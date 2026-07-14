@@ -1,0 +1,136 @@
+{
+  "info": {
+    "name": "Liverpool Live Code API",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Buscar productos por nombre o descripcion, enriquecidos con stock actual",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_Products}}/api/v1/products/search?query=iPhone",
+              "protocol": "",
+              "host": [
+                "{{url_Products}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "search?query=iPhone"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "iPhone"
+                }
+              ],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/products/search",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "",
+                      "description": "Palabra clave a buscar en nombre o descripcion"
+                    }
+                  ],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": \"\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"price\": 0,\n    \"stock\": 0,\n    \"inventoryStatus\": \"IN_STOCK\"\n  }\n]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "Buscar stock por id articulo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_Inventory}}/api/v1/inventory/EXT-006",
+              "protocol": "",
+              "host": [
+                "{{url_Inventory}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "inventory",
+                "EXT-006"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "url_Products",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "url_Inventory",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

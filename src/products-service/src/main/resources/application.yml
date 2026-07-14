@@ -1,0 +1,91 @@
+spring:
+  profiles:
+    active: '@activatedProperties@'
+  application:
+    name: product-service
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api/v1/api-docs
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventoryService:
+        register-health-indicator: true
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+      soapCalculatorService: # <-- Nueva instancia para el cliente SOAP
+        register-health-indicator: true
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 6           # Evaluamos sobre las últimas 6 llamadas
+        minimum-number-of-calls: 3        # Mínimo de llamadas antes de calcular fallos
+        failure-rate-threshold: 50        # Si el 50% falla, se abre el circuito
+        wait-duration-in-open-state: 15s  # Espera 15 segundos antes de intentar Half-Open
+        permitted-number-of-calls-in-half-open-state: 2
+        automatic-transition-from-open-to-half-open-enabled: true        
+  timelimiter:
+    instances:
+      inventoryService:
+        timeout-duration: 2s
+        cancel-running-future: true
+      soapCalculatorService:
+        timeout-duration: 3s
+        cancel-running-future: true        
+  retry:
+    instances:
+      inventoryService:
+        max-attempts: 3
+        wait-duration: 300ms
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+      soapCalculatorService: # <-- Reintentos específicos para el SOAP        
+        max-attempts: 3
+        wait-duration: 250ms
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers,metrics
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+
+logging:
+  file:
+    name: logs/app.log
+  logback:
+    rollingpolicy:
+      max-file-size: 20MB
+      max-history: 15
+      total-size-cap: 500MB
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log.gz
+  level:
+    com.example.product: INFO
+    io.github.resilience4j: INFO
+    org.hibernate.orm.connections.pooling: WARN
+    org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: WARN
+
+inventory:
+  service:
+    base-url: ${INVENTORY_SERVICE_URL:http://localhost:8081}
+
+soap:
+  calculator:
+    wsdl: ${http://www.dneonline.com/calculator.asmx}
+  countryinfo:
+    wsdl: ${http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso}
+  

@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: '@activatedProperties@'
+  application:
+    name: inventory-service
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api/v1/api-docs
+
+logging:
+  file:
+    name: logs/app.log
+  logback:
+    rollingpolicy:
+      max-file-size: 20MB
+      max-history: 15
+      total-size-cap: 500MB
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log.gz
+  level:
+    com.example.product: INFO
+    io.github.resilience4j: INFO
+    org.hibernate.orm.connections.pooling: WARN
+    org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: WARN
+
+soap:
+  calculator:
+    wsdl: ${http://www.dneonline.com/calculator.asmx}    

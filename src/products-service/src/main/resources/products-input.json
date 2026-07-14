@@ -1,0 +1,56 @@
+[
+  {
+    "id": "EXT-001",
+    "title": "iPhone 13 128GB",
+    "description": "Smartphone Apple...",
+    "price": "18999.99",
+    "currency": "MXN",
+    "category": "smartphones",
+    "active": true
+  },
+  {
+    "id": "EXT-002",
+    "title": "Samsung Galaxy S22",
+    "description": "Gama alta...",
+    "price": "17499.50",
+    "currency": "MXN",
+    "category": "smartphones",
+    "active": true
+  },
+  {
+    "id": "EXT-003",
+    "title": "MacBook Air M1",
+    "description": "Laptop ligera...",
+    "price": "21999.00",
+    "currency": "MXN",
+    "category": "laptops",
+    "active": true
+  },
+  {
+    "id": "EXT-004",
+    "title": "Dell XPS 13",
+    "description": "Ultrabook premium...",
+    "price": "24999.99",
+    "currency": "MXN",
+    "category": "laptops",
+    "active": true
+  },
+  {
+    "id": "EXT-005",
+    "title": "Audífonos Sony WH-1000XM4",
+    "description": "Cancelación de ruido",
+    "price": "5999.00",
+    "currency": "MXN",
+    "category": "audio",
+    "active": true
+  },
+  {
+    "id": "EXT-006",
+    "title": "Antena de TV",
+    "description": "Antena local para pantalla de TV",
+    "price": "390.00",
+    "currency": "MXN",
+    "category": "communications",
+    "active": true
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "EXT-001",
+    "title": "Active Product 1",
+    "description": "Description 1",
+    "price": "10.50",
+    "currency": "MXN",
+    "category": "Electronics",
+    "active": true
+  },
+  {
+    "id": "EXT-002",
+    "title": "Inactive Product 2",
+    "description": "Description 2",
+    "price": "20.00",
+    "currency": "MXN",
+    "category": "Home",
+    "active": false
+  },
+  {
+    "id": "EXT-003",
+    "title": "Active Product 3",
+    "description": "Description 3",
+    "price": "150.00",
+    "currency": "MXN",
+    "category": "Fashion",
+    "active": true
+  }
+]

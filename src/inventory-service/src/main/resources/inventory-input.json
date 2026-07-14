@@ -1,0 +1,7 @@
+[
+  { "productId": "EXT-001", "stock": 10 },
+  { "productId": "EXT-002", "stock": 0 },
+  { "productId": "EXT-003", "stock": 5 },
+  { "productId": "EXT-004", "stock": 2 },
+  { "productId": "EXT-005", "stock": 20 }
+]
