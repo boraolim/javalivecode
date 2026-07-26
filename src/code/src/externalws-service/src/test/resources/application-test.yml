@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;INIT=CREATE SCHEMA IF NOT EXISTS LIVERLIVECODE;MODE=MariaDB;DATABASE_TO_UPPER=false
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+
+  sql:
+    init:
+      #mode: never
+      mode: always
+      schema-locations: classpath:schema.sql
+
+# Async Task
+queue:
+  capacity: 10
+pool:
+  size: 5
+
+soap:
+  calculator:
+    wsdl: ${http://www.dneonline.com/calculator.asmx}
+  countryinfo:
+    wsdl: ${http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso}
+
+api:
+  typicode:
+    url: ${https://jsonplaceholder.typicode.com}    
+

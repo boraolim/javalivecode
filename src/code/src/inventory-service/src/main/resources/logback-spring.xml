@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <springProfile name="local">
+        <appender name="CONSOLE_LOCAL" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - %X{traceId:-} - [%thread] - %-5level - %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="FILE_LOCAL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>logs/app.log</file>
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - %X{traceId:-} - [%thread] - %-5level - %logger{36} - %msg%n</pattern>
+            </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <fileNamePattern>logs/app-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+                <maxFileSize>20MB</maxFileSize>
+                <maxHistory>15</maxHistory>
+                <totalSizeCap>500MB</totalSizeCap>
+            </rollingPolicy>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_LOCAL"/>
+            <appender-ref ref="FILE_LOCAL"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="!local">
+        <appender name="CONSOLE_JSON" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                <!-- Opcional: Personaliza campos que quieres incluir de forma plana -->
+                <fieldNames>
+                    <timestamp>timestamp</timestamp>
+                    <version>[field_version]</version>
+                    <level>level</level>
+                    <thread>thread</thread>
+                    <logger>logger</logger>
+                    <message>message</message>
+                    <stackTrace>stack_trace</stackTrace>
+                </fieldNames>
+            </encoder>
+        </appender>
+
+        <appender name="FILE_APP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>logs/app.log</file>
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - %X{traceId:-} - [%thread] - %-5level - %logger{36} - %msg%n</pattern>
+            </encoder>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <fileNamePattern>logs/app-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+                <maxFileSize>20MB</maxFileSize>
+                <maxHistory>15</maxHistory>
+                <totalSizeCap>500MB</totalSizeCap>
+            </rollingPolicy>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_JSON"/>
+            <appender-ref ref="FILE_APP"/>
+        </root>
+    </springProfile>
+</configuration>

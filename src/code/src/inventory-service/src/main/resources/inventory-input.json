@@ -1,0 +1,17 @@
+[
+  { "productId": "EXT-001", "stock": 100 },
+  { "productId": "EXT-002", "stock": 50 },
+  { "productId": "EXT-003", "stock": 50 },
+  { "productId": "EXT-004", "stock": 30 },
+  { "productId": "EXT-005", "stock": 200 },
+  { "productId": "EXT-006", "stock": 150 },
+  { "productId": "EXT-007", "stock": 70 },
+  { "productId": "EXT-008", "stock": 70 },
+  { "productId": "EXT-009", "stock": 70 },
+  { "productId": "EXT-010", "stock": 70 },
+  { "productId": "EXT-011", "stock": 70 },
+  { "productId": "EXT-013", "stock": 70 },
+  { "productId": "EXT-049", "stock": 170 },
+  { "productId": "EXT-360", "stock": 170 },
+  { "productId": "EXT-361", "stock": 170 }
+]
