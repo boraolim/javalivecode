@@ -16,7 +16,7 @@ public final class MiddlewareUtil {
     public static String truncate(String value) {
         return Optional.ofNullable(value)
             .map(valueString -> valueString.length() > AppConstants.MAX_CHARS
-                    ? valueString.substring(0, AppConstants.MAX_CHARS)
+                    ? AppConstants.TRUNCATED_PREFIX + valueString.substring(0, Math.max(0, AppConstants.MAX_CHARS - AppConstants.TRUNCATED_PREFIX.length()))
                     : valueString)
             .orElse(null);
     }
