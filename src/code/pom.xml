@@ -54,6 +54,7 @@
         <podam.version>8.0.2.RELEASE</podam.version>
         <jacoco.maven.plugin>0.8.15</jacoco.maven.plugin>
         <mockwebserver.version>5.4.0</mockwebserver.version>
+        <testcontainer.version>1.21.4</testcontainer.version>
 
         <project.build.filterDirectory>${basedir}/src/main/filters</project.build.filterDirectory>
         <project.build.resourcesDirectory>${basedir}/src/main/resources</project.build.resourcesDirectory>
@@ -166,6 +167,20 @@
                 <version>${mockwebserver.version}</version>
                 <scope>test</scope>
             </dependency>
+            
+            <!-- Testcontainers JUnit 5 -->
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${testcontainer.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>mariadb</artifactId>
+                <version>${testcontainer.version}</version>
+                <scope>test</scope>
+            </dependency>            
         </dependencies>
     </dependencyManagement>
 

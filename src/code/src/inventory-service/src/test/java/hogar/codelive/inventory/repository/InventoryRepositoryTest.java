@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 
 import hogar.codelive.inventory.entity.InventoryEntity;
 import hogar.codelive.inventory.constants.AppTestConstants;
@@ -22,16 +22,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@DataJpaTest
 @Transactional
+@SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @DisplayName("InventoryRepository - Integration Tests")
 class InventoryRepositoryTest {
 
     @Autowired
     private InventoryRepository inventoryRepository;
-
-    @Autowired
-    private TestEntityManager entityManager;
 
     private String targetId;
     private InventoryEntity sampleEntity;
@@ -39,8 +37,10 @@ class InventoryRepositoryTest {
 
     @BeforeEach
     void setUp() {
+        inventoryRepository.deleteAll();
+
         sampleEntity = InventoryEntity.builder()
-                .productId(AppTestConstants.PRODUCT_LAST_ID)
+                .productId(AppTestConstants.PRODUCT_FIRST_ID)
                 .stock(150)
                 .build();
 
@@ -51,7 +51,7 @@ class InventoryRepositoryTest {
                     .build())
             .toList();                
 
-        inventoryList.forEach(entityManager::persistAndFlush);
+        inventoryRepository.saveAll(inventoryList);
     }
 
     @Test
@@ -61,7 +61,7 @@ class InventoryRepositoryTest {
 
         assertAll("Validar inserción de entidad",
                 () -> assertNotNull(savedEntity),
-                () -> assertEquals(AppTestConstants.PRODUCT_LAST_ID, savedEntity.getProductId()),
+                () -> assertEquals(AppTestConstants.PRODUCT_FIRST_ID, savedEntity.getProductId()),
                 () -> assertEquals(150, savedEntity.getStock())
         );
     }
@@ -69,9 +69,9 @@ class InventoryRepositoryTest {
     @Test
     @DisplayName("Read - Debería buscar y encontrar un inventario por su ID (Read)")
     void shouldFindInventoryById() {
-        entityManager.persistAndFlush(sampleEntity);
+        inventoryRepository.save(sampleEntity);
 
-        Optional<InventoryEntity> foundEntityOpt = inventoryRepository.findById(AppTestConstants.PRODUCT_LAST_ID);
+        Optional<InventoryEntity> foundEntityOpt = inventoryRepository.findById(AppTestConstants.PRODUCT_FIRST_ID);
 
         assertTrue(foundEntityOpt.isPresent());
         assertEquals(150, foundEntityOpt.get().getStock());
@@ -91,9 +91,9 @@ class InventoryRepositoryTest {
     @Test
     @DisplayName("Update - Debería actualizar el stock de un producto existente (Update)")
     void shouldUpdateInventoryStock() {
-        entityManager.persistAndFlush(sampleEntity);
+        inventoryRepository.save(sampleEntity);
 
-        InventoryEntity existingEntity = inventoryRepository.findById(AppTestConstants.PRODUCT_LAST_ID).orElseThrow();
+        InventoryEntity existingEntity = inventoryRepository.findById(AppTestConstants.PRODUCT_FIRST_ID).orElseThrow();
         existingEntity.setStock(300);
         InventoryEntity updatedEntity = inventoryRepository.saveAndFlush(existingEntity);
 
@@ -103,10 +103,10 @@ class InventoryRepositoryTest {
     @Test
     @DisplayName("Delete - Debería eliminar un registro de inventario por su ID (Delete)")
     void shouldDeleteInventory() {
-        entityManager.persistAndFlush(sampleEntity);
+        inventoryRepository.save(sampleEntity);
 
-        inventoryRepository.deleteById(AppTestConstants.PRODUCT_LAST_ID);
-        Optional<InventoryEntity> deletedEntityOpt = inventoryRepository.findById(AppTestConstants.PRODUCT_LAST_ID);
+        inventoryRepository.deleteById(AppTestConstants.PRODUCT_FIRST_ID);
+        Optional<InventoryEntity> deletedEntityOpt = inventoryRepository.findById(AppTestConstants.PRODUCT_FIRST_ID);
 
         assertFalse(deletedEntityOpt.isPresent());
     }
