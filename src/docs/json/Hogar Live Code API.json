@@ -1,0 +1,2345 @@
+{
+  "info": {
+    "name": "Demo Live Code API",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "External Service",
+      "item": [
+        {
+          "name": "Calcular el producto de dos numeros enteros utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/calculate-multiply",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "calculate-multiply"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valorA\": 45,\n  \"valorB\": 12\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/calculate-multiply",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "calculate-multiply"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valorA\": 45,\n  \"valorB\": 12\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "0",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Calcular el cociente de dos numeros enteros utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/calculate-divide",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "calculate-divide"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valorA\": 45,\n  \"valorB\": 12\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/calculate-divide",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "calculate-divide"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valorA\": 45,\n  \"valorB\": 12\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "0",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Calcular la suma de dos numeros enteros utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/calculate-add",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "calculate-add"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valorA\": 45,\n  \"valorB\": 12\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/calculate-add",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "calculate-add"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valorA\": 45,\n  \"valorB\": 12\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "0",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de los continentes por nombre y su codigo ISO utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/listOfLanguagesByName",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfLanguagesByName"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfLanguagesByName",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfLanguagesByName"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tlanguage\": [\n    {\n      \"sisocode\": \"\",\n      \"sname\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de los continentes por codigo ISO y su codigo ISO utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/listOfLanguagesByCode",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfLanguagesByCode"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfLanguagesByCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfLanguagesByCode"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tlanguage\": [\n    {\n      \"sisocode\": \"\",\n      \"sname\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de las divisas con su nombre utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/listOfCurrenciesByName",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfCurrenciesByName"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfCurrenciesByName",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfCurrenciesByName"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcurrency\": [\n    {\n      \"sisocode\": \"\",\n      \"sname\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de las divisas con su código ISO utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/listOfCurrenciesByCode",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfCurrenciesByCode"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfCurrenciesByCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfCurrenciesByCode"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcurrency\": [\n    {\n      \"sisocode\": \"\",\n      \"sname\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de los paises agrupados por continentes utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/listOfCountryNamesGroupedByContinent",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfCountryNamesGroupedByContinent"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfCountryNamesGroupedByContinent",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfCountryNamesGroupedByContinent"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcountryCodeAndNameGroupedByContinent\": [\n    {\n      \"continent\": {\n        \"sname\": \"\",\n        \"scode\": \"\"\n      },\n      \"countryCodeAndNames\": {\n        \"tcountryCodeAndName\": [\n          {\n            \"sisocode\": \"\",\n            \"sname\": \"\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de los continentes por nombre utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/externalsvc/listOfContinentsByName",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfContinentsByName"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfContinentsByName",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfContinentsByName"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcontinent\": [\n    {\n      \"sname\": \"\",\n      \"scode\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de los continentes por codigo ISO utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/listOfContinentsByCode",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "listOfContinentsByCode"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/listOfContinentsByCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "listOfContinentsByCode"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcontinent\": [\n    {\n      \"sname\": \"\",\n      \"scode\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene el nombre del idioma o dialecto especifico por el codigo ISO de un idioma o dialecto utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/languageName/cat",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "languageName",
+                "cat"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/languageName/:sISOCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "languageName",
+                    ":sISOCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sISOCode",
+                      "value": "",
+                      "description": "Nombre del idioma o dialecto"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene el codigo ISO de un idioma o dialecto especifico por el nombre del idioma o dialecto utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/languageISOCode/catalan",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "languageISOCode",
+                "catalan"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/languageISOCode/:sLanguageName",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "languageISOCode",
+                    ":sLanguageName"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sLanguageName",
+                      "value": "",
+                      "description": "Nombre del idioma o dialecto"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de post de un sitio API externo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/getApiPost",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "getApiPost"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/getApiPost",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "getApiPost"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"userId\": 0,\n    \"id\": 0,\n    \"title\": \"\",\n    \"body\": \"\"\n  }\n]",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de los países utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/fullCountryInfoAllCountries",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "fullCountryInfoAllCountries"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/fullCountryInfoAllCountries",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "fullCountryInfoAllCountries"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcountryInfo\": [\n    {\n      \"languages\": {\n        \"tlanguage\": [\n          {\n            \"sisocode\": \"\",\n            \"sname\": \"\"\n          }\n        ]\n      },\n      \"sisocode\": \"\",\n      \"scurrencyISOCode\": \"\",\n      \"scountryFlag\": \"\",\n      \"scontinentCode\": \"\",\n      \"scapitalCity\": \"\",\n      \"sphoneCode\": \"\",\n      \"sname\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de un país en especifico utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/fullCountryInfo/MX",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "fullCountryInfo",
+                "MX"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/fullCountryInfo/:sCountryCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "fullCountryInfo",
+                    ":sCountryCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"languages\": {\n    \"tlanguage\": [\n      {\n        \"sisocode\": \"\",\n        \"sname\": \"\"\n      }\n    ]\n  },\n  \"sisocode\": \"\",\n  \"scurrencyISOCode\": \"\",\n  \"scountryFlag\": \"\",\n  \"scontinentCode\": \"\",\n  \"scapitalCity\": \"\",\n  \"sphoneCode\": \"\",\n  \"sname\": \"\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de un país en especifico por codigo ISO de la moneda del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/currencyName/MXN",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "currencyName",
+                "MXN"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/currencyName/:sCurrencyIsoCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "currencyName",
+                    ":sCurrencyIsoCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCurrencyIsoCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene toda la información de un país en especifico por codigo ISO del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/countryName/MX",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "countryName",
+                "MX"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/countryName/:sCountryIsoCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "countryName",
+                    ":sCountryIsoCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryIsoCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene el número telefonico ISO de un país en especifico por codigo ISO del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/countryIntPhoneCode/MX",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "countryIntPhoneCode",
+                "MX"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/countryIntPhoneCode/:sCountryIsoCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "countryIntPhoneCode",
+                    ":sCountryIsoCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryIsoCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene el codigo ISO de un país en especifico por nombre de un país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/countryISOCode/Mexico",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "countryISOCode",
+                "Mexico"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/countryISOCode/:sCountryName",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "countryISOCode",
+                    ":sCountryName"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryName",
+                      "value": "",
+                      "description": "Nombre del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene la dirección URL de la bandera de un país en especifico por codigo ISO del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/countryFlag/MX",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "countryFlag",
+                "MX"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/countryFlag/:sCountryIsoCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "countryFlag",
+                    ":sCountryIsoCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryIsoCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene la información de la unidad monetaria de un país en especifico por codigo ISO del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/countryCurrency/MX",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "countryCurrency",
+                "MX"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/countryCurrency/:sCountryIsoCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "countryCurrency",
+                    ":sCountryIsoCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryIsoCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"sisocode\": \"\",\n  \"sname\": \"\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene la información de la lista de países que usan una moneda por codigo ISO de la moneda del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/countriesUsingCurrency/MXN",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "countriesUsingCurrency",
+                "MXN"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/countriesUsingCurrency/:sIsoCurrencyCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "countriesUsingCurrency",
+                    ":sIsoCurrencyCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sIsoCurrencyCode",
+                      "value": "",
+                      "description": "Identificador de la moneda del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tcountryCodeAndName\": [\n    {\n      \"sisocode\": \"\",\n      \"sname\": \"\"\n    }\n  ]\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "Obtiene el nombre de la capital de un país en especifico por codigo ISO del país utilizando el motor SOAP externo de manera asíncrona",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_externalws}}/api/v1/externalsvc/capitalCity/MX",
+              "protocol": "",
+              "host": [
+                "{{url_externalws}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "externalsvc",
+                "capitalCity",
+                "MX"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/externalsvc/capitalCity/:sCountryIsoCode",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "externalsvc",
+                    "capitalCity",
+                    ":sCountryIsoCode"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "sCountryIsoCode",
+                      "value": "",
+                      "description": "Identificador del país"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "Obtener el stock actual de un producto por su id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_Inventory}}/api/v1/inventory/EXT-361",
+              "protocol": "",
+              "host": [
+                "{{url_Inventory}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "inventory",
+                "EXT-361"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/inventory/:productId",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "inventory",
+                    ":productId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "",
+                      "description": "Identificador del producto"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"productId\": \"\",\n  \"stock\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Actualizar el stock de un producto",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "Actualiza la informacion de un producto existente.",
+            "url": {
+              "raw": "{{url_Inventory}}/api/v1/inventory/:productId",
+              "protocol": "",
+              "host": [
+                "{{url_Inventory}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "inventory",
+                ":productId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "",
+                  "description": "Identificador del producto"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productStock\": 1300\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/inventory/:productId",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "inventory",
+                    ":productId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "",
+                      "description": "Identificador del producto"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productStock\": 1300\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Eliminar un producto del inventario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "Elimina un producto existente del inventario.",
+            "url": {
+              "raw": "{{url_Inventory}}/api/v1/inventory/:productId",
+              "protocol": "",
+              "host": [
+                "{{url_Inventory}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "inventory",
+                ":productId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "",
+                  "description": "Identificador del producto"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/inventory/:productId",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "inventory",
+                    ":productId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "",
+                      "description": "Identificador del producto"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Registrar nuevo stock de un producto existente",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_Inventory}}/api/v1/inventory",
+              "protocol": "",
+              "host": [
+                "{{url_Inventory}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "inventory"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"EXT-012\",\n  \"productStock\": 300\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/inventory",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "inventory"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productId\": \"PROD-001\",\n  \"productStock\": 1300\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"productId\": \"\",\n  \"stock\": 0\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Obtener un producto por identificador",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "Obtiene la información de un producto existente.",
+            "url": {
+              "raw": "{{url_Products}}/api/v1/products/:productId",
+              "protocol": "",
+              "host": [
+                "{{url_Products}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                ":productId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "EXT-001",
+                  "description": "Identificador del producto"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/products/:productId",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    ":productId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "",
+                      "description": "Identificador del producto"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"idProduct\": \"\",\n  \"nameProduct\": \"\",\n  \"descriptionProduct\": \"\",\n  \"priceProduct\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Actualizar un producto",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "Actualiza la información de un producto existente.",
+            "url": {
+              "raw": "{{url_Products}}/api/v1/products/:productId",
+              "protocol": "",
+              "host": [
+                "{{url_Products}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                ":productId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "",
+                  "description": "Identificador del producto"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameProduct\": \"Laptop Lenovo\",\n  \"descriptionProduct\": \"Laptop Lenovo ThinkPad con 16 GB de RAM\",\n  \"priceProduct\": 1299.99\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "204 Response",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/products/:productId",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    ":productId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "",
+                      "description": "Identificador del producto"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nameProduct\": \"Laptop Lenovo\",\n  \"descriptionProduct\": \"Laptop Lenovo ThinkPad con 16 GB de RAM\",\n  \"priceProduct\": 1299.99\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Eliminar un producto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "Elimina un producto existente.",
+            "url": {
+              "raw": "{{url_Products}}/api/v1/products/:productId",
+              "protocol": "",
+              "host": [
+                "{{url_Products}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                ":productId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "",
+                  "description": "Identificador del producto"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "204 Response",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/products/:productId",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    ":productId"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "",
+                      "description": "Identificador del producto"
+                    }
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Crear un nuevo producto",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "Registra un nuevo producto en el catálogo.",
+            "url": {
+              "raw": "{{url_Products}}/api/v1/products",
+              "protocol": "",
+              "host": [
+                "{{url_Products}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"productId\": \"EXT-013\",\n  \"nameProduct\": \"iPhone 13 1TB\",\n  \"descriptionProduct\": \"Smartphone Apple\",\n  \"priceProduct\": 1599.99\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "201 Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/products",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "products"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productId\": \"PROD-001\",\n  \"nameProduct\": \"Laptop Lenovo\",\n  \"descriptionProduct\": \"Laptop Lenovo ThinkPad con 16 GB de RAM\",\n  \"priceProduct\": 1299.99\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"idProduct\": \"\",\n  \"nameProduct\": \"\",\n  \"descriptionProduct\": \"\",\n  \"priceProduct\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar productos por nombre o descripcion, enriquecidos con stock actual",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{url_Products}}/api/v1/products/search?query=gelatina",
+              "protocol": "",
+              "host": [
+                "{{url_Products}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "search?query=gelatina"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "gelatina"
+                }
+              ],
+              "variable": []
+            }
+          },
+          "response": [
+            {
+              "name": "200 Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/products/search",
+                  "protocol": "",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "",
+                      "description": "Palabra clave a buscar en nombre o descripcion"
+                    }
+                  ],
+                  "variable": []
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*",
+                  "name": "Content-Type",
+                  "description": "",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": \"\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"price\": 0,\n    \"stock\": 0,\n    \"inventoryStatus\": \"IN_STOCK\"\n  }\n]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "url_Inventory",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "url_Products",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "url_externalws",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "baseurl",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+spring:
+  profiles:
+    active: '@activatedProperties@'
+  application:
+    name: product-service
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api/v1/api-docs
+
+app:
+  logging:
+    slow-request-threshold-ms: 1000
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventoryService:
+        register-health-indicator: true
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+  timelimiter:
+    instances:
+      inventoryService:
+        timeout-duration: 2s
+        cancel-running-future: true
+  retry:
+    instances:
+      inventoryService:
+        max-attempts: 3
+        wait-duration: 300ms
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers,metrics
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuit breakers:
+      enabled: true
+
+logging:
+  file:
+    name: logs/app.log
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([%thread]){magenta} %clr(%logger{36}){cyan} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] [%X{traceId:-}] %logger{40}:%L - %msg%n"    
+  logback:
+    rolling policy:
+      max-file-size: 20MB
+      max-history: 15
+      total-size-cap: 500MB
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log.gz
+  level:
+    web: INFO
+    hogar.codelive.products: INFO
+    io.github.resilience4j: INFO
+    com.zaxxer.hikari: WARN
+    org.hibernate: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.orm.connections.pooling: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN    
+    org.springframework.boot.autoconfigure.security.UserDetailsServiceAutoConfiguration: WARN
+    org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: WARN
+    org.springframework.boot.devtools.restart.ChangeableUrls: ERROR   
+
+queue:
+  capacity: 10
+
+pool:
+  size: 5
+
+cache:
+  initialCapacity: 100
+  maximumSize: 1000
+  expireAfterWrite: 10
+
+inventory:
+  service:
+    base-url: ${INVENTORY_SERVICE_URL:http://localhost:8081}

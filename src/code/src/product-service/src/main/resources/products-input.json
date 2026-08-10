@@ -1,0 +1,5403 @@
+[
+  {
+    "id": "EXT-001",
+    "title": "Leche Entera Lala 1L",
+    "description": "Leche entera pasteurizada adicionada con vitaminas A y D",
+    "price": "28.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-002",
+    "title": "Huevo Blanco San Juan 18 pzas",
+    "description": "Huevo fresco de gallina de libre pastoreo",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "huevos_y_lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-003",
+    "title": "Frijol Negro 1kg",
+    "description": "Frijol negro seleccionado de gran calidad",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-004",
+    "title": "Arroz Super Extra 1kg",
+    "description": "Arroz grano largo extra selecto",
+    "price": "32.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-005",
+    "title": "Aceite Vegetal 1L",
+    "description": "Aceite comestible puro de soya",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-006",
+    "title": "Atún en Agua Dolores 140g",
+    "description": "Lomo de atún en agua en presentación lata",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-007",
+    "title": "Azúcar Estándar 1kg",
+    "description": "Azúcar de caña para uso cotidiano",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-008",
+    "title": "Papel Higiénico 12 rollos",
+    "description": "Papel higiénico acolchado ultra suave",
+    "price": "79.90",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-009",
+    "title": "Detergente en Polvo 1kg",
+    "description": "Detergente multiusos para ropa blanca y de color",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-010",
+    "title": "Jabón de Tocador Escudo",
+    "description": "Jabón antibacterial en barra protección familiar",
+    "price": "16.50",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-011",
+    "title": "Pasta de Dientes Colgate 120ml",
+    "description": "Crema dental máxima protección anticaries",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-012",
+    "title": "Shampoo Pantene 400ml",
+    "description": "Shampoo nutrición profunda para cabello seco",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-013",
+    "title": "Café Soluble Legal 200g",
+    "description": "Café puro soluble descafeinado",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-014",
+    "title": "Cereal Corn Flakes 500g",
+    "description": "Hojuelas de maíz tostadas con vitaminas",
+    "price": "56.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-015",
+    "title": "Galletas Marías Gamesa",
+    "description": "Galletas dulces tradicionales crujientes",
+    "price": "21.50",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-016",
+    "title": "Pan Bimbo Blanco Grande",
+    "description": "Pan de caja integral enriquecido con fibra",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-017",
+    "title": "Jugo de Naranja Del Valle 1L",
+    "description": "Néctar de fruta sabor naranja con vitamina C",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-018",
+    "title": "Refresco Coca-Cola 2.5L",
+    "description": "Bebida carbonatada sabor cola no retornable",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-019",
+    "title": "Agua Purificada Ciel 1.5L",
+    "description": "Agua ligera embotellada de manantial",
+    "price": "14.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-020",
+    "title": "Manzana Red Delicious 1kg",
+    "description": "Fruta fresca seleccionada por kilo",
+    "price": "49.90",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-021",
+    "title": "Plátano Tabasco 1kg",
+    "description": "Plátano fresco rico en potasio por kilo",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-022",
+    "title": "Jitomate Saladet 1kg",
+    "description": "Jitomate rojo fresco para cocina",
+    "price": "34.50",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-023",
+    "title": "Cebolla Blanca 1kg",
+    "description": "Cebolla blanca fresca de gran tamaño",
+    "price": "29.90",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-024",
+    "title": "Papa Blanca 1kg",
+    "description": "Papa fresca ideal para freír o cocer",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-025",
+    "title": "Pechuga de Pollo 1kg",
+    "description": "Pechuga de pollo sin hueso empacada al alto vacío",
+    "price": "135.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-026",
+    "title": "Carne Molida de Res 1kg",
+    "description": "Carne de res con 10% de grasa selecta",
+    "price": "148.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-027",
+    "title": "Chuleta de Cerdo 1kg",
+    "description": "Chuleta ahumada de cerdo fresca",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-028",
+    "title": "Jamón de Pavo FUD 250g",
+    "description": "Jamón fino de pechuga de pavo en rebanadas",
+    "price": "42.50",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-029",
+    "title": "Queso Panela FUD 400g",
+    "description": "Queso fresco tipo panela pasteurizado",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-030",
+    "title": "Queso Manchego Lala 200g",
+    "description": "Queso madurado rebanado tipo manchego",
+    "price": "55.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-031",
+    "title": "Yogurt Natural Yoplait 1L",
+    "description": "Yogurt bebible sabor natural sin azúcar añadida",
+    "price": "41.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-032",
+    "title": "Mantequilla con Sal Lala 90g",
+    "description": "Mantequilla pasteurizada 100% de vaca",
+    "price": "24.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-033",
+    "title": "Crema Acida Lala 200ml",
+    "description": "Crema entera acidificada de leche de vaca",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-034",
+    "title": "Papel Aluminio Reynolds 7m",
+    "description": "Rollo de aluminio protector para alimentos",
+    "price": "39.90",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-035",
+    "title": "Bolsas para Basura Extragrandes",
+    "description": "Paquete de 20 bolsas resistentes con asa",
+    "price": "47.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-036",
+    "title": "Cloro Líquido Cloralex 1L",
+    "description": "Desinfectante y blanqueador para ropa y superficies",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-037",
+    "title": "Fabuloso Limpiador Pisos 1L",
+    "description": "Líquido multiusos aroma lavanda",
+    "price": "31.50",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-038",
+    "title": "Esponjas para Trastes 3 pzas",
+    "description": "Esponja doble cara con fibra abrasiva",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-039",
+    "title": "Mayonesa McCormick 390g",
+    "description": "Mayonesa con jugo de limón",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-040",
+    "title": "Ketchup Heinz 397g",
+    "description": "Salsa de tomate cátsup tradicional",
+    "price": "43.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-041",
+    "title": "Salsa Valentina Roja 370ml",
+    "description": "Salsa picante botanera clásica",
+    "price": "18.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-042",
+    "title": "Sal Refinada La Fina 1kg",
+    "description": "Sal yodada fluorada fina",
+    "price": "17.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-043",
+    "title": "Pasta para Sopa La Moderna 200g",
+    "description": "Pasta de sémola de trigo tipo codo",
+    "price": "11.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-044",
+    "title": "Salsa de Tomate Puré 210g",
+    "description": "Puré de tomate sazonado estilo casero",
+    "price": "13.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-045",
+    "title": "Frijoles Refritos La Costeña 580g",
+    "description": "Frijoles negros refritos bayos en lata",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-046",
+    "title": "Chiles Jalapeños en Escabeche 220g",
+    "description": "Chiles jalapeños enteros con zanahorias y cebolla",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-047",
+    "title": "Papitas Sabritas Original 45g",
+    "description": "Botana salada de papa frita crujiente",
+    "price": "19.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-048",
+    "title": "Chocolate Abuelita Tablillas 270g",
+    "description": "Chocolate de mesa para preparar bebida caliente",
+    "price": "48.50",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-049",
+    "title": "Gelatina en Polvo D'Gari 85g",
+    "description": "Polvo para preparar gelatina sabor fresa",
+    "price": "12.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-050",
+    "title": "Toallitas Húmedas Huggies 80 pzas",
+    "description": "Toallitas húmedas limpiadoras sin alcohol",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-051",
+    "title": "Avena Integral Quaker 400g",
+    "description": "Avena hojuelas integrales de granos seleccionados",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-052",
+    "title": "Miel de Abeja Карani 300g",
+    "description": "Miel pura de abeja natural",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-053",
+    "title": "Lentejas Gran Gema 500g",
+    "description": "Lentejas limpias de alta calidad",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-054",
+    "title": "Harina de Trigo Selecta 1kg",
+    "description": "Harina de trigo ultra refinada para repostería",
+    "price": "27.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-055",
+    "title": "Maizena Fécula de Maíz 45g",
+    "description": "Fécula de maíz sabor vainilla",
+    "price": "10.50",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-056",
+    "title": "Sardinas en Tomate Guaymex 425g",
+    "description": "Sardinas en salsa de tomate ricas en omega 3",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-057",
+    "title": "Ejotes en Lata Herdez 400g",
+    "description": "Ejotes tiernos enteros en salmuera",
+    "price": "20.50",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-058",
+    "title": "Chícharos con Zanahoria Herdez 220g",
+    "description": "Vegetales mixtos enlatados listos para servir",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-059",
+    "title": "Pina en Almíbar Del Monte 800g",
+    "description": "Rodajas de piña en almíbar ligero",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-060",
+    "title": "Duraznos en Almíbar Del Monte 820g",
+    "description": "Mitades de durazno en almíbar",
+    "price": "63.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-061",
+    "title": "Galletas Emperador Chocolate 97g",
+    "description": "Galletas sándwich rellenas de crema sabor chocolate",
+    "price": "19.50",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-062",
+    "title": "Galletas Chokis Gamesa 70g",
+    "description": "Galletas con trocitos de chocolate",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-063",
+    "title": "Totopos de Maíz Tía Rosa 200g",
+    "description": "Totopos crujientes de maíz amarillo",
+    "price": "28.50",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-064",
+    "title": "Cacahuates Japoneses Barcel 100g",
+    "description": "Cacahuates con capa crujiente sabor japonés",
+    "price": "16.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-065",
+    "title": "Palomitas de Maíz Act II 3 pzas",
+    "description": "Palomitas para microondas mantequilla",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-066",
+    "title": "Néctar de Mango Jumex 1L",
+    "description": "Bebida sabor mango enriquecida",
+    "price": "26.50",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-067",
+    "title": "Agua Mineral Peñafiel 2L",
+    "description": "Agua carbonatada mineral natural",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-068",
+    "title": "Té Verde Lipton 20 sobres",
+    "description": "Infusión de té verde natural",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-069",
+    "title": "Bebida Isotónica Gatorade 1L",
+    "description": "Bebida rehidratante sabor mora azul",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-070",
+    "title": "Energizante Red Bull 250ml",
+    "description": "Bebida estimulante con cafeína y taurina",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-071",
+    "title": "Limón con Semilla 1kg",
+    "description": "Limón fresco jugoso por kilo",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-072",
+    "title": "Aguacate Hass 1kg",
+    "description": "Aguacate fresco seleccionado en su punto",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-073",
+    "title": "Papaya Maradol 1kg",
+    "description": "Papaya dulce fresca entera por kilo",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-074",
+    "title": "Sandía Crimson 1kg",
+    "description": "Sandía entera fresca de gran dulzor",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-075",
+    "title": "Zanahoria Fresca 1kg",
+    "description": "Zanahoria limpia y crujiente por kilo",
+    "price": "21.50",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-076",
+    "title": "Bistec de Res 1kg",
+    "description": "Bistec delgado de res para asar o freír",
+    "price": "178.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-077",
+    "title": "Costilla de Cerdo 1kg",
+    "description": "Costilla cargada de cerdo fresca",
+    "price": "132.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-078",
+    "title": "Pierna y Muslo de Pollo 1kg",
+    "description": "Piezas de pollo frescas con hueso",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-079",
+    "title": "Longaniza de Cerdo 1kg",
+    "description": "Embutido fresco sazonado de cerdo",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-080",
+    "title": "Salchicha de Viena FUD 500g",
+    "description": "Salchicha mixta de pavo y cerdo empacada",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-081",
+    "title": "Tocino Ahumado FUD 200g",
+    "description": "Tiras de tocino de cerdo ahumado natural",
+    "price": "52.50",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-082",
+    "title": "Queso Amarillo Sencillo 200g",
+    "description": "Queso procesado tipo americano rebanado",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-083",
+    "title": "Queso Cotija 200g",
+    "description": "Queso seco artesanal para espolvorear",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-084",
+    "title": "Queso Philadelphia 200g",
+    "description": "Queso crema untable original",
+    "price": "49.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-085",
+    "title": "Leche Deslactosada Alpura 1L",
+    "description": "Leche ultra pasteurizada 100% de vaca sin lactosa",
+    "price": "30.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-086",
+    "title": "Leche Condensada La Lechera 387g",
+    "description": "Leche entera azucarada ideal para postres",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-087",
+    "title": "Leche Evaporada Carnation 360g",
+    "description": "Leche parcialmente descremada evaporada",
+    "price": "26.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-088",
+    "title": "Servilletas de Papel Scribe 400 pzas",
+    "description": "Servilletas blancas de alta absorción",
+    "price": "38.50",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-089",
+    "title": "Fosforos Tres Leones 10 cajitas",
+    "description": "Cerillos de madera seguros de seguridad",
+    "price": "14.50",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-090",
+    "title": "Velas Blancas Cortas 4 pzas",
+    "description": "Velas de parafina para iluminación de emergencia",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-091",
+    "title": "Lavatrastes Roma Líquido 750ml",
+    "description": "Jabón líquido arrancagrasa aroma limón",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-092",
+    "title": "Suavizante de Telas Downy 800ml",
+    "description": "Suavizante aromático para ropa brisa fresca",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-093",
+    "title": "Insecticida Aerosol Raid 400ml",
+    "description": "Mata insectos rastreros y voladores eficacia rápida",
+    "price": "69.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-094",
+    "title": "Desodorante en Barra Rexona 50g",
+    "description": "Antitranspirante protección 48h active dry",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-095",
+    "title": "Rastrillos Gillette Prestobarba 3 pzas",
+    "description": "Afeitadoras desechables con banda lubricante",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-096",
+    "title": "Algodon Medicas 100g",
+    "description": "Algodón 100% puro hidrófilo suave",
+    "price": "23.50",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-097",
+    "title": "Alcohol Etílico Desnaturalizado 250ml",
+    "description": "Solución antiséptica tópica de uso general",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-098",
+    "title": "Curitas Band-Aid 20 pzas",
+    "description": "Apósito adhesivo protector surtido",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-099",
+    "title": "Pastillas Halt para Garganta 12 pzas",
+    "description": "Pastillas para la tos sabor miel y limón",
+    "price": "27.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-100",
+    "title": "Aspirina Bayer 50タブレット (Tablets)",
+    "description": "Ácido acetilsalicílico analgésico de 500mg",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-101",
+    "title": "Jarabe para la Tos Vicks 120ml",
+    "description": "Jarabe expectorante para aliviar la tos con flemas",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-102",
+    "title": "Ibuprofeno 400mg 10 cápsulas",
+    "description": "Analgésico y antiinflamatorio de venta libre",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-103",
+    "title": "Paracetamol 500mg 20 tabletas",
+    "description": "Analgésico y antipirético eficaz",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-104",
+    "title": "Omeprazol 20mg 14 cápsulas",
+    "description": "Inhibidor de la bomba de protones para acidez estomacal",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-105",
+    "title": "Pepto-Bismol Líquido 236ml",
+    "description": "Alivio estomacal multi-síntomas",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-106",
+    "title": "Termómetro Digital Clinico",
+    "description": "Termómetro con pantalla LCD de lectura rápida",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-107",
+    "title": "Agua Oxigenada 250ml",
+    "description": "Solución antiséptica y desinfectante",
+    "price": "16.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-108",
+    "title": "Merthiolate Tintura 30ml",
+    "description": "Antiséptico tópico para pequeñas heridas",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-109",
+    "title": "Venda Elástica 5cm x 5m",
+    "description": "Venda de compresión para soporte muscular",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-110",
+    "title": "Gasa Esterilizada sobre con 5 pzas",
+    "description": "Gasas de algodón hidrófilo esterilizadas",
+    "price": "19.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-111",
+    "title": "Leche Soya Silk 946ml",
+    "description": "Bebida vegetal de soya fortificada con calcio",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-112",
+    "title": "Bebida de Almendra Silk 946ml",
+    "description": "Bebida vegetal sabor almendra sin azúcar",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-113",
+    "title": "Queso Crema Cheddar 200g",
+    "description": "Queso fundible ideal para nachos",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-114",
+    "title": "Queso Oaxaca Alpura 400g",
+    "description": "Queso de hebra 100% de leche de vaca",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-115",
+    "title": "Chorizo Argentino FUD 400g",
+    "description": "Embutido fresco de cerdo con especias",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-116",
+    "title": "Milanesa de Res 1kg",
+    "description": "Corte delgado de carne de res para empanizar",
+    "price": "185.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-117",
+    "title": "Costilla de Res 1kg",
+    "description": "Costilla cargada de res para caldo o asar",
+    "price": "160.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-118",
+    "title": "Lomo de Cerdo 1kg",
+    "description": "Corte magro de cerdo fresco",
+    "price": "139.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-119",
+    "title": "Alitas de Pollo 1kg",
+    "description": "Alitas de pollo frescas con punta",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-120",
+    "title": "Pierna de Cerdo Ahumada 1kg",
+    "description": "Pierna de cerdo ahumada rebanada",
+    "price": "125.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-121",
+    "title": "Espinaca Fresca empaque 300g",
+    "description": "Hojas de espinaca desinfectadas listas para ensalada",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-122",
+    "title": "Lechuga Romana pieza",
+    "description": "Lechuga fresca crujiente de campo",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-123",
+    "title": "Pepino Verde 1kg",
+    "description": "Pepino fresco firme para ensaladas",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-124",
+    "title": "Calabacita Italiana 1kg",
+    "description": "Calabacita fresca verde para guisados",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-125",
+    "title": "Champiñones Enteros 225g",
+    "description": "Champiñones frescos empacados",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-126",
+    "title": "Chile Serrano 1kg",
+    "description": "Chile verde picante fresco por kilo",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-127",
+    "title": "Cilantro manojo",
+    "description": "Hierba fresca aromática para cocina",
+    "price": "8.50",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-128",
+    "title": "Perejil manojo",
+    "description": "Perejil fresco desinfectado",
+    "price": "8.50",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-129",
+    "title": "Ajo blanco malla 3 cabezas",
+    "description": "Ajo fresco de calidad para sazonar",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-130",
+    "title": "Jengibre fresco 250g",
+    "description": "Raíz de jengibre fresco aromático",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-131",
+    "title": "Fresa empacada 450g",
+    "description": "Fresas rojas seleccionadas de invernadero",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-132",
+    "title": "Uva Red Globe sin semilla 1kg",
+    "description": "Uva fresca dulce por kilo",
+    "price": "69.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-133",
+    "title": "Pera Anjou 1kg",
+    "description": "Pera fresca jugosa",
+    "price": "55.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-134",
+    "title": "Durazno Amarillo 1kg",
+    "description": "Durazno fresco de temporada",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-135",
+    "title": "Melón Chino 1kg",
+    "description": "Melón fresco entero dulce",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-136",
+    "title": "Piña Miel 1kg",
+    "description": "Piña dulce madurada en planta",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-137",
+    "title": "Mango Ataulfo 1kg",
+    "description": "Mango fresco dulce de temporada",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-138",
+    "title": "Mandarina 1kg",
+    "description": "Mandarina fresca jugosa fácil de pelar",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-139",
+    "title": "Toronja 1kg",
+    "description": "Toronja fresca jugosa agridulce",
+    "price": "27.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-140",
+    "title": "Ciruela Roja 1kg",
+    "description": "Ciruela fresca de piel firme",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-141",
+    "title": "Pan Integral Bimbo Grande",
+    "description": "Pan de caja 100% integral con fibra",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-142",
+    "title": "Medias Noches Bimbo 8 pzas",
+    "description": "Pan dulce suave para hot dogs o emparedados",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-143",
+    "title": "Buns para Hamburguesa Bimbo 8 pzas",
+    "description": "Pan con ajonjolí para hamburguesa",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-144",
+    "title": "Tortillas de Harina Tía Rosa 10 pzas",
+    "description": "Tortillas de harina de trigo suaves",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-145",
+    "title": "Tortillas de Maíz paquete 1kg",
+    "description": "Tortillas de maíz frescas del día",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-146",
+    "title": "Conchas de Chocolate Bimbo 4 pzas",
+    "description": "Pan dulce tradicional cubierto de chocolate",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-147",
+    "title": "Donas Bimbo azucaradas 6 pzas",
+    "description": "Donas de pastel cubiertas con azúcar",
+    "price": "33.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-148",
+    "title": "Roles de Canela Bimbo 4 pzas",
+    "description": "Pan dulce con glaseado y canela",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-149",
+    "title": "Negrito Tía Rosa pieza",
+    "description": "Pastelito individual sabor chocolate con relleno",
+    "price": "17.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-150",
+    "title": "Gansito Marinela pieza",
+    "description": "Pastelito cubierto de chocolate con mermelada y crema",
+    "price": "17.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-151",
+    "title": "Chocorroles Marinela 2 pzas",
+    "description": "Pastelito enrollado sabor chocolate con crema y piña",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-152",
+    "title": "Barritas Marinela Fresa 6 pzas",
+    "description": "Galletas suaves rellenas de mermelada de fresa",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-153",
+    "title": "Príncipe Marinela galletas 150g",
+    "description": "Galletas de chocolate rellenas de crema sabor avellana",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-154",
+    "title": "Florentinas Gamesa 100g",
+    "description": "Galletas crujientes con cubierta de cajeta",
+    "price": "20.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-155",
+    "title": "Saladitas Gamesa 300g",
+    "description": "Galletas saladas horneadas crujientes",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-156",
+    "title": "Crackers Ritz Nabisco 200g",
+    "description": "Galletas cracker mantequilla crujientes",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-157",
+    "title": "Oreo Original paquete 270g",
+    "description": "Galletas de chocolate con relleno cremoso",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-158",
+    "title": "Chips Ahoy! galletas 120g",
+    "description": "Galletas con chispas de chocolate real",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-159",
+    "title": "Bubulubu Ricolino paquete 3 pzas",
+    "description": "Malvavisco cubierto de chocolate con mermelada",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-160",
+    "title": "Paleta Payaso Ricolino pieza",
+    "description": "Paleta de malvavisco con cobertura de chocolate",
+    "price": "16.50",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-161",
+    "title": "Duvalín bicolor Ricolino",
+    "description": "Confite untable sabor avellana y vainilla",
+    "price": "7.50",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-162",
+    "title": "Bocadin Ricolino paquete 5 pzas",
+    "description": "Barrita de oblea con relleno sabor cacahuate y chocolate",
+    "price": "14.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-163",
+    "title": "Pulparindo Lucas original",
+    "description": "Dulce de pulpa de tamarindo natural con sal y chile",
+    "price": "9.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-164",
+    "title": "Skittles Original bolsa 50g",
+    "description": "Caramelos masticables sabor frutas",
+    "price": "16.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-165",
+    "title": "M&M's Con Chocolate bolsa 45g",
+    "description": "チョコレート de leche con capa de azúcar crujiente",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-166",
+    "title": "Snickers barra de chocolate 52g",
+    "description": "Chocolate con leche, cacahuates, caramelo y nougat",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-167",
+    "title": "Milky Way chocolate barra 48g",
+    "description": "Barra de chocolate con relleno de caramelo y nougat",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-168",
+    "title": "Carlos V barra clásica 20g",
+    "description": "Chocolate con leche tradicional mexicano",
+    "price": "11.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-169",
+    "title": "Hershey's Cookies 'n' Creme 40g",
+    "description": "Chocolate blanco con trocitos de galleta de chocolate",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-170",
+    "title": "Trident Menta chicles 14 pzas",
+    "description": "Goma de mascar sin azúcar sabor menta",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-171",
+    "title": "Clorets Menta Fuerte 12 pzas",
+    "description": "Chicles con clorofila aliento fresco",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-172",
+    "title": "Halls Miel Limón 9 pzas",
+    "description": "Pastillas mentoladas alivio para la garganta",
+    "price": "12.00",
+    "currency": "MXN",
+    "category": "dulceria",
+    "active": true
+  },
+  {
+    "id": "EXT-173",
+    "title": "Café Legal en grano 500g",
+    "description": "Café tostado y molido selecto",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-174",
+    "title": "Café Nescafé Clásico 100g",
+    "description": "Café 100% puro soluble descafeinado o regular",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-175",
+    "title": "Café Capuchino Andatti 250g",
+    "description": "Café soluble mezclado con leche y espuma",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-176",
+    "title": "Té Manzanilla McCormick 25 sobres",
+    "description": "Infusión natural de flor de manzanilla",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-177",
+    "title": "Té Negro Lipton 50 sobres",
+    "description": "Sobres de té negro clásico intenso",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-178",
+    "title": "Chocolate en Polvo Choco Milk 350g",
+    "description": "Modificador de leche sabor chocolate con vitaminas",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-179",
+    "title": "Caldo de Pollo Knorr Suiza 12 cubitos",
+    "description": "Sazonador en cubos concentrado de pollo",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-180",
+    "title": "Consomé de Res Knorr 8 cubitos",
+    "description": "Sazonador en cubos concentrado de res",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-181",
+    "title": "Sazonador Completo Maggi 200g",
+    "description": "Mezcla de especias y sal para carnes",
+    "price": "33.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-182",
+    "title": "Salsa Inglesa Caperucita 190ml",
+    "description": "Salsa sazonadora para carnes y sopas",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-183",
+    "title": "Jugo sazonador Maggi 100ml",
+    "description": "Salsa líquida para realzar el sabor de los alimentos",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-184",
+    "title": "Salsa Habanera El Yucateco 120ml",
+    "description": "Salsa picante de chile habanero verde",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-185",
+    "title": "Salsa Bufalo clásica 335ml",
+    "description": "Salsa picante ideal para botanas y alitas",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-186",
+    "title": "Vinagre Blanco La Costeña 500ml",
+    "description": "Vinagre de alcohol de caña multiusos",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-187",
+    "title": "Vinagre de Manzana Clemente Jacques 500ml",
+    "description": "Vinagre de manzana natural para aderezos",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-188",
+    "title": "Aceite de Oliva Extra Virgen 250ml",
+    "description": "Aceite de oliva virgen prensado en frío",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-189",
+    "title": "Aderezo César McCormick 240ml",
+    "description": "Aderezo cremoso para ensaladas",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-190",
+    "title": "Aderezo Mil Islas McCormick 240ml",
+    "description": "Aderezo con toque agridulce",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-191",
+    "title": "Mostaza McCornick 250g",
+    "description": "Mostaza clásica preparada con semillas",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-192",
+    "title": "Mermelada de Fresa McCormick 450g",
+    "description": "Mermelada de fruta con trozos de fresa",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-193",
+    "title": "Mermelada de Chabacano McCormick 450g",
+    "description": "Mermelada dulce de chabacano",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-194",
+    "title": "Cajeta Coronado Quemada 340g",
+    "description": "Dulce de leche de cabra tradicional",
+    "price": "51.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-195",
+    "title": "Leche Condensada deslactosada La Lechera",
+    "description": "Leche condensada sin lactosa para postres",
+    "price": "43.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-196",
+    "title": "Flan en Polvo Pronto 70g",
+    "description": "Polvo para preparar postre sabor vainilla con caramelo",
+    "price": "14.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-197",
+    "title": "Arroz con Leche premezcla 100g",
+    "description": "Ingredientes listos para preparar postre tradicional",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-198",
+    "title": "Media Crema Nestlé 190g",
+    "description": "Crema de leche esterilizada ligera",
+    "price": "22.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-199",
+    "title": "Queso Crema Philadelphia Light 190g",
+    "description": "Queso crema reducido en grasa",
+    "price": "49.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-200",
+    "title": "Cereal Zucaritas Kelloggs 500g",
+    "description": "Hojuelas de maíz azucaradas con vitaminas",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-201",
+    "title": "Cereal Choco Krispis Kelloggs 490g",
+    "description": "Arroz inflado sabor chocolate",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-202",
+    "title": "Cereal Froot Loops 400g",
+    "description": "Aros de cereal de maíz multicereales con frutas",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-203",
+    "title": "Granola Tradicional Quaker 400g",
+    "description": "Mix de avena, frutos secos y miel horneados",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-204",
+    "title": "Barritas de Avena Quaker Fresa 6 pzas",
+    "description": "Barras energéticas de cereal con relleno de fresa",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-205",
+    "title": "Harina para Hot Cakes Gamesa 800g",
+    "description": "Harina preparada para hot cakes esponjosos",
+    "price": "41.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-206",
+    "title": "Jarabe sabor Maple McCornick 350ml",
+    "description": "Sátira de jarabe de maple para hot cakes y waffles",
+    "price": "37.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-207",
+    "title": "Papel Higiénico Regio 4 rollos",
+    "description": "Papel higiénico hojas dobles con aroma",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-208",
+    "title": "Papel Higiénico Suavel 24 rollos",
+    "description": "Papel higiénico económico ahorro familiar",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-209",
+    "title": "Kleenex Facial pañuelos 90 pzas",
+    "description": "Pañuelos desechables suaves con extracto de seda",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-210",
+    "title": "Toallitas Desinfectantes Lysol 80 pzas",
+    "description": "Toallitas húmedas antibacteriales mata virus y bacterias",
+    "price": "95.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-211",
+    "title": "Desinfectante en Aerosol Lysol 360ml",
+    "description": "Spray desinfectante aroma crisp linen",
+    "price": "119.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-212",
+    "title": "Windex Limpiador de Vidrios 750ml",
+    "description": "Líquido transparente para cristales y espejos",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-213",
+    "title": "Pinol Limpiador de Pino 828ml",
+    "description": "Limpiador multiusos desinfectante con aceite de pino",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-214",
+    "title": "Salvo Líquido Lavatrastes 900ml",
+    "description": "Detergente líquido lavatrastes poder aroma limón",
+    "price": "55.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-215",
+    "title": "Axion Limón Pasta 500g",
+    "description": "Jabón en pasta quitagrasa para platos",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-216",
+    "title": "Fabuloso Pasión de Frutas 1L",
+    "description": "Limpiador líquido de pisos aroma frutal",
+    "price": "31.50",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-217",
+    "title": "Harpic Limpiador de Baños 500ml",
+    "description": "Gel desincrustante para inodoros",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-218",
+    "title": "Cloralex Pato Purific 3 pzas",
+    "description": "Pastillas sanitarias desodorizantes para excusado",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-219",
+    "title": "Escoba de Cerdas Suaves con Mango",
+    "description": "Escoba plástica para barrer interiores",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-220",
+    "title": "Recogedor de Basura Metálico",
+    "description": "Pala recolectora de basura resistente",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-221",
+    "title": "Trapeador de Algodón Absorbente",
+    "description": "Mopa de hilos de algodón con bastón",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-222",
+    "title": "Guantes de Látex para Limpieza talla M",
+    "description": "Guantes protectores multiusos resistentes",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-223",
+    "title": "Fibra Verde Scotch-Brite 3 pzas",
+    "description": "Fibras estropajo abrasivas para limpieza pesada",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-224",
+    "title": "Franela de Algodón para Polvo paquete 3 pzas",
+    "description": "Paños de tela suave para limpiar superficies",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-225",
+    "title": "Bolsas Ziploc Medianas 20 pzas",
+    "description": "Bolsas herméticas resellables para alimentos",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-226",
+    "title": "Película Plástica Enplay 30m",
+    "description": "Rollo de plástico adherible para emplayar alimentos",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-227",
+    "title": "Platos Desechables de Cartón 20 pzas",
+    "description": "Platos hondos o planos de cartón resistente",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-228",
+    "title": "Vasos de Plástico Desechables 50 pzas",
+    "description": "Vasos desechables transparentes de 350ml",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-229",
+    "title": "Cucharas de Plástico Desechables 50 pzas",
+    "description": "Cucharas blancas de plástico resistente",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-230",
+    "title": "Foco LED A19 9W Luz de Día",
+    "description": "Bombilla ahorradora de energía rosca estándar",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-231",
+    "title": "Pilas Alcalinas AA Duracell 4 pzas",
+    "description": "Baterías de larga duración para aparatos",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-232",
+    "title": "Pilas Alcalinas AAA Duracell 4 pzas",
+    "description": "Baterías pequeñas de larga duración",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-233",
+    "title": "Cinta Canela de Embalaje 50m",
+    "description": "Cinta adhesiva transparente de alta resistencia",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-234",
+    "title": "Pegamento Líquido Blanco Resistol 110g",
+    "description": "Adhesivo escolar y multiusos",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-235",
+    "title": "Cuaderno Profesional Raya Scribe 100 hojas",
+    "description": "Cuaderno con espiral y pasta semirrígida",
+    "price": "27.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-236",
+    "title": "Bolígrafo BIC Cristal Punto Fino Negro 2 pzas",
+    "description": "Pluma de tinta tradicional escritura suave",
+    "price": "14.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-237",
+    "title": "Marcador Permanente Sharpie Negro",
+    "description": "Marcador de punta fina indeleble",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-238",
+    "title": "Tijeras Escolares de Punta Redonda",
+    "description": "Tijeras con mango ergonómico plástico",
+    "price": "19.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-239",
+    "title": "Lápiz de Grafito BIC Evolution 2 pzas",
+    "description": "Lápices con borrador de alta resistencia",
+    "price": "12.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-240",
+    "title": "Borrador de Migajón Factis",
+    "description": "Goma suave que no mancha el papel",
+    "price": "10.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-241",
+    "title": "Jabón Corporal Líquido Palmolive 400ml",
+    "description": "Gel de ducha hidratante con aroma natural",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-242",
+    "title": "Shampoo Head & Shoulders 375ml",
+    "description": "Shampoo anticaspa limpieza renovadora",
+    "price": "85.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-243",
+    "title": "Acondicionador Pantene 400ml",
+    "description": "Crema para peinar y acondicionador nutritivo",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-244",
+    "title": "Crema Corporal Nivea Milk 400ml",
+    "description": "Loción corporal hidratación profunda piel seca",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-245",
+    "title": "Pasta Dental Sensodyne Original 100g",
+    "description": "Crema dental para aliviar la sensibilidad dental",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-246",
+    "title": "Enjuague Bucal Colgate Plax 500ml",
+    "description": "Solución antiséptica para aliento fresco sin alcohol",
+    "price": "72.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-247",
+    "title": "Hilo Dental Oral-B Essential Floss 50m",
+    "description": "Hilo dental encerado con menta",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-248",
+    "title": "Cepillo Dental Colgate Triple Acción 2 pzas",
+    "description": "Cepillo de cerdas medianas remueve placa",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-249",
+    "title": "Toallas Femininas Always Con Alas 10 pzas",
+    "description": "Protección nocturna ultra delgada",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-250",
+    "title": "Protectores Diarios Carefree 40 pzas",
+    "description": "Protectores delgados uso diario transpirables",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-251",
+    "title": "Tampones Tampax Regular 10 pzas",
+    "description": "Tampones con aplicador compacto",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-252",
+    "title": "Pañales Huggies Supreme Etapa 3 40 pzas",
+    "description": "Pañales ultra suaves para bebé con absorción superior",
+    "price": "249.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-253",
+    "title": "Fórmula Infantil Nidal Etapa 1 800g",
+    "description": "Alimento en polvo para lactantes de 0 a 6 meses",
+    "price": "320.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-254",
+    "title": "Puré Gerber de Manzana frasco 113g",
+    "description": "Alimento para bebé etapa 1 natural",
+    "price": "16.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-255",
+    "title": "Puré Gerber de Pollo frasco 113g",
+    "description": "Alimento de carne procesada para bebé",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-256",
+    "title": "Shampoo para Bebé Ricitos de Oro 250ml",
+    "description": "Shampoo de manzanilla hipoalergénico",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-257",
+    "title": "Aceite para Bebé Johnson & Johnson 200ml",
+    "description": "Aceite protector suavizante con vitamina E",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-258",
+    "title": "Talco Johnson & Johnson Original 200g",
+    "description": "Polvo fino protector para la piel contra rozaduras",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-259",
+    "title": "Loción Colonia Bebé Sensations 200ml",
+    "description": "Agua de colonia con aroma suave sin alcohol",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-260",
+    "title": "Alimento para Perro Pedigree Adulto 2kg",
+    "description": "Croquetas secas sabor carne y vegetales",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-261",
+    "title": "Alimento Húmedo Perro Pedigree Sobre 100g",
+    "description": "Sobre con trocitos en salsa sabor res",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-262",
+    "title": "Alimento para Gato Whiskas Adulto 1.5kg",
+    "description": "Croquetas secas con atún y control de bolas de pelo",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-263",
+    "title": "Alimento Húmedo Gato Whiskas Sobre 85g",
+    "description": "Filetitos de pescado en salsa para gato adulto",
+    "price": "14.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-264",
+    "title": "Arena Sanitaria para Gato Maxicat 4kg",
+    "description": "Arena aglutinante absorbente para control de olores",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-265",
+    "title": "Shampoo Antipulgas para Perro 250ml",
+    "description": "Shampoo de tratamiento dermatológico veterinario",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-266",
+    "title": "Hueso de Piel Recreativo para Perro",
+    "description": "Premio masticable natural dental para mascota",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "mascotas",
+    "active": true
+  },
+  {
+    "id": "EXT-267",
+    "title": "Cerveza Corona Extra 6 pack latas 355ml",
+    "description": "Cerveza tipo lager clara en presentación lata",
+    "price": "85.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-268",
+    "title": "Cerveza Modelo Especial 6 pack botellas",
+    "description": "Cerveza ámbar tipo Vienna tradicional",
+    "price": "95.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-269",
+    "title": "Cerveza Heineken 6 pack latas 355ml",
+    "description": "Cerveza de importación tipo lager premium",
+    "price": "105.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-270",
+    "title": "Tequila José Cuervo Especial Reposado 750ml",
+    "description": "Bebida alcohólica destilada de agave 100% auténtica",
+    "price": "245.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-271",
+    "title": "Ron Bacardi Blanco 750ml",
+    "description": "Ron destilado ligero para coctelería",
+    "price": "230.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-272",
+    "title": "Vodka Smirnoff No. 21 750ml",
+    "description": "Vodka triple destilado puro",
+    "price": "210.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-273",
+    "title": "Whisky Johnnie Walker Red Label 700ml",
+    "description": "Whisky escocés blended de perfil vibrante",
+    "price": "349.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-274",
+    "title": "Vino Tinto Concha y Toro Casillero del Diablo 750ml",
+    "description": "Vino tinto Cabernet Sauvignon chileno",
+    "price": "199.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-275",
+    "title": "Vino Blanco Frontera 750ml",
+    "description": "Vino blanco Chardonnay refrescante",
+    "price": "135.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-276",
+    "title": "Brandy Presidente 700ml",
+    "description": "Brandy mexicano añejo en barrica de roble",
+    "price": "185.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-277",
+    "title": "Crema de Whisky Baileys Original 700ml",
+    "description": "Licor cremoso de whisky irlandés con notas de cacao",
+    "price": "389.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-278",
+    "title": "Mecal Joven Artesanal 400 Conejos 750ml",
+    "description": "Mezcal 100% agave espadín con notas ahumadas",
+    "price": "480.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-279",
+    "title": "Vermouth Martini Rosso 750ml",
+    "description": "Vino aromatizado aperitivo italiano",
+    "price": "175.00",
+    "currency": "MXN",
+    "category": "cervezas_y_vinos",
+    "active": true
+  },
+  {
+    "id": "EXT-280",
+    "title": "Hielo en Bolsa Purificado 5kg",
+    "description": "Bolsa de cubos de hielo filtrado para bebidas",
+    "price": "30.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-281",
+    "title": "Bebida Energética Monster Energy 473ml",
+    "description": "Bebida energetizante sabor original con taurina",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-282",
+    "title": "Agua de Coco Real Coco 1L",
+    "description": "Agua de coco natural sin azúcar añadida",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-283",
+    "title": "Jugo de Tomate Clamato 946ml",
+    "description": "Bebida de tomate preparada con almeja y especias",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-284",
+    "title": "Refresco Sidral Mundet 2L",
+    "description": "Bebida carbonatada sabor manzana natural no retornable",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-285",
+    "title": "Refresco Sprite 2.5L",
+    "description": "Bebida carbonatada sabor lima-limón",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-286",
+    "title": "Refresco Fanta Naranja 2.5L",
+    "description": "Bebida carbonatada sabor naranja",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-287",
+    "title": "Refresco Fresca Toronja 2L",
+    "description": "Bebida carbonatada sabor toronja sin calorías",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-288",
+    "title": "Agua Saborizada Bonafont Levite Fresa 1.5L",
+    "description": "Agua ligera con toque de jugo natural de fresa",
+    "price": "27.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-289",
+    "title": "Té Helado Arizona Durazno 680ml",
+    "description": "Bebida refrescante sabor té negro con durazno",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-290",
+    "title": "Queso Parmesano en Polvo Kraft 226g",
+    "description": "Queso parmesano rallado seco curado",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-291",
+    "title": "Queso Cabaña Rebanado FUD 200g",
+    "description": "Queso madurado de mesa",
+    "price": "56.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-292",
+    "title": "Jamón de Pierna FUD 250g",
+    "description": "Jamón cocido de pierna de cerdo",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-293",
+    "title": "Salchicha de Pavo Zwan 500g",
+    "description": "Salchichas finas elaboradas 100% con carne de pavo",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-294",
+    "title": "Chorizo Español Pamplona FUD 200g",
+    "description": "Embutido curado tipo español en rodajas",
+    "price": "64.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-295",
+    "title": "Salami Italiano FUD 200g",
+    "description": "Salami curado rebanado fino",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-296",
+    "title": "Pechuga de Pavo Horneada Zwan 250g",
+    "description": "Pechuga de pavo fina sazonada al horno",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-297",
+    "title": "Mortadela con Pistache FUD 250g",
+    "description": "Embutido fino sazonado con trocitos de pistache",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-298",
+    "title": "Tocino Ahumado Extra Grueso FUD 250g",
+    "description": "Tiras de tocino grueso ahumado con leña",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-299",
+    "title": "Queso Ricotta Alpura 400g",
+    "description": "Queso fresco italiano suave granulado",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-300",
+    "title": "Queso Cottage Lala 400g",
+    "description": "Queso requesón bajo en grasa con trocitos",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-301",
+    "title": "Helado Sabor Vainilla Holanda 1L",
+    "description": "Nieve cremosa sabor vainilla real",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-302",
+    "title": "Helado Neapolitan Holanda 2L",
+    "description": "Combinación de sabores chocolate, fresa y vainilla",
+    "price": "125.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-303",
+    "title": "Paleta Magnum Almendras Holanda pieza",
+    "description": "Paleta de helado de vainilla cubierta de chocolate y almendras",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-304",
+    "title": "Papas Francesas Congeladas McCain 750g",
+    "description": "Papas a la francesa prefritas listas para hornear o freír",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-305",
+    "title": "Nuggets de Pollo Pilgrim's 700g",
+    "description": "Nuggets crujientes de pechuga de pollo empanizados",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-306",
+    "title": "Pizza Pepperoni congelada McCain 400g",
+    "description": "Pizza lista para hornear con queso y pepperoni",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-307",
+    "title": "Verduras Mixtas Congeladas 500g",
+    "description": "Mix de elote, chícharos, zanahoria y judías congeladas",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-308",
+    "title": "Brocoli Congelado en Floretes 500g",
+    "description": "Floretes de brócoli seleccionados ultracongelados",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-309",
+    "title": "Filete de Pescado Basa Congelado 1kg",
+    "description": "Filetes de pescado blanco sin espinas empacados",
+    "price": "99.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-310",
+    "title": "Camarón Medio sin Cabeza Congelado 500g",
+    "description": "Camarones limpios congelados para cocinar",
+    "price": "185.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-311",
+    "title": "Pulpa de Mango Congelada 500g",
+    "description": "Pulpa 100% natural de mango para aguas o postres",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-312",
+    "title": "Pulpa de Fresa Congelada 500g",
+    "description": "Pulpa de fresa natural lista para licuar",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "congelados",
+    "active": true
+  },
+  {
+    "id": "EXT-313",
+    "title": "Sopa Maruchan Sabor Camarón con Chile 64g",
+    "description": "Sopa instantánea en vaso",
+    "price": "14.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-314",
+    "title": "Sopa Knorr Instantánea Pollo con Fideo 60g",
+    "description": "Sopa en vaso sabor tradicional",
+    "price": "16.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-315",
+    "title": "Arroz con Pollo Knorr sobre 95g",
+    "description": "Arroz preparado sazonado deshidratado",
+    "price": "19.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-316",
+    "title": "Sopa de Letras La Moderna 200g",
+    "description": "Pasta de sémola de trigo en forma de letras",
+    "price": "11.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-317",
+    "title": "Spaghetti No. 5 La Moderna 200g",
+    "description": "Pasta larga de trigo duro",
+    "price": "11.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-318",
+    "title": "Fideo Grueso La Moderna 200g",
+    "description": "Pasta para sopas caldosas",
+    "price": "11.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-319",
+    "title": "Crema de Champiñones Campbell's 420g",
+    "description": "Sopa cremosa condensada en lata",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-320",
+    "title": "Crema de Tomate Campbell's 420g",
+    "description": "Sopa cremosa de tomate en lata",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-321",
+    "title": "Lentejas Enlatadas La Costeña 400g",
+    "description": "Lentejas cocidas listas para calentar",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-322",
+    "title": "Elotes Doraditos Herdez 220g",
+    "description": "Granos de elote tierno en salmuera",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-323",
+    "title": "Champiñones Sliced Herdez 200g",
+    "description": "Champiñones en rodajas en lata",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-324",
+    "title": "Atún en Aceite Dolores 140g",
+    "description": "Lomo de atún en aceite de soya",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-325",
+    "title": "Atún Tuny con Verduras 140g",
+    "description": "Ensalada de atún con chícharo, zanahoria y papa",
+    "price": "22.50",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-326",
+    "title": "Salmón en Lata Starkist 150g",
+    "description": "Lomo de salmón rosado en agua",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-327",
+    "title": "Mejillones en Escabeche Palacio 111g",
+    "description": "Mejillones seleccionados en aceite y vinagre",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-328",
+    "title": "Pulpo en Aceite de Oliva Palacio 111g",
+    "description": "Trocitos de pulpo en aceite",
+    "price": "55.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-329",
+    "title": "Aceitunas Verdes Sin Hueso Fragata 150g",
+    "description": "Aceitunas manzanilla seleccionadas",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-330",
+    "title": "Aceitunas Rellenas de Pimiento Fragata 150g",
+    "description": "Aceitunas verdes rellenas de pasta de pimiento",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-331",
+    "title": "Alcaparras en Frasco Fragata 60g",
+    "description": "Alcaparras en vinagre para aderezos y pescados",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-332",
+    "title": "Chiles Chipotles Adobados La Costeña 220g",
+    "description": "Chiles chipotles en salsa adobada dulce picosita",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-333",
+    "title": "Rajas de Chile Jalapeño Herdez 220g",
+    "description": "Tiritas de jalapeño escabechadas en lata",
+    "price": "20.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-334",
+    "title": "Salsa Verde Mexicana Herdez 210g",
+    "description": "Salsa de tomatillo verde en frasco estilo casero",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-335",
+    "title": "Salsa Roja Mexicana Herdez 210g",
+    "description": "Salsa de jitomate con chile de árbol",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-336",
+    "title": "Mole Poblano Doña María frasco 250g",
+    "description": "Pasta de mole tradicional con chiles y chocolate",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-337",
+    "title": "Pozole Rojo Enlatado La Costeña 850g",
+    "description": "Grano de maíz pozolero con carne de cerdo y salsa",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-338",
+    "title": "Menudo Blanco Enlatado 850g",
+    "description": "Pancita de res en caldo con maíz",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-339",
+    "title": "Tostadas de Maíz Milpa Real 200g",
+    "description": "Tostadas horneadas crujientes de maíz",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-340",
+    "title": "Totopos de Maíz Salmas 200g",
+    "description": "Galletas horneadas crujientes saladas de maíz",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-341",
+    "title": "Papas Fritas Barcel Chipotles 170g",
+    "description": "Botana de papa con sabor chile chipotle",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-342",
+    "title": "Fritos Sal y Limón Barcel 100g",
+    "description": "Botana frita de maíz con sabor sal y limón",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-343",
+    "title": "Toreadas Takis Barcel 100g",
+    "description": "Taquitos de maíz frito muy picantes sabor habanero",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-344",
+    "title": "Takis Fuego Barcel 200g",
+    "description": "Taquitos de maíz con chile y limón intenso",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-345",
+    "title": "Cacahuates Hot Nuts Barcel 100g",
+    "description": "Cacahuates con cobertura crujiente picante",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-346",
+    "title": "Cacahuates Salados La Botanera 150g",
+    "description": "Cacahuates tostados con sal seleccionados",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-347",
+    "title": "Pistaches Rostizados con Sal 100g",
+    "description": "Fruto seco pistache con cáscara tostado",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-348",
+    "title": "Almendras Tostadas con Sal 100g",
+    "description": "Almendras enteras tostadas crujientes",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-349",
+    "title": "Nuez de la India Horneada 100g",
+    "description": "Cashews tostados ligeros de gran calidad",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-350",
+    "title": "Pasas de Uva sin Semilla 200g",
+    "description": "Uvas pasas deshidratadas dulces",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-351",
+    "title": "Arándanos Deshidratados 150g",
+    "description": "Fruto seco de arándano agridulce",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-352",
+    "title": "Mix Energético Frutos Secos 150g",
+    "description": "Mezcla de almendras, pasas, arándanos y nueces",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-353",
+    "title": "Ajonjolí tostado bolsa 100g",
+    "description": "Semillas de sésamo para decorado de panes y comidas",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-354",
+    "title": "Linaza Canadiense molida 200g",
+    "description": "Semilla de linaza rica en fibra y omega 3",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-355",
+    "title": "Chía natural bolsa 200g",
+    "description": "Semillas de chía limpias para bebidas o licuados",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-356",
+    "title": "Harina de Almendras 250g",
+    "description": "Harina fina sin gluten para repostería keto",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-357",
+    "title": "Eritritol endulzante natural 250g",
+    "description": "Sustituto de azúcar cero calorías keto",
+    "price": "95.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-358",
+    "title": "Stevia en Polvo Cologran 100g",
+    "description": "Edulcorante natural de alta concentración",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-359",
+    "title": "Splenda sobre azucarado caja 100 sobres",
+    "description": "Edulcorante artificial bajo en calorías",
+    "price": "85.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-360",
+    "title": "Gelatina de Agua D'Gari Sabor Limón 85g",
+    "description": "Polvo para preparar gelatina de agua refrescante",
+    "price": "12.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-361",
+    "title": "Gelatina de Agua D'Gari Sabor Uva 85g",
+    "description": "Polvo para gelatina sabor uva",
+    "price": "12.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-362",
+    "title": "Polvo para Hornear Royal 100g",
+    "description": "Leudante químico para bizcochos y pasteles",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-363",
+    "title": "Esencia de Vainilla McCormick 120ml",
+    "description": "Saborizante artificial para repostería",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-364",
+    "title": "Coco Rallado Deshidratado 100g",
+    "description": "Pulpa de coco rallada para decoración de postres",
+    "price": "19.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-365",
+    "title": "Chispas de Chocolate Repostería 150g",
+    "description": "Gotas de chocolate semi amargo para galletas",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-366",
+    "title": "Cacao en Polvo Amargo 200g",
+    "description": "Polvo de cacao natural puro para repostería fina",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-367",
+    "title": "Jarabe de Chocolate Hershey's 680g",
+    "description": "Salsa dulce de chocolate para postres y helados",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-368",
+    "title": "Leche Sabor Fresa Alpura 250ml",
+    "description": "Leche descremada sabor fresa en envase individual",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-369",
+    "title": "Leche Sabor Chocolate Lala 250ml",
+    "description": "Leche entera sabor chocolate individual con popote",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-370",
+    "title": "Yogurt Bebible Fresa Yoplait 330g",
+    "description": "Yogurt con trocitos de fresa botella individual",
+    "price": "19.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-371",
+    "title": "Yogurt Griego Natural Fage 150g",
+    "description": "Yogurt estilo griego alto en proteína sin grasa",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-372",
+    "title": "Activia Yogurt Firme con Durazno 125g",
+    "description": "Yogurt con probióticos reguladores digestivos",
+    "price": "14.50",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-373",
+    "title": "Mantequilla Lurpak sin Sal 200g",
+    "description": "Mantequilla premium de crema de leche de vaca",
+    "price": "69.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-374",
+    "title": "Margarina Primavera con Sal 200g",
+    "description": "Emulsión vegetal para untar y cocinar",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-375",
+    "title": "Queso Crema Philadelphia Bloque 200g",
+    "description": "Bloque clásico de queso crema untable",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-376",
+    "title": "Queso Panela Alpura 400g",
+    "description": "Queso fresco artesanal de consistencia suave",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-377",
+    "title": "Queso Cotija en Barra 250g",
+    "description": "Queso añejo salado para acompañar antojitos",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-378",
+    "title": "Queso Chihuahua Lala 400g",
+    "description": "Queso tipo menonita semi-madurado para fundir",
+    "price": "85.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-379",
+    "title": "Queso Gouda Rebanado Esmeralda 200g",
+    "description": "Queso madurado de pasta semi-dura",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-380",
+    "title": "Queso Asadero Los Volcanes 400g",
+    "description": "Queso especial para quesadillas que estira perfectamente",
+    "price": "88.00",
+    "currency": "MXN",
+    "category": "salchichoneria",
+    "active": true
+  },
+  {
+    "id": "EXT-381",
+    "title": "Manzana Granny Smith 1kg",
+    "description": "Manzana verde ácida fresca crujiente",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-382",
+    "title": "Plátano Morado 1kg",
+    "description": "Plátano dulce especial de pulpa firme",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-383",
+    "title": "Kiwi verde importado 1kg",
+    "description": "Kiwi fresco rico en vitamina C por kilo",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-384",
+    "title": "Frambuesa empacada 125g",
+    "description": "Frambuesas rojas silvestres seleccionadas",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-385",
+    "title": "Zarzamora empacada 125g",
+    "description": "Zarzamoras frescas de invernadero",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-386",
+    "title": "Granada Roja pieza",
+    "description": "Granada fresca de granos jugosos",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-387",
+    "title": "Higos frescos empaque 250g",
+    "description": "Higos maduros dulces suaves",
+    "price": "55.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-388",
+    "title": "Pitaya roja pieza",
+    "description": "Fruta exótica dulce fresca",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-389",
+    "title": "Berenjena fresca 1kg",
+    "description": "Berenjena morada firme para hornear o guisar",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-390",
+    "title": "Coliflor blanca pieza",
+    "description": "Cabeza de coliflor fresca de campo",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-391",
+    "title": "Brócoli fresco pieza",
+    "description": "Brócoli verde de tallo firme",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-392",
+    "title": "Alcachofa fresca pieza",
+    "description": "Flor de alcachofa tierna para cocinar al vapor",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-393",
+    "title": "Betabel fresco 1kg",
+    "description": "Remolacha roja fresca con tallo",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-394",
+    "title": "Nabo blanco fresco 1kg",
+    "description": "Nabo jugoso para caldos y sopas",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-395",
+    "title": "Puerro o Poro manojo",
+    "description": "Poro fresco aromático para sopas gourmet",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-396",
+    "title": "Apio fresco manojo",
+    "description": "Tallos de apio crujientes verdes",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-397",
+    "title": "Calabaza de Castilla 1kg",
+    "description": "Calabaza de pulpa naranja para postres o sopas",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-398",
+    "title": "Chayote sin espinas 1kg",
+    "description": "Chayote fresco tierno para purés o caldos",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-399",
+    "title": "Camote Amarillo 1kg",
+    "description": "Boniato o camote dulce por kilo",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-400",
+    "title": "Jícama fresca 1kg",
+    "description": "Jícama crujiente jugosa por kilo",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-401",
+    "title": "Papaya picada charola 500g",
+    "description": "Fruta fresca cortada lista para comer",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-402",
+    "title": "Sandía picada charola 500g",
+    "description": "Trocitos de sandía fresca en envase",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-403",
+    "title": "Melón picado charola 500g",
+    "description": "Melón chino fresco en cubos",
+    "price": "30.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-404",
+    "title": "Piña en trozos charola 500g",
+    "description": "Piña miel natural en cubos",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-405",
+    "title": "Coctel de Frutas Fresco charola 500g",
+    "description": "Mix de papaya, melón, sandía, piña y uva",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "frutas_y_verduras",
+    "active": true
+  },
+  {
+    "id": "EXT-406",
+    "title": "Arrachera de Res Marinada 1kg",
+    "description": "Corte de res suave marinado listo para asar al carbón",
+    "price": "249.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-407",
+    "title": "Rib Eye de Res Corte Fino 1kg",
+    "description": "Corte americano con excelente marmoleo",
+    "price": "389.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-408",
+    "title": "New York de Res Corte Fino 1kg",
+    "description": "Corte de carne de res magro y jugoso",
+    "price": "360.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-409",
+    "title": "Sirloin de Res 1kg",
+    "description": "Corte de carne de res ideal para bistec o parrillada",
+    "price": "199.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-410",
+    "title": "T-Bone de Res 1kg",
+    "description": "Corte clásico con hueso en forma de T",
+    "price": "320.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-411",
+    "title": "Cecina de Res Natural 1kg",
+    "description": "Láminas de carne de res salada desecada",
+    "price": "230.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-412",
+    "title": "Longaniza Toluca Roja 1kg",
+    "description": "Embutido artesanal estilo Toluca con chile pasilla",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-413",
+    "title": "Pancita de Res Limpia 1kg",
+    "description": "Estómago de res prelavado para caldo de menudo",
+    "price": "110.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-414",
+    "title": "Hueso Tuétano de Res 1kg",
+    "description": "Huesos cortados para asar al horno o parrillada",
+    "price": "85.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-415",
+    "title": "Molleja de Res 1kg",
+    "description": "Víscera fina de res para asar",
+    "price": "120.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-416",
+    "title": "Pierna de Pollo Entera 1kg",
+    "description": "Muslo y pierna fresca de pollo granja",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-417",
+    "title": "Pollo Entero Fresco 1kg",
+    "description": "Pollo entero limpio sin vísceras empacado",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-418",
+    "title": "Muslo de Pollo sin Piel 1kg",
+    "description": "Muslos de pollo magros sin hueso ni piel",
+    "price": "92.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-419",
+    "title": "Milanesa de Pollo Empanizada 1kg",
+    "description": "Pechuga de pollo lista para freír",
+    "price": "145.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-420",
+    "title": "Hígado de Res 1kg",
+    "description": "Hígado fresco de res cortado en finos bisteces",
+    "price": "85.00",
+    "currency": "MXN",
+    "category": "carniceria",
+    "active": true
+  },
+  {
+    "id": "EXT-421",
+    "title": "Papel Higiénico Premier 12 rollos",
+    "description": "Papel higiénico acolchado triple hoja suavidad máxima",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-422",
+    "title": "Detergente Líquido Ariel 2L",
+    "description": "Detergente líquido concentrado remueve manchas difíciles",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-423",
+    "title": "Detergente Líquido Mas Color 2L",
+    "description": "Jabón líquido para proteger los colores de la ropa",
+    "price": "110.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-424",
+    "title": "Suavizante Downy Aroma Floral 2.8L",
+    "description": "Suavizante de telas de larga duración",
+    "price": "129.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-425",
+    "title": "Cloro Blanqueador Cloralex 3.78L",
+    "description": "Galón de cloro desinfectante potente",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-426",
+    "title": "Quitamanchas Vanish Oxi Action 450g",
+    "description": "Polvo quitamanchas seguro para ropa blanca y de color",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-427",
+    "title": "Jabón Zote Blanco en Barra 400g",
+    "description": "Jabón de lavandería tradicional para ropa delicada",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-428",
+    "title": "Jabón Rosa Zote en Barra 400g",
+    "description": "Jabón de lavandería multiusos aroma citronela",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-429",
+    "title": "Almidón en Spray para Ropa Ensueño 500ml",
+    "description": "Spray para planchado fácil de camisas",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-430",
+    "title": "Limpiador de Pisos Maestro Limón 1L",
+    "description": "Limpiador multiusos desengrasante",
+    "price": "33.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-431",
+    "title": "Pastilla Desodorante para Mingitorio 3 pzas",
+    "description": "Aromatizante con acción desinfectante",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-432",
+    "title": "Aromatizante Ambiental Glade Aerosol 275ml",
+    "description": "Spray ambientador aroma lavanda y vainilla",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-433",
+    "title": "Repuesto Glade Sensations Automático",
+    "description": "Cartucho de repuesto ambientador para aparato",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-434",
+    "title": "Espiral Repelente de Mosquitos Raid 10 pzas",
+    "description": "Incienso espiral antimosquitos exterior",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-435",
+    "title": "Trampa Adhesiva para Cucarachas Raid 4 pzas",
+    "description": "Cebo efectivo atrapainsectos",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-436",
+    "title": "Fósforos de Cera Estreya caja grande",
+    "description": "Cerillos encerados de alta resistencia al viento",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-437",
+    "title": "Encendedor Bic Recargable Pieza",
+    "description": "Encendedor de gas durable de bolsillo",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-438",
+    "title": "Velas de Té Rechaud 10 pzas",
+    "description": "Velas chicas en base de aluminio para decoración",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-439",
+    "title": "Servilletas de Cocktail Pétalo 200 pzas",
+    "description": "Servilletas pequeñas para fiestas o bebidas",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-440",
+    "title": "Toalla de Cocina Regio Rollos 2 pzas",
+    "description": "Toallas de papel absorbente para cocina de alta resistencia",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-441",
+    "title": "Shampoo Sedal Ceramidas 650ml",
+    "description": "Shampoo fórmula fortalecedora para cabello largo",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-442",
+    "title": "Jabón en Barra Dove Original 3 pzas",
+    "description": "Barra limpiadora hidratante con crema humectante",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-443",
+    "title": "Desodorante en Spray Axe Apollo 150ml",
+    "description": "Antitranspirante masculino de larga duración",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-444",
+    "title": "Gel para Cabello Moco de Gorila 340g",
+    "description": "Gel fijador extra fuerte efecto memoria",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-445",
+    "title": "Crema para Peinar Sedal 300ml",
+    "description": "Tratamiento sin enjuague control frizz",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-446",
+    "title": "Tinte para Cabello L'Oreal Excellence 6",
+    "description": "Tinte permanente con cobertura total de canas",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-447",
+    "title": "Removedor de Esmaltes sin Acetona 125ml",
+    "description": "Líquido quitaesmalte protector de uñas",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-448",
+    "title": "Bastoncitos de Algodón Q-Tips 100 pzas",
+    "description": "Hisopos de algodón puro con palito de papel flexible",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-449",
+    "title": "Toallitas Desmaquillantes Ponds 25 pzas",
+    "description": "Toallitas húmedas limpiadoras faciales",
+    "price": "56.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-450",
+    "title": "Crema Facial Ponds Clarant B3 200g",
+    "description": "Crema aclaradora facial humectante",
+    "price": "109.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-451",
+    "title": "Protector Solar Nivea Sun FPS 50 200ml",
+    "description": "Loción protectora solar resistente al agua",
+    "price": "210.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-452",
+    "title": "Enjuague Bucal Listerine Cool Mint 500ml",
+    "description": "Antiséptico bucal mentolado potente",
+    "price": "95.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-453",
+    "title": "Cepillo Dental Eléctrico Oral-B Vitality",
+    "description": "Cepillo recargable con movimiento oscilante",
+    "price": "599.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-454",
+    "title": "Repuestos Cabezales Oral-B 2 pzas",
+    "description": "Cabezales de reemplazo para cepillo eléctrico",
+    "price": "249.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-455",
+    "title": "Pasta Dental Infantil Colgate con Flúor 75ml",
+    "description": "Crema dental sabor chicle para niños",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-456",
+    "title": "Pañales para Adulto Depend Confort Etapa G 10 pzas",
+    "description": "Ropa interior absorbente desechable incontinencia",
+    "price": "135.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-457",
+    "title": "Toallitas Húmedas para Adulto Depend 40 pzas",
+    "description": "Toallas limpiadoras húmedas grandes con aloe vera",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-458",
+    "title": "Papel Higiénico Master Ultra 4 rollos",
+    "description": "Papel higiénico institucional acolchado",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-459",
+    "title": "Bolsas para Basura Chicas con Asa 30 pzas",
+    "description": "Bolsas de polietileno para botes de baño o recámara",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-460",
+    "title": "Bolsas para Basura Jumbo 10 pzas",
+    "description": "Bolsas reforzadas de gran capacidad para contenedores",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "limpieza_hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-461",
+    "title": "Leche Condensada en Soyo Squeezable 200g",
+    "description": "Leche dulce en envase práctico flexible",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "lacteos",
+    "active": true
+  },
+  {
+    "id": "EXT-462",
+    "title": "Cajeta en Squeeze Coronado 250g",
+    "description": "Dulce de leche quemada en envase dosificador",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "postres",
+    "active": true
+  },
+  {
+    "id": "EXT-463",
+    "title": "Miel de Maple Aunt Jemima 355ml",
+    "description": "Jarabe estilo maple original americano",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-464",
+    "title": "Pan Bimbo Cero Cero Integral 500g",
+    "description": "Pan sin azúcar añadida ni grasa agregada",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-465",
+    "title": "Pan Tostado Bimbo Clásico 210g",
+    "description": "Pan de caja tostado crujiente",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-466",
+    "title": "Medias Noches Integrales Bimbo 8 pzas",
+    "description": "Pan dulce integral suave",
+    "price": "41.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-467",
+    "title": "Tortillas de Harina Integrales Tía Rosa 10 pzas",
+    "description": "Tortillas con fibra de trigo",
+    "price": "33.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-468",
+    "title": "Galletas de Avena Quaker con Pasas 210g",
+    "description": "Galletas integrales nutritivas horneadas",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-469",
+    "title": "Galletas Emperador Maravilla 100g",
+    "description": "Galletas sándwich sabor vainilla",
+    "price": "19.50",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-470",
+    "title": "Galletas Arcoiris Gamesa 75g",
+    "description": "Galletas dulces con grajeas de colores de azúcar",
+    "price": "16.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-471",
+    "title": "Galletas Canelitas Gamesa 90g",
+    "description": "Galletas crujientes espolvoreadas con canela y azúcar",
+    "price": "15.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-472",
+    "title": "Polvorones Gamesa 310g",
+    "description": "Galletas tradicionales de mantequilla espolvoreadas",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-473",
+    "title": "Mantecadas Bimbo Sabor Vainilla 4 pzas",
+    "description": "Panecillos suaves sabor vainilla caseros",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-474",
+    "title": "Donitas Bimbo Espolvoreadas 6 pzas",
+    "description": "Mini donas con cobertura de azúcar glass",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-475",
+    "title": "Rehiletes Bimbo 4 pzas",
+    "description": "Pan dulce hojaldrado con relleno de piña",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-476",
+    "title": "Panqué con Nueces Bimbo 255g",
+    "description": "Panqué esponjoso con trozos de nuez natural",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-477",
+    "title": "Panqué con Pasas Bimbo 255g",
+    "description": "Panqué tradicional con pasas uva",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-478",
+    "title": "Tortillinas Tía Rosa 12 pzas",
+    "description": "Tortillas de harina de trigo miniatura para sincronizadas",
+    "price": "27.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-479",
+    "title": "Harina de Trigo Tres Estrellas 1kg",
+    "description": "Harina de trigo cernida multipropósito",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-480",
+    "title": "Arroz Grano Medio Verde Valle 1kg",
+    "description": "Arroz selecto grano corto especial para sushi o postres",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-481",
+    "title": "Frijol Pinto Verde Valle 1kg",
+    "description": "Frijol pinto limpio seleccionado de gran calidad",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-482",
+    "title": "Lentejas Verde Valle 500g",
+    "description": "Lentejas limpias seleccionadas sin impurezas",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-483",
+    "title": "Garbanzo Verde Valle 500g",
+    "description": "Garbanzo seco de alta calidad para cocido",
+    "price": "29.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-484",
+    "title": "Habas Secas Verdes Verde Valle 500g",
+    "description": "Habas secas peladas para sopa tradicional",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-485",
+    "title": "Sopa de Fideo Corto Verde Valle 200g",
+    "description": "Pasta de sémola de trigo para caldos",
+    "price": "11.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-486",
+    "title": "Sopa de Codito Verde Valle 200g",
+    "description": "Pasta de trigo codo para ensaladas frías",
+    "price": "11.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-487",
+    "title": "Sopa de Caracol Verde Valle 200g",
+    "description": "Pasta de trigo con figura de caracol",
+    "price": "11.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-488",
+    "title": "Sal Molida Yodada La Fina 1kg",
+    "description": "Sal refinada fina con yodo",
+    "price": "17.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-489",
+    "title": "Azúcar Morena 1kg",
+    "description": "Azúcar mascabado o moreno sin refinar",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-490",
+    "title": "Azúcar Glass 500g",
+    "description": "Azúcar pulverizada fina para decoración repostera",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-491",
+    "title": "Aceite de Canola 1L",
+    "description": "Aceite vegetal puro de canola bajo en grasas saturadas",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-492",
+    "title": "Aceite de Maíz 1L",
+    "description": "Aceite vegetal 100% puro de maíz",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-493",
+    "title": "Aceite de Girasol 1L",
+    "description": "Aceite comestible de semillas de girasol",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-494",
+    "title": "Puré de Tomate sazonado Del Fuerte 210g",
+    "description": "Puré de jitomate con especias naturales",
+    "price": "13.50",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-495",
+    "title": "Pulpa de Tomate Pasata 500g",
+    "description": "Tomate triturado natural para salsas italianas",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-496",
+    "title": "Salsa Boloñesa Prego 400g",
+    "description": "Salsa para pasta con carne de res y jitomate",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-497",
+    "title": "Salsa Alfredo Prego 400g",
+    "description": "Salsa cremosa con queso parmesano para pasta",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-498",
+    "title": "FrijolesBayos Refritos La Costeña 580g",
+    "description": "Frijoles bayos refritos en lata lista para calentar",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-499",
+    "title": "Chiles En rajas con Zanahoria La Costeña 220g",
+    "description": "Rajas escabechadas en lata",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-500",
+    "title": "Chiles Habaneros en Escabeche La Costeña 220g",
+    "description": "Chiles habaneros enteros en rodajas con cebolla morada",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-501",
+    "title": "Mayonesa McCormick con Jugo de Limón 1kg",
+    "description": "Frasco económico de mayonesa tradicional",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-502",
+    "title": "Mayonesa Hellmann's Clásica 390g",
+    "description": "Mayonesa con aceite de girasol y huevos camperos",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-503",
+    "title": "Cátsup Heinz en Squeeze 397g",
+    "description": "Salsa de tomate en envase flexible dosificador",
+    "price": "44.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-504",
+    "title": "Salsa Botanera Valentina Etiqueta Negra 370ml",
+    "description": "Salsa picante extra picante para botanas",
+    "price": "19.50",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-505",
+    "title": "Salsa Botanera Búfalo Clásica 750ml",
+    "description": "Botella grande de salsa picante",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-506",
+    "title": "Salsa Tabasco Original 60ml",
+    "description": "Salsa picante de pepper rojo fermentado importada",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-507",
+    "title": "Salsa Soya Kikkoman 296ml",
+    "description": "Salsa de soya fermentada natural tradicional",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-508",
+    "title": "Salsa Teriyaki Kikkoman 296ml",
+    "description": "Salsa oriental dulce para carnes y verduras",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-509",
+    "title": "Salsa de Ostras Lee Kum Kee 255g",
+    "description": "Salsa espesa para cocinar salteados orientales",
+    "price": "69.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-510",
+    "title": "Aceite de Ajonjolí Oriental 250ml",
+    "description": "Aceite aromático de sésamo para dar toque asiático",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-511",
+    "title": "Fideos Ramen Nissin Sabor Pollo 64g",
+    "description": "Sopa de fideos instantánea oriental",
+    "price": "12.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-512",
+    "title": "Fideos Instantáneos Shin Ramyun 120g",
+    "description": "Sopa coreana picante de fideos gruesos",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-513",
+    "title": "Arroz para Sushi Hinode 1kg",
+    "description": "Arroz grano corto especial alta adherencia",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-514",
+    "title": "Alga Nori para Sushi 10 hojas",
+    "description": "Hojas de alga marina tostada para makis",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-515",
+    "title": "Vinagre de Arroz para Sushi 250ml",
+    "description": "Vinagre sazonado especial para preparación de arroz",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-516",
+    "title": "Pasta Wasabi en Tubo 43g",
+    "description": "Condimento picante de rábano picante japonés",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-517",
+    "title": "Jengibre Curtido Encurtido para Sushi 190g",
+    "description": "Láminas de jengibre marinado dulce rosado",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-518",
+    "title": "Leche de Coco en Lata Thai Kitchen 400ml",
+    "description": "Crema de coco espesa para cocina tailandesa y postres",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "enlatados",
+    "active": true
+  },
+  {
+    "id": "EXT-519",
+    "title": "Curry Verde en Pasta 200g",
+    "description": "Pasta de especias orientales picantes",
+    "price": "62.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-520",
+    "title": "Tortillas de Trigo para Burrito 8 pzas",
+    "description": "Tortillas de harina grandes para armar burritos",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-521",
+    "title": "Pan pita o pan árabe 6 pzas",
+    "description": "Pan redondo plano con bolsillo interior",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-522",
+    "title": "Pan Bimbo Artesano Blanco 500g",
+    "description": "Pan de caja estilo artesanal con rebanadas gruesas",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-523",
+    "title": "Pan Bimbo Artesano Integral 500g",
+    "description": "Pan integral grueso estilo artesanal",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-524",
+    "title": "Pan Molido Tradicional Bimbo 400g",
+    "description": "Miga de pan tostada crujiente para empanizar",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-525",
+    "title": "Pan Molido Crujiente Bimbo 400g",
+    "description": "Pan molido sazonado estilo crujiente",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-526",
+    "title": "Cereal All-Bran Original Kelloggs 450g",
+    "description": "Cereal de trigo y salvado alto en fibra dietética",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-527",
+    "title": "Cereal Special K Original Kelloggs 430g",
+    "description": "Hojuelas de arroz y trigo integral",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-528",
+    "title": "Cereal Choco Krispis Cajas Grandes 630g",
+    "description": "Presentación familiar de arroz inflado con chocolate",
+    "price": "79.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-529",
+    "title": "Cereal Zucaritas Familiar 700g",
+    "description": "Caja grande de hojuelas de maíz azucaradas",
+    "price": "82.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-530",
+    "title": "Avena Instantánea Quaker Sabor Manzana Canela 10 sobres",
+    "description": "Avena lista para preparar con agua o leche caliente",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-531",
+    "title": "Avena Instantánea Quaker Frutos Rojos 10 sobres",
+    "description": "Hojuelas de avena instantáneas con trocitos de fruta",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "desayunos",
+    "active": true
+  },
+  {
+    "id": "EXT-532",
+    "title": "Galletas Club Social 300g",
+    "description": "Galletas saladas horneadas ideales para acompañar con queso o paté",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-533",
+    "title": "Galletas Chokis Extrem 120g",
+    "description": "Galletas con el doble de chispas de chocolate",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-534",
+    "title": "Galletas Marías Gamesa Paquete Familiar 3 paquetes",
+    "description": "Triple empaque de galletas tradicionales",
+    "price": "52.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-535",
+    "title": "Galletas Saladitas Gamesa Empaque Múltiple",
+    "description": "Tirilla de paquetitos individuales de galletas saladas",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-536",
+    "title": "Pastelito Choco Roles Marinela Doble",
+    "description": "Paquete doble de pastelitos enrollados",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-537",
+    "title": "Pastelito Submarinos Marinela 2 pzas",
+    "description": "Pastelito individual alargado relleno de crema",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-538",
+    "title": "Pingüinos Marinela 2 pzas",
+    "description": "Pastelitos de chocolate con relleno cremoso y cobertura",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-539",
+    "title": "Gansito Marinela Doble Paquete",
+    "description": "Presentación de dos pastelitos individuales",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "panaderia",
+    "active": true
+  },
+  {
+    "id": "EXT-540",
+    "title": "Galletas Oreo Doble Crema 246g",
+    "description": "Galletas de chocolate con el doble de relleno cremoso",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-541",
+    "title": "Galletas Golden Oreo 246g",
+    "description": "Galletas de vainilla con relleno de crema de vainilla",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "galletas_y_snacks",
+    "active": true
+  },
+  {
+    "id": "EXT-542",
+    "title": "Chocolate Abuelita en Polvo sobre 250g",
+    "description": "Chocolate instantáneo en polvo para disolver en leche",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-543",
+    "title": "Chocolate Ibarra Tablillas 540g",
+    "description": "Caja con tablillas de chocolate tradicional para mesa",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-544",
+    "title": "Café Legal soluble Frasco 100g",
+    "description": "Café puro soluble económico",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-545",
+    "title": "Café Legal descafeinado 100g",
+    "description": "Café soluble sin cafeína en frasco de vidrio",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-546",
+    "title": "Café Garat Tostado y Molido 400g",
+    "description": "Café gourmet mexicano 100% arábica",
+    "price": "145.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-547",
+    "title": "Café Los Portales de Córdoba 500g",
+    "description": "Café selecto de altura tostado y molido",
+    "price": "129.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-548",
+    "title": "Té Lipton Manzanilla Miel 20 sobres",
+    "description": "Infusión relajante de manzanilla con toque de miel",
+    "price": "33.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-549",
+    "title": "Té de Hierbabuena McCormick 25 sobres",
+    "digestión": "Infusión natural digestiva",
+    "description": "Sobres de hierbabuena natural para té caliente",
+    "price": "31.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-550",
+    "title": "Té Chai India McCormick 20 sobres",
+    "description": "Té negro con especias aromáticas canela, jengibre y cardamomo",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-551",
+    "title": "Agua Ciel purificada garrafón 20L",
+    "description": "Garrafón con agua purificada de alta calidad",
+    "price": "48.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-552",
+    "title": "Agua Bonafont purificada garrafón 20L",
+    "description": "Garrafón de agua ligera para beber en casa",
+    "price": "49.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-553",
+    "title": "Agua Mineral Peñafiel sin gas 2L",
+    "description": "Agua purificada mineralizada en botella grande",
+    "price": "26.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-554",
+    "title": "Agua Topo Chico Preparada con Limón y Sal 600ml",
+    "description": "Agua mineral con gas con toque de limón y sal",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-555",
+    "title": "Bebida Isotónica Gatorade Sabor Limón 1L",
+    "description": "Electrolitos orales deportivos rehidratantes",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-556",
+    "title": "Bebida Isotónica Powerade Uva 1L",
+    "description": "Bebida con 4 electrolitos para recuperación física",
+    "price": "34.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  },
+  {
+    "id": "EXT-557",
+    "title": "Suero Oral Electrolit Fresa 625ml",
+    "description": "Suero de rehidratación oral farmacéutico sabor fresa",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-558",
+    "title": "Suero Oral Electrolit Coco 625ml",
+    "description": "Suero rehidratante sabor coco con electrolitos",
+    "price": "46.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-559",
+    "title": "Vitamina C Redoxon efervescente 10 tabletas",
+    "description": "Suplemento alimenticio efervescente refuerzo inmune",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-560",
+    "title": "Multivitamínico Centrum Adultos 30 tabletas",
+    "description": "Suplemento de vitaminas y minerales esenciales",
+    "price": "199.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-561",
+    "title": "Aceite de Hígado de Tiburón Emulsion de Scott 400ml",
+    "description": "Suplemento vitamínico con aceite de pescado y vitaminas A y D",
+    "price": "145.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-562",
+    "title": "Jarabe Melts Vicks para la Noche 120ml",
+    "description": "Medicamento auxiliar para los síntomas del resfriado nocturno",
+    "price": "115.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-563",
+    "title": "Pastillas Vicks VapoRub Vaporub inhalador stick",
+    "description": "Inhalador nasal descongestionante en barra",
+    "price": "58.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-564",
+    "title": "Ungüento Vicks VapoRub 50g",
+    "description": "Bálsamo tópico para aliviar la tos y congestión nasal",
+    "price": "69.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-565",
+    "title": "Curitas Surtidas Band-Aid Classic 50 pzas",
+    "description": "Caja económica de tiritas adhesivas curativas",
+    "price": "65.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-566",
+    "title": "Micropore Cinta de Papel 3M 5m x 2.5cm",
+    "description": "Cinta adhesiva médica hipoalergénica para curaciones",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-567",
+    "title": "Alcohol Isopropílico Desinfectante 500ml",
+    "description": "Alcohol para limpieza de dispositivos y heridas superficiales",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-568",
+    "title": "Gel Antibacterial para Manos Escudo 500ml",
+    "description": "Alcohol en gel al 70% con dispensador con bomba",
+    "price": "59.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-569",
+    "title": "Cubrebocas Tricapa Plisados 50 pzas caja",
+    "description": "Mascarillas desechables con ajuste nasal protector",
+    "price": "89.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-570",
+    "title": "Guantes de Nitril Azules Caja 100 pzas Talla M",
+    "description": "Guantes de exploración sin látex resistentes",
+    "price": "189.00",
+    "currency": "MXN",
+    "category": "cuidado_personal",
+    "active": true
+  },
+  {
+    "id": "EXT-571",
+    "title": "Papel Aluminio Grande Reynolds Wrap 30m",
+    "description": "Rollo de papel aluminio resistente uso culinario extendido",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-572",
+    "title": "Bolsas Ziploc para Congelación Galón 15 pzas",
+    "description": "Bolsas extra gruesas con cierre hermético para congelar",
+    "price": "68.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-573",
+    "title": "Carbón Vegetal para Asar 4kg",
+    "description": "Bolsa de carbón natural de encino para parrillada",
+    "price": "69.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-574",
+    "title": "Encendedor de Fuego en Cubos 24 pzas",
+    "description": "Pastillas ecológicas para encender carbón o leña",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-575",
+    "title": "Brocha de Cerdas para Cocina",
+    "description": "Brocha para marinar carnes y barnizar panadería",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-576",
+    "title": "Pinzas de Acero Inoxidable para Asador",
+    "description": "Pinzas largas metálicas para voltear carne",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-577",
+    "title": "Charola de Aluminio Desechable 3 pzas",
+    "description": "Charolas hondas para horno o carbón",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "hogar",
+    "active": true
+  },
+  {
+    "id": "EXT-578",
+    "title": "Sal Gruesa de Mar para Asados 1kg",
+    "description": "Sal en grano ideal para salar cortes finos de carne",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-579",
+    "title": "Sazonador Lemon Pepper 150g",
+    "description": "Mezcla de pimienta negra y cáscara de limón granulada",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-580",
+    "title": "Ajo en Polvo McCormick 45g",
+    "description": "Condimento en polvo de ajo deshidratado",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-581",
+    "title": "Cebolla en Polvo McCormick 45g",
+    "description": "Condimento de cebolla deshidratada molida",
+    "price": "23.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-582",
+    "title": "Pimienta Negra Molida McCormick 35g",
+    "description": "Especias finas pimienta negra molida",
+    "price": "25.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-583",
+    "title": "Comino Molido McCormick 30g",
+    "description": "Comino en polvo sazonador tradicional",
+    "price": "21.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-584",
+    "title": "Orégano Entero McCormick 15g",
+    "description": "Hojas de orégano seco aromático para pozole y caldos",
+    "price": "18.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-585",
+    "title": "Hoja de Laurel McCormick 10g",
+    "description": "Hojas de laurel deshidratadas para guisos",
+    "price": "16.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-586",
+    "title": "Canela Entera en Vara McCormick 20g",
+    "description": "Ramas de canela natural para postres y té",
+    "price": "24.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-587",
+    "title": "Clavos de Olor Enteros McCormick 15g",
+    "description": "Especias aromáticas para repostería y caldos",
+    "price": "22.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-588",
+    "title": "Chile Guajillo Seco bolsa 100g",
+    "description": "Chile seco entero para salsas y adobos",
+    "price": "32.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-589",
+    "title": "Chile Ancho Seco bolsa 100g",
+    "description": "Chile ancho seco ideal para pozole y moles",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-590",
+    "title": "Chile de Árbol Seco bolsa 100g",
+    "description": "Chile seco picante para salsa de mesa",
+    "price": "38.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-591",
+    "title": "Chile Pasilla Seco bolsa 100g",
+    "description": "Chile pasilla entero seco oscuro",
+    "price": "36.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-592",
+    "title": "Ajonjolí natural bolsa 100g",
+    "description": "Semillas crudas de ajonjolí para cocinar",
+    "price": "17.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-593",
+    "title": "Pepita de Calabaza sin cáscara 100g",
+    "description": "Semilla verde de calabaza para pepianes y botana",
+    "price": "42.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-594",
+    "title": "Cacahuate tostado sin sal 200g",
+    "description": "Cacahuates naturales tostados para salsas o mole",
+    "price": "28.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-595",
+    "title": "Almendra entera cruda 200g",
+    "description": "Almendras naturales sin tostar para repostería",
+    "price": "75.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-596",
+    "title": "Nuez mariposa enmitades 200g",
+    "description": "Mitades de nuez pecanera selecta",
+    "price": "98.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-597",
+    "title": "Hueso de Chabacano o Frutos secos surtidos",
+    "description": "Mix especial de frutas deshidratadas",
+    "price": "54.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-598",
+    "title": "Tamarindo natural en bolsa 200g",
+    "description": "Vaina de tamarindo natural pulpa agridulce",
+    "price": "35.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-599",
+    "title": "Jamaica flor natural seca 100g",
+    "description": "Flores de jamaica deshidratadas para agua fresca",
+    "price": "39.00",
+    "currency": "MXN",
+    "category": "abarrotes",
+    "active": true
+  },
+  {
+    "id": "EXT-600",
+    "title": "Horchata concentrada en polvo Frisco 350g",
+    "description": "Polvo saborizante para preparar agua de horchata con arroz y canela",
+    "price": "45.00",
+    "currency": "MXN",
+    "category": "bebidas",
+    "active": true
+  }
+]

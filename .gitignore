@@ -1,0 +1,105 @@
+############################################
+# 🔧 GENERAL
+############################################
+*.log
+*.log.*
+*.lock
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+############################################
+# ☕ JAVA / MAVEN
+############################################
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven Wrapper (SÍ se incluye el jar)
+!.mvn/wrapper/maven-wrapper.jar
+
+############################################
+# 🧪 TEST / REPORTES
+############################################
+/coverage/
+/jacoco.exec
+/jacoco-report/
+/surefire-reports/
+/failsafe-reports/
+
+############################################
+# 📦 BUILD / DISTRIBUCIÓN
+############################################
+/build/
+/dist/
+/out/
+
+############################################
+# ⚙️ SPRING BOOT
+############################################
+/logs/
+/logs-fallback.log
+*.logback.xml
+
+# Archivos temporales Spring
+*.pid
+*.seed
+
+############################################
+# 🔐 CONFIG / SECRETS
+############################################
+application-local.properties
+application-dev.properties
+application-*.yml
+application-*.yaml
+
+# Variables de entorno
+.env
+.env.*
+
+############################################
+# 🐳 DOCKER
+############################################
+docker-compose.override.yml
+
+############################################
+# 🧠 IDEs
+############################################
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse / STS
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+############################################
+# 🧾 DOCUMENTACIÓN / OTROS
+############################################
+HELP.md
+*.orig
+
+############################################
+# 🔄 GIT
+############################################
+*.rej
+*.bak
