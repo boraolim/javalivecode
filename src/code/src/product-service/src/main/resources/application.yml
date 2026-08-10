@@ -88,7 +88,7 @@ pool:
 cache:
   initialCapacity: 100
   maximumSize: 1000
-  expireAfterWrite: 10
+  expireAfterWrite: 2
 
 inventory:
   service:

@@ -1,6 +1,10 @@
 package hogar.codelive.common.middleware;
 
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Supplier;
+
+import org.slf4j.MDC;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -36,4 +40,18 @@ public final class MiddlewareUtil {
         return truncate(new String(byteContent, charset));
     }
 
+    public void restoreMdc(Map<String, String> contextMap) {
+
+        if (contextMap != null) {
+            MDC.setContextMap(contextMap);
+        }
+    }
+
+    public <T> T withMdcCleanup(Supplier<T> action) {
+        try {
+            return action.get();
+        } finally {
+            MDC.clear();
+        }
+    } 
 }

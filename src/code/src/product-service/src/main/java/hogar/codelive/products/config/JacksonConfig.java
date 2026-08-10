@@ -14,6 +14,7 @@ public class JacksonConfig {
     public ObjectMapper objectMapper() {
         ObjectMapper objectMapper = JsonMapper.builder()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .findAndAddModules()
             .build();
         objectMapper.deactivateDefaultTyping();
         return objectMapper;

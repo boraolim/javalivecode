@@ -13,5 +13,6 @@
   { "productId": "EXT-013", "stock": 70 },
   { "productId": "EXT-049", "stock": 170 },
   { "productId": "EXT-360", "stock": 170 },
-  { "productId": "EXT-361", "stock": 170 }
+  { "productId": "EXT-361", "stock": 170 },
+  { "productId": "EXT-033", "stock": 170 }
 ]

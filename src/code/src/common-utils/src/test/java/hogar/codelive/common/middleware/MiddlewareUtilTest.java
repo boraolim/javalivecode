@@ -1,18 +1,36 @@
 package hogar.codelive.common.middleware;
 
+import java.util.Map;
+import java.util.function.Supplier;
+
 import java.nio.charset.StandardCharsets;
 
-import org.junit.jupiter.api.Test;
+import org.slf4j.MDC;
 
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
 import hogar.codelive.common.constants.AppConstants;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @DisplayName("MiddlewareUtilTest - Unit Tests")
 class MiddlewareUtilTest {
+
+    @BeforeEach
+    void setUp() {
+        MDC.clear();
+    }
+
+    @AfterEach
+    void tearDown() {
+        MDC.clear();
+    }
 
     @Test
     void shouldReturnOriginalTextWhenLengthIsLowerThanMaxChars() {
@@ -125,5 +143,57 @@ class MiddlewareUtilTest {
         String result = MiddlewareUtil.decodeBytes(bytes, "UTF-8");
 
         assertEquals(AppConstants.MAX_CHARS, result.length());
-    }    
+    }
+    
+@Test
+    @DisplayName("restoreMdc - Debería cubrir la rama cuando el mapa NO es nulo")
+    void shouldRestoreMdcWhenContextMapNotNull() {
+        Map<String, String> map = Map.of("testKey", "testValue");
+        
+        MiddlewareUtil.restoreMdc(map);
+
+        assertThat(MDC.get("testKey")).isEqualTo("testValue");
+    }
+
+    @Test
+    @DisplayName("restoreMdc - Debería cubrir la rama FALSE cuando el mapa ES nulo (Evita branch coverage incompleto)")
+    void shouldDoNothingWhenContextMapIsNull() {
+        MDC.put("existingKey", "value");
+
+        MiddlewareUtil.restoreMdc(null);
+
+        // Verifica que no rompió y mantuvo el estado anterior
+        assertThat(MDC.get("existingKey")).isEqualTo("value");
+    }
+
+    @Test
+    @DisplayName("withMdcCleanup - Debería ejecutar el Supplier con éxito y limpiar el MDC en el finally")
+    void shouldExecuteSupplierAndTriggerFinallyCleanup() {
+        MDC.put("persistentKey", "temp");
+
+        String result = MiddlewareUtil.withMdcCleanup(() -> {
+            assertThat(MDC.get("persistentKey")).isEqualTo("temp");
+            return "OK";
+        });
+
+        assertThat(result).isEqualTo("OK");
+        assertThat(MDC.getCopyOfContextMap()).isNullOrEmpty();
+    }
+
+    @Test
+    @DisplayName("withMdcCleanup - Debería limpiar el MDC en el finally incluso si el Supplier lanza una excepción")
+    void shouldCleanupMdcInFinallyWhenSupplierThrowsException() {
+        MDC.put("persistentKey", "temp");
+
+        assertThatThrownBy(() -> 
+            MiddlewareUtil.withMdcCleanup(() -> {
+                throw new RuntimeException("Error de prueba");
+            })
+        )
+        .isInstanceOf(RuntimeException.class)
+        .hasMessage("Error de prueba");
+
+        // Valida que el finally cubrió la limpieza a pesar de la excepción
+        assertThat(MDC.getCopyOfContextMap()).isNullOrEmpty();
+    }
 }

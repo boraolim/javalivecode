@@ -66,19 +66,19 @@ public class HttpLoggingInterceptor implements AsyncHandlerInterceptor {
             new LogRule(
                 contextLog -> contextLog.ex() != null || contextLog.status() >= 400,
                 contextLog -> log.error(LogConstants.LOG_RESPONSE_ERROR, contextLog.method(), contextLog.path(), contextLog.status(), 
-                    contextLog.elapsed(), contextLog.query(), contextLog.requestBody(), contextLog.responseBody(), 
+                    contextLog.elapsed(), contextLog.query(), MiddlewareUtil.truncate(contextLog.requestBody()), MiddlewareUtil.truncate(contextLog.responseBody()), 
                     contextLog.ex() != null ? MiddlewareUtil.truncate(rootCause(contextLog.ex())) : AppConstants.MSG_INTERNAL_ERROR)),
             // Regla 2: Advertencia por Lenta ejecución
             new LogRule(
                 contextLog -> contextLog.elapsed() >= slowThresholdMs,
                 contextLog -> log.warn("[SLOW REQUEST (>{}ms)] " + LogConstants.LOG_RESPONSE_WARN, slowThresholdMs, 
                     contextLog.method(), contextLog.path(), contextLog.status(), contextLog.elapsed(), contextLog.query(), 
-                    contextLog.requestBody(), contextLog.responseBody())),
+                    MiddlewareUtil.truncate(contextLog.requestBody()), MiddlewareUtil.truncate(contextLog.responseBody()))),
             // Regla 3: Caso por defecto (OK)
             new LogRule(
                 contextLog -> true,
                 contextLog -> log.info(LogConstants.LOG_RESPONSE_OK, contextLog.method(), contextLog.path(), contextLog.status(), 
-                    contextLog.elapsed(), contextLog.query(), contextLog.requestBody(), contextLog.responseBody())))
+                    contextLog.elapsed(), contextLog.query(), MiddlewareUtil.truncate(contextLog.requestBody()), MiddlewareUtil.truncate(contextLog.responseBody()))))
             .stream()
             .filter(rule -> rule.predicate().test(ctx))
             .findFirst()

@@ -98,7 +98,7 @@ pool:
 cache:
   initialCapacity: 100
   maximumSize: 1000
-  expireAfterWrite: 10 
+  expireAfterWrite: 1
 
 soap:
   calculator:

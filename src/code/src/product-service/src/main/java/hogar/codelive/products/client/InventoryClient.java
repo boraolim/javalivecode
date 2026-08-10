@@ -1,11 +1,14 @@
 package hogar.codelive.products.client;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 import lombok.extern.slf4j.Slf4j;
 
 import reactor.core.publisher.Mono;
+
+import org.slf4j.MDC;
 
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +19,7 @@ import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 import hogar.codelive.products.dto.InventoryDto;
+import hogar.codelive.common.middleware.MiddlewareUtil;
 
 @Slf4j
 @Component
@@ -33,17 +37,22 @@ public class InventoryClient {
     @CircuitBreaker(name = "inventoryService", fallbackMethod = "fallbackInventory")
     @TimeLimiter(name = "inventoryService", fallbackMethod = "fallbackInventory")
     public CompletableFuture<InventoryDto> getStock(String productId) {
+         Map<String, String> callerContext = MDC.getCopyOfContextMap();
+
         return webClient.get()
                 .uri("/api/v1/inventory/{productId}", productId)
                 .retrieve()
                 .onStatus(status -> status.value() == 404, response -> Mono.empty())
                 .bodyToMono(InventoryDto.class)
                 .defaultIfEmpty(new InventoryDto(productId, null))
+                .doOnError(ex -> MiddlewareUtil.restoreMdc(callerContext))
                 .toFuture();
     }
 
     CompletableFuture<InventoryDto> fallbackInventory(String productId, Throwable ex) {
-        log.warn("Fallback de inventario activado para productId={}. Motivo: {}", productId, ex.getMessage());
-        return CompletableFuture.completedFuture(new InventoryDto(productId, null));
+        return MiddlewareUtil.withMdcCleanup(() -> {
+            log.warn("Fallback de inventario activado para productId={}. Motivo: {}", productId, ex.getMessage());
+            return CompletableFuture.completedFuture(new InventoryDto(productId, null));
+        });
     }
 }
