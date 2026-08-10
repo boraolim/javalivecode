@@ -71,12 +71,12 @@ public class HttpLoggingInterceptor implements AsyncHandlerInterceptor {
             // Regla 2: Advertencia por Lenta ejecución
             new LogRule(
                 contextLog -> contextLog.elapsed() > slowThresholdMs,
-                contextLog -> log.warn("[SLOW REQUEST (>{}ms)] " + LogConstants.LOG_RESPONSE_WARN, contextLog.elapsed(), 
+                contextLog -> log.warn("[SLOW REQUEST (>{}ms)] " + LogConstants.LOG_RESPONSE_WARN, slowThresholdMs, 
                     contextLog.method(), contextLog.path(), contextLog.status(), contextLog.elapsed(), contextLog.query(), 
                     MiddlewareUtil.truncate(contextLog.requestBody()), MiddlewareUtil.truncate(contextLog.responseBody()))),
             // Regla 3: Caso por defecto (OK)
             new LogRule(
-                contextLog -> true,
+                contextLog -> contextLog.elapsed() <= slowThresholdMs,
                 contextLog -> log.info(LogConstants.LOG_RESPONSE_OK, contextLog.method(), contextLog.path(), contextLog.status(), 
                     contextLog.elapsed(), contextLog.query(), MiddlewareUtil.truncate(contextLog.requestBody()), MiddlewareUtil.truncate(contextLog.responseBody()))))
             .stream()
