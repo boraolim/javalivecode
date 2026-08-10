@@ -12,14 +12,14 @@ springdoc:
 
 app:
   logging:
-    slow-request-threshold-ms: 1000    
+    slow-request-threshold-ms: 1000
 
 logging:
   file:
     name: logs/app.log
   pattern:
     console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([${spring.application.name}]){blue} %clr([%thread]){magenta} %clr([%X{traceId:-NOTRACE}]){yellow} %clr(%logger{36}){cyan} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${spring.application.name}] [%thread] [%X{traceId:-NOTRACEID}] %logger{40}:%L - %msg%n"  
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${spring.application.name}] [%thread] [%X{traceId:-NOTRACEID}] %logger{40}:%L - %msg%n"
   logback:
     rolling policy:
       max-file-size: 20MB
@@ -34,7 +34,7 @@ logging:
     org.hibernate: WARN
     org.hibernate.SQL: WARN
     org.hibernate.orm.connections.pooling: WARN
-    org.hibernate.type.descriptor.sql.BasicBinder: WARN    
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
     org.springframework.boot.autoconfigure.security.UserDetailsServiceAutoConfiguration: WARN
     org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: WARN
     org.springframework.boot.devtools.restart.ChangeableUrls: ERROR

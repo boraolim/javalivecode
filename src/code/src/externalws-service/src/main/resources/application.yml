@@ -10,6 +10,10 @@ spring doc:
   api-docs:
     path: /api/v1/api-docs
 
+app:
+  logging:
+    slow-request-threshold-ms: 1000
+
 resilience4j:
   circuitbreaker:
     instances:
@@ -30,7 +34,7 @@ resilience4j:
         failure-rate-threshold: 50        # Si el 50% falla, se abre el circuito
         wait-duration-in-open-state: 15s  # Espera 15 segundos antes de intentar Half-Open
         permitted-number-of-calls-in-half-open-state: 2
-        automatic-transition-from-open-to-half-open-enabled: true        
+        automatic-transition-from-open-to-half-open-enabled: true
   timelimiter:
     instances:
       soapCalculatorService:
@@ -38,7 +42,7 @@ resilience4j:
         cancel-running-future: true
       soapcountryService:
         timeout-duration: 3s
-        cancel-running-future: true        
+        cancel-running-future: true
   retry:
     instances:
       soapCalculatorService: # <-- Reintentos específicos para el SOAP
@@ -50,7 +54,7 @@ resilience4j:
         max-attempts: 3
         wait-duration: 250ms
         enable-exponential-backoff: true
-        exponential-backoff-multiplier: 2        
+        exponential-backoff-multiplier: 2
 
 management:
   endpoints:
@@ -69,7 +73,7 @@ logging:
     name: logs/app.log
   pattern:
     console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([${spring.application.name}]){blue} %clr([%thread]){magenta} %clr([%X{traceId:-NOTRACE}]){yellow} %clr(%logger{36}){cyan} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${spring.application.name}] [%thread] [%X{traceId:-NOTRACEID}] %logger{40}:%L - %msg%n"  
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${spring.application.name}] [%thread] [%X{traceId:-NOTRACEID}] %logger{40}:%L - %msg%n"
   logback:
     rolling policy:
       max-file-size: 20MB
@@ -84,7 +88,7 @@ logging:
     org.hibernate: WARN
     org.hibernate.SQL: WARN
     org.hibernate.orm.connections.pooling: WARN
-    org.hibernate.type.descriptor.sql.BasicBinder: WARN    
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
     org.springframework.boot.autoconfigure.security.UserDetailsServiceAutoConfiguration: WARN
     org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: WARN
     org.springframework.boot.devtools.restart.ChangeableUrls: ERROR
@@ -98,7 +102,7 @@ pool:
 cache:
   initialCapacity: 100
   maximumSize: 1000
-  expireAfterWrite: 1
+  expireAfterWrite: 2
 
 soap:
   calculator:
