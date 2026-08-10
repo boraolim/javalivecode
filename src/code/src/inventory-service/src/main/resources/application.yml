@@ -18,8 +18,8 @@ logging:
   file:
     name: logs/app.log
   pattern:
-    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([%thread]){magenta} %clr(%logger{36}){cyan} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] [%X{traceId:-}] %logger{40}:%L - %msg%n"    
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(%-5level) %clr([${spring.application.name}]){blue} %clr([%thread]){magenta} %clr([%X{traceId:-NOTRACE}]){yellow} %clr(%logger{36}){cyan} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${spring.application.name}] [%thread] [%X{traceId:-NOTRACEID}] %logger{40}:%L - %msg%n"  
   logback:
     rolling policy:
       max-file-size: 20MB
