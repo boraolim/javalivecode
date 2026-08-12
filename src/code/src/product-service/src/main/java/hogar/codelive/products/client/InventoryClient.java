@@ -1,5 +1,6 @@
 package hogar.codelive.products.client;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -20,6 +21,7 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 import hogar.codelive.products.dto.InventoryDto;
 import hogar.codelive.common.middleware.MiddlewareUtil;
+import hogar.codelive.products.request.ProductBatchRequest;
 
 @Slf4j
 @Component
@@ -49,10 +51,35 @@ public class InventoryClient {
                 .toFuture();
     }
 
+    @Retry(name = "inventoryService")
+    @CircuitBreaker(name = "inventoryService", fallbackMethod = "fallbackInventoryBatch")
+    @TimeLimiter(name = "inventoryService", fallbackMethod = "fallbackInventoryBatch")
+    public CompletableFuture<List<InventoryDto>> getStockBatch(ProductBatchRequest request) {
+        Map<String, String> callerContext = MDC.getCopyOfContextMap();
+
+        return webClient.post()
+                .uri("/api/v1/inventory/batch") // Ajusta la ruta del nuevo endpoint batch
+                .bodyValue(request)
+                .retrieve()
+                .onStatus(status -> status.value() == 404, response -> Mono.empty())
+                .bodyToFlux(InventoryDto.class)
+                .collectList()
+                .defaultIfEmpty(List.of())
+                .doOnError(ex -> MiddlewareUtil.restoreMdc(callerContext))
+                .toFuture();
+    }
+
     CompletableFuture<InventoryDto> fallbackInventory(String productId, Throwable ex) {
         return MiddlewareUtil.withMdcCleanup(() -> {
             log.warn("Fallback de inventario activado para productId={}. Motivo: {}", productId, ex.getMessage());
             return CompletableFuture.completedFuture(new InventoryDto(productId, null));
+        });
+    }
+
+    CompletableFuture<List<InventoryDto>> fallbackInventoryBatch(Throwable ex) {
+        return MiddlewareUtil.withMdcCleanup(() -> {
+            log.warn("Fallback de inventario activado para la lista de poductos seleccionados. Motivo: {}", ex.getMessage());
+            return CompletableFuture.completedFuture(List.of());
         });
     }
 }

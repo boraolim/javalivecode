@@ -1,5 +1,6 @@
 package hogar.codelive.inventory.service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -17,6 +18,7 @@ import hogar.codelive.inventory.entity.InventoryEntity;
 import hogar.codelive.inventory.mapper.InventoryMapper;
 import hogar.codelive.inventory.response.InventoryResponse;
 import hogar.codelive.inventory.repository.InventoryRepository;
+import hogar.codelive.inventory.request.InventoryBatchRequest;
 import hogar.codelive.inventory.request.InventoryExistentRequest;
 import hogar.codelive.inventory.request.InventoryNewProductRequest;
 import hogar.codelive.inventory.exception.InventoryNotFoundException;
@@ -32,6 +34,12 @@ public class InventoryService {
         return CompletableFuture.supplyAsync(() -> inventoryRepository.findById(productId))
             .thenApply(optionalEntity -> validateAndGet(optionalEntity, productId))
             .thenApply(this::buildToResponse);
+    }
+
+    @Cacheable(value = "inventoryBatchCache", key = "#request.productIds")
+    public CompletableFuture<List<InventoryResponse>> getStockByProductIdsAsync(InventoryBatchRequest request) {
+        return CompletableFuture.supplyAsync(() -> inventoryRepository.findAllById(request.productIds()))
+            .thenApply(entities -> entities.stream().map(this::buildToResponse).toList());
     }
 
     @CacheEvict(value = {"inventorySearchCache", "inventoryByIdCache"}, allEntries = true)

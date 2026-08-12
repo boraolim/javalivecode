@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import java.util.stream.IntStream;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
+import java.util.concurrent.ExecutionException;
 
 import org.junit.jupiter.api.Test;
 import org.jeasy.random.EasyRandom;
@@ -29,6 +30,7 @@ import hogar.codelive.inventory.mapper.InventoryMapper;
 import hogar.codelive.inventory.constants.AppTestConstants;
 import hogar.codelive.inventory.response.InventoryResponse;
 import hogar.codelive.inventory.repository.InventoryRepository;
+import hogar.codelive.inventory.request.InventoryBatchRequest;
 import hogar.codelive.inventory.request.InventoryExistentRequest;
 import hogar.codelive.inventory.request.InventoryNewProductRequest;
 import hogar.codelive.inventory.exception.InventoryNotFoundException;
@@ -36,13 +38,14 @@ import hogar.codelive.inventory.exception.InventoryNotFoundException;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verifyNoInteractions;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @ExtendWith(MockitoExtension.class)
@@ -372,6 +375,78 @@ class InventoryServiceTest {
                 .hasCauseInstanceOf(RuntimeException.class)
                 .cause()
                 .hasMessage(AppTestConstants.MSG_ERR_CONEXION_BD);
+    }
+
+    @Test
+    @DisplayName("Éxito - Debería retornar lista de inventario mapeada de forma asíncrona")
+    void shouldReturnStockResponsesSuccessfully() throws Exception {
+        // Arrange
+        List<String> productIds = List.of("EXT-002", "EXT-003");
+        InventoryBatchRequest request = new InventoryBatchRequest(productIds);
+
+        InventoryEntity entity1 = InventoryEntity.builder().productId(AppTestConstants.PRODUCT_FIRST_ID).stock(50).build();
+        InventoryEntity entity2 = InventoryEntity.builder().productId(AppTestConstants.PRODUCT_SECOND_ID).stock(20).build();
+
+        InventoryDto dto1 = new InventoryDto(AppTestConstants.PRODUCT_FIRST_ID, 50);
+        InventoryDto dto2 = new InventoryDto(AppTestConstants.PRODUCT_SECOND_ID, 20);
+
+        when(inventoryRepository.findAllById(productIds)).thenReturn(List.of(entity1, entity2));
+
+        when(inventoryMapper.fromEntity(entity1)).thenReturn(dto1);
+        when(inventoryMapper.fromEntity(entity2)).thenReturn(dto2);
+
+        // Act
+        CompletableFuture<List<InventoryResponse>> futureResult = inventoryService.getStockByProductIdsAsync(request);
+
+        // Assert (Esperamos a que el CompletableFuture termine su ejecución asíncrona)
+        List<InventoryResponse> responses = futureResult.get();
+
+        assertThat(responses).isNotNull().hasSize(2);
+        assertThat(responses.get(0).getProductId()).isEqualTo(AppTestConstants.PRODUCT_FIRST_ID);
+        assertThat(responses.get(0).getStock()).isEqualTo(50);
+        assertThat(responses.get(1).getProductId()).isEqualTo(AppTestConstants.PRODUCT_SECOND_ID);
+        assertThat(responses.get(1).getStock()).isEqualTo(20);
+
+        verify(inventoryRepository, times(1)).findAllById(productIds);
+    }
+
+    @Test
+    @DisplayName("Éxito - Debería retornar lista vacía cuando no se encuentran productos")
+    void shouldReturnEmptyListWhenNoProductsFound() throws Exception {
+        // Arrange
+        List<String> productIds = List.of("UNKNOWN-999");
+        InventoryBatchRequest request = new InventoryBatchRequest(productIds);
+
+        when(inventoryRepository.findAllById(productIds)).thenReturn(List.of());
+
+        // Act
+        CompletableFuture<List<InventoryResponse>> futureResult = inventoryService.getStockByProductIdsAsync(request);
+        List<InventoryResponse> responses = futureResult.get();
+
+        // Assert
+        assertThat(responses).isNotNull().isEmpty();
+        verify(inventoryRepository, times(1)).findAllById(productIds);
+    }
+
+    @Test
+    @DisplayName("Error - Debería propagar la excepción cuando el repositorio falla de forma asíncrona")
+    void shouldPropagateExceptionWhenRepositoryFails() {
+        // Arrange
+        List<String> productIds = List.of(AppTestConstants.PRODUCT_FIRST_ID);
+        InventoryBatchRequest request = new InventoryBatchRequest(productIds);
+
+        when(inventoryRepository.findAllById(anyList())).thenThrow(new RuntimeException("Error de conexión a BD"));
+
+        // Act & Assert
+        CompletableFuture<List<InventoryResponse>> futureResult = inventoryService.getStockByProductIdsAsync(request);
+
+        // Al ejecutarse de forma asíncrona dentro de supplyAsync, la excepción se envuelve en un ExecutionException
+        assertThatThrownBy(futureResult::get)
+                .isInstanceOf(ExecutionException.class)
+                .hasCauseInstanceOf(RuntimeException.class)
+                .hasRootCauseMessage("Error de conexión a BD");
+
+        verify(inventoryRepository, times(1)).findAllById(productIds);
     }
 
     private static Stream<Arguments> provideDiezProductos() {

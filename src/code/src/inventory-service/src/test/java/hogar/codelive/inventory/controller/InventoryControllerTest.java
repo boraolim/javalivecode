@@ -1,7 +1,11 @@
 package hogar.codelive.inventory.controller;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,27 +16,48 @@ import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.client.MockMvcWebTestClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import jakarta.persistence.EntityNotFoundException;
 
 import hogar.codelive.inventory.service.InventoryService;
 import hogar.codelive.inventory.response.InventoryResponse;
 import hogar.codelive.inventory.constants.AppTestConstants;
+import hogar.codelive.inventory.request.InventoryBatchRequest;
 import hogar.codelive.inventory.request.InventoryExistentRequest;
+import hogar.codelive.inventory.middleware.HttpLoggingInterceptor;
 import hogar.codelive.inventory.request.InventoryNewProductRequest;
+import hogar.codelive.inventory.exception.GlobalExceptionHandler;
 import hogar.codelive.inventory.exception.InventoryNotFoundException;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.ArgumentMatchers.any;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.asyncDispatch;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("InventoryController - Pruebas unitarias")
 class InventoryControllerTest {
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private WebTestClient webTestClient;
 
     @Mock
     private InventoryService inventoryService;
@@ -40,8 +65,10 @@ class InventoryControllerTest {
     @InjectMocks
     private InventoryController inventoryController;
 
+    private final ObjectMapper objectMapper = new ObjectMapper();
     private InventoryNewProductRequest defaultNewProductRequest;
     private InventoryExistentRequest defaultExistentRequest;
+
 
     @BeforeEach
     void setUp() {
@@ -51,6 +78,15 @@ class InventoryControllerTest {
 
         defaultExistentRequest = new InventoryExistentRequest();
         defaultExistentRequest.setProductStock(60);
+
+        this.mockMvc = MockMvcBuilders.standaloneSetup(inventoryController)
+            .addInterceptors(new HttpLoggingInterceptor())
+            .build();
+
+        this.webTestClient = MockMvcWebTestClient
+            .bindToController(inventoryController)
+            .controllerAdvice(new GlobalExceptionHandler())
+            .build();
     }
 
     @Test
@@ -182,5 +218,107 @@ class InventoryControllerTest {
         assertThatThrownBy(result::join)
                 .isInstanceOf(CompletionException.class)
                 .hasCauseInstanceOf(EntityNotFoundException.class);
+    }
+
+    @Test
+    @DisplayName("EXITO: Debería retornar 200 OK con la lista de inventarios de forma asíncrona")
+    void getStockByProducts_shouldReturnOkWithResponses() throws Exception {
+        // Arrange
+        List<String> productIds = List.of(AppTestConstants.PRODUCT_SECOND_ID, AppTestConstants.PRODUCT_THIRD_ID);
+        InventoryBatchRequest request = new InventoryBatchRequest(productIds);
+
+        List<InventoryResponse> responses = List.of(new InventoryResponse(AppTestConstants.PRODUCT_SECOND_ID, 50),
+                                                    new InventoryResponse(AppTestConstants.PRODUCT_THIRD_ID, 20));
+
+        when(inventoryService.getStockByProductIdsAsync(any(InventoryBatchRequest.class)))
+                .thenReturn(CompletableFuture.completedFuture(responses));
+
+        // Act & Assert
+        // Nota: Como el controlador retorna un CompletableFuture, usamos mvc.perform(...)
+        // y Spring se encarga de manejar el hilo asíncrono automáticamente.
+        var mvcResult = mockMvc.perform(post("/api/v1/inventory/batch") // Ajusta la ruta base de tu controlador si es diferente
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(Objects.requireNonNull(MediaType.APPLICATION_JSON))
+                .content(Objects.requireNonNull(objectMapper.writeValueAsString(request))))
+                .andExpect(request().asyncStarted())
+                .andReturn();
+
+        // Para endpoints asíncronos en MockMvc, se suele esperar al resultado con asyncDispatch
+        mockMvc.perform(asyncDispatch(mvcResult))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", org.hamcrest.Matchers.hasSize(2)))
+                .andExpect(jsonPath("$[0].productId").value(AppTestConstants.PRODUCT_SECOND_ID))
+                .andExpect(jsonPath("$[0].stock").value(50))
+                .andExpect(jsonPath("$[1].productId").value(AppTestConstants.PRODUCT_THIRD_ID))
+                .andExpect(jsonPath("$[1].stock").value(20));
+
+        // Verify: Comprobamos que el servicio fue llamado exactamente una vez
+        verify(inventoryService, times(1)).getStockByProductIdsAsync(any(InventoryBatchRequest.class));                
+    }
+
+    @Test
+    @DisplayName("EXITO: Debería retornar 200 OK con la lista de inventarios de forma asíncrona")
+    void getStockByProductsWb_shouldReturnOkWithResponses() {
+
+        // Arrange
+        List<String> productIds = List.of(AppTestConstants.PRODUCT_SECOND_ID,
+                                          AppTestConstants.PRODUCT_THIRD_ID);
+
+        InventoryBatchRequest request = new InventoryBatchRequest(productIds);
+
+        List<InventoryResponse> responses = List.of(new InventoryResponse(AppTestConstants.PRODUCT_SECOND_ID, 50),
+                                                    new InventoryResponse(AppTestConstants.PRODUCT_THIRD_ID, 20));
+
+        when(inventoryService.getStockByProductIdsAsync(any(InventoryBatchRequest.class)))
+            .thenReturn(CompletableFuture.completedFuture(responses));
+
+        // Act & Assert
+        webTestClient.post()
+            .uri("/api/v1/inventory/batch")
+            .contentType(MediaType.APPLICATION_JSON)
+            .accept(MediaType.APPLICATION_JSON)
+            .bodyValue(request)
+            .exchange()
+            .expectStatus().isOk()
+            .expectHeader().contentTypeCompatibleWith(MediaType.APPLICATION_JSON)
+            .expectBody()
+            .jsonPath("$.length()").isEqualTo(2)
+            .jsonPath("$[0].productId").isEqualTo(AppTestConstants.PRODUCT_SECOND_ID)
+            .jsonPath("$[0].stock").isEqualTo(50)
+            .jsonPath("$[1].productId").isEqualTo(AppTestConstants.PRODUCT_THIRD_ID)
+            .jsonPath("$[1].stock").isEqualTo(20);
+
+        verify(inventoryService).getStockByProductIdsAsync(any(InventoryBatchRequest.class));
+    }
+
+    @Test
+    @DisplayName("Éxito - Debería retornar lista vacía cuando no se encuentran productos")
+    void shouldReturnEmptyListWhenNoProductsFound() throws Exception {
+        // Arrange
+        List<String> productIds = List.of("UNKNOWN-999");
+        InventoryBatchRequest request = new InventoryBatchRequest(productIds);
+
+        List<InventoryResponse> responses = List.of();
+
+        when(inventoryService.getStockByProductIdsAsync(any(InventoryBatchRequest.class)))
+                .thenReturn(CompletableFuture.completedFuture(responses));
+
+        // Act
+        var mvcResult = mockMvc.perform(post("/api/v1/inventory/batch")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(Objects.requireNonNull(MediaType.APPLICATION_JSON))
+                .content(Objects.requireNonNull(objectMapper.writeValueAsString(request))))
+                .andExpect(request().asyncStarted())
+                .andReturn();
+
+        // Para endpoints asíncronos en MockMvc, se suele esperar al resultado con asyncDispatch                
+        mockMvc.perform(asyncDispatch(mvcResult))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", org.hamcrest.Matchers.hasSize(0)));
+
+        // Verify: Comprobamos que el servicio fue llamado exactamente una vez                
+        verify(inventoryService, times(1)).getStockByProductIdsAsync(any(InventoryBatchRequest.class)); 
     }
 }

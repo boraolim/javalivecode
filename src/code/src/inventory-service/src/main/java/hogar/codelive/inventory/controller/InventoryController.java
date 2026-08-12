@@ -1,5 +1,6 @@
 package hogar.codelive.inventory.controller;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hogar.codelive.inventory.service.InventoryService;
 import hogar.codelive.inventory.response.InventoryResponse;
+import hogar.codelive.inventory.request.InventoryBatchRequest;
 import hogar.codelive.inventory.request.InventoryExistentRequest;
 import hogar.codelive.inventory.request.InventoryNewProductRequest;
 
@@ -73,5 +75,12 @@ public class InventoryController {
                                                                       @PathVariable @NonNull String productId) {
          return inventoryService.deleteProductAsync(productId)
                 .thenApply(voidResult -> ResponseEntity.noContent().build());
+    }
+
+    @PostMapping(value = "/batch", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Muestra la lista de los productos de inventario por batch")
+    public CompletableFuture<ResponseEntity<List<InventoryResponse>>> getStockByProducts(@Valid @RequestBody InventoryBatchRequest request) {
+        return inventoryService.getStockByProductIdsAsync(request)
+                .thenApply(ResponseEntity::ok);
     }
 }
