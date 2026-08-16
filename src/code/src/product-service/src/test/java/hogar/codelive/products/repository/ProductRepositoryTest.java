@@ -6,16 +6,14 @@ import java.util.Optional;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 
 import hogar.codelive.products.entity.ProductEntity;
+import hogar.codelive.products.BaseProductTest;
 import hogar.codelive.products.constants.AppTestConstants;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -26,53 +24,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Transactional
-@SpringBootTest
-@ActiveProfiles("test")
 @AutoConfigureTestDatabase
 @DisplayName("ProductRepository - Integration Tests")
-class ProductRepositoryTest {
+class ProductRepositoryTest extends BaseProductTest {
 
     @Autowired
     private ProductRepository productRepository;
 
-    private String targetId;
-    private ProductEntity product1;
-    private ProductEntity product2;
-    private ProductEntity product3;
-    private ProductEntity product4;
-    private List<ProductEntity> inventoryList;
-
-    @BeforeEach
-    void setUp() {
-        product1 = ProductEntity.builder()
-                .id(AppTestConstants.PRODUCT_FIRST_ID)
-                .name("PlayStation 5 Slim")
-                .description("Next-gen gaming console from Sony")
-                .price(new BigDecimal("499.99"))
-                .build();
-
-        product2 = ProductEntity.builder()
-                .id(AppTestConstants.PRODUCT_SECOND_ID)
-                .name("Nintendo Switch OLED")
-                .description("Portable family console")
-                .price(new BigDecimal("349.99"))
-                .build();
-
-        product3 = ProductEntity.builder()
-                .id(AppTestConstants.PRODUCT_THIRD_ID)
-                .name("Xbox Series X")
-                .description("Powerful console with GamePass")
-                .price(new BigDecimal("499.00"))
-                .build();
-
-        product4 = ProductEntity.builder()
-                .id(AppTestConstants.PRODUCT_FOURTH_ID)
-                .name("PlayStation 5")
-                .description("Standard gaming console from Sony")
-                .price(new BigDecimal("2449.99"))
-                .build();
-
-        inventoryList = List.of(product1, product2, product3);
+    @Test
+    void testSomethingWithProducts() {
+        assertThat(inventoryList).hasSize(3);
+        assertThat(product1.getName()).isEqualTo("PlayStation 5 Slim");
     }
 
     @Test
