@@ -196,4 +196,23 @@ class ProControllerTest {
                 .isInstanceOf(CompletionException.class)
                 .hasCauseInstanceOf(EntityNotFoundException.class);
     }
+
+    @Test
+    @DisplayName("searchbatch - EXITO: retorna 200 OK con la lista de productos enriquecidos por lote")
+    void searchbatch_conQueryValida_debeRetornar200ConResponse() {
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+        responseDto.setName("Laptop Lenovo");
+
+        when(productService.searchBatch("laptop"))
+                .thenReturn(CompletableFuture.completedFuture(List.of(responseDto)));
+
+        ResponseEntity<List<EnrichedProductResponse>> response =
+                productController.searchbatch("laptop").join();
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).hasSize(1);
+        assertThat(response.getBody().get(0).getId()).isEqualTo("EXT-001");
+        verify(productService, times(1)).searchBatch("laptop");
+    }
 }

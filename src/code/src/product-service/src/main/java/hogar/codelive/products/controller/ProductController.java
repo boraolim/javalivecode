@@ -46,6 +46,14 @@ public class ProductController {
         return productService.search(query).thenApply(ResponseEntity::ok);
     }
 
+    @GetMapping(value = "/searchbatch", produces = MediaType.APPLICATION_JSON_VALUE)
+    @Operation(summary = "Buscar productos por nombre o descripcion, enriquecidos con stock actual")
+    public CompletableFuture<ResponseEntity<List<EnrichedProductResponse>>> searchbatch(@Parameter(description = "Palabra clave a buscar en nombre o descripcion")
+                                                                                        @RequestParam String query) {
+        return productService.searchBatch(query).thenApply(ResponseEntity::ok);
+    }
+
+
     @GetMapping(value = "/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Obtener el articulo actual de un producto por su id")
     public CompletableFuture<ResponseEntity<EnrichedProductResponse>> getProduct(@NotBlank
