@@ -27,7 +27,7 @@
     "active": true
   },
     {
-    "id": "EXT-007",
+    "id": "EXT-008",
     "title": "Active Product 7",
     "description": "Description 7",
     "price": "150.00",
@@ -36,7 +36,7 @@
     "active": true
   },
   {
-    "id": "EXT-014",
+    "id": "EXT-009",
     "title": "Active Product 7",
     "description": "Description 7",
     "price": "150.00",
@@ -45,10 +45,28 @@
     "active": true
   },
   {
-    "id": "EXT-015",
+    "id": "EXT-010",
     "title": "Active Product 7",
     "description": "Description 7",
     "price": "150.00",
+    "currency": "MXN",
+    "category": "Fashion",
+    "active": true
+  },
+  {
+    "id": "EXT-011",
+    "title": "Active Product 8",
+    "description": "Description 8",
+    "price": "1500.00",
+    "currency": "MXN",
+    "category": "Fashion",
+    "active": true
+  },
+  {
+    "id": "EXT-012",
+    "title": "Active Product 9",
+    "description": "Description 9",
+    "price": "1500.00",
     "currency": "MXN",
     "category": "Fashion",
     "active": true

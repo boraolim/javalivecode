@@ -1,5 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS liverlivecode;
 
+SET SCHEMA LIVERLIVECODE;
+
 CREATE TABLE liverlivecode.products
 (
     id_product              VARCHAR(50)   NOT NULL PRIMARY KEY,

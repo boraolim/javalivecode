@@ -20,6 +20,7 @@ import org.mockito.Spy;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.context.ActiveProfiles;
 
 import hogar.codelive.products.entity.ProductEntity;
 import hogar.codelive.products.mapper.ProductMapper;
@@ -29,6 +30,7 @@ import hogar.codelive.products.repository.ProductRepository;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.lenient;
@@ -37,6 +39,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.verifyNoInteractions;
 
+@ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
 @DisplayName("ProductDataLoader - Pruebas unitarias")
 class ProductDataLoaderTest {
@@ -135,6 +138,6 @@ class ProductDataLoaderTest {
         productDataLoader.run();
 
         verify(productRepository, times(1)).findAllById(anyList());
-        verify(productRepository, org.mockito.Mockito.never()).saveAll(anyList());
+        verify(productRepository, never()).saveAll(anyList());
     }
 }

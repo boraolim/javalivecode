@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +27,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Transactional
 @SpringBootTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@ActiveProfiles("test")
+@AutoConfigureTestDatabase
 @DisplayName("ProductRepository - Integration Tests")
 class ProductRepositoryTest {
 
@@ -42,8 +44,6 @@ class ProductRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        productRepository.deleteAll();
-
         product1 = ProductEntity.builder()
                 .id(AppTestConstants.PRODUCT_FIRST_ID)
                 .name("PlayStation 5 Slim")
@@ -73,8 +73,6 @@ class ProductRepositoryTest {
                 .build();
 
         inventoryList = List.of(product1, product2, product3);
-
-        productRepository.saveAll(Objects.requireNonNull(inventoryList));
     }
 
     @Test
