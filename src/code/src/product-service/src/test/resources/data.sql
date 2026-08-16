@@ -1,4 +1,4 @@
-SET SCHEMA LIVERLIVECODE;
+SET SCHEMA liverlivecode;
 
 INSERT INTO liverlivecode.products (id_product, name_product, description_product, price_product)
 VALUES ('EXT-001', 'PlayStation 5 Slim', 'Next-gen gaming console from Sony', 499.99),

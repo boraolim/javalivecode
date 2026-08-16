@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS liverlivecode;
 
-SET SCHEMA LIVERLIVECODE;
+SET SCHEMA liverlivecode;
 
 CREATE TABLE liverlivecode.products
 (
