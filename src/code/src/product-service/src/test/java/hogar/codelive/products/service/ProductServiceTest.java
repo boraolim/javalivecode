@@ -14,7 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import jakarta.persistence.EntityNotFoundException;
-
+import reactor.core.publisher.Flux;
 import hogar.codelive.products.dto.InventoryDto;
 import hogar.codelive.products.mapper.ProductMapper;
 import hogar.codelive.products.entity.ProductEntity;
@@ -24,6 +24,7 @@ import hogar.codelive.products.constants.AppConstants;
 import hogar.codelive.products.dto.ExternalProductDto;
 import hogar.codelive.products.request.ProductNewRequest;
 import hogar.codelive.products.repository.ProductRepository;
+import hogar.codelive.products.request.ProductBatchRequest;
 import hogar.codelive.products.request.ProductExistentRequest;
 import hogar.codelive.products.response.EnrichedProductResponse;
 
@@ -250,5 +251,158 @@ class ProductServiceTest {
         assertThatThrownBy(() -> productService.deleteProductAsync(productId).get())
                 .hasCauseInstanceOf(EntityNotFoundException.class)
                 .hasMessageContaining(String.format(AppConstants.MSG_INVENTORY_NOT_EXISTS, productId));
+    }
+
+    @Test
+    @DisplayName("search - Success: Should return enriched products list using batch inventory call")
+    void searchSuccessWithBatchInventory() throws Exception {
+        // Arrange
+        ProductEntity entity = ProductEntity.builder()
+                .id("EXT-001")
+                .name("Laptop")
+                .description("Gaming laptop")
+                .price(BigDecimal.valueOf(1000))
+                .build();
+
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+        responseDto.setName("Laptop");
+
+        InventoryDto inventoryDto = new InventoryDto("EXT-001", 10);
+
+        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
+                .thenReturn(List.of(entity));
+        when(productMapper.toEnrichedResponse(entity)).thenReturn(responseDto);
+        
+        // Mockeamos la llamada al cliente por lote (batch)
+        when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
+                .thenReturn(CompletableFuture.completedFuture(List.of(inventoryDto)));
+
+        // Act
+        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
+
+        // Assert
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0).getStock()).isEqualTo(10);
+        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.IN_STOCK);
+        
+        // Verificamos que se haya invocado al cliente batch
+        verify(inventoryClient).getStockBatch(any(ProductBatchRequest.class));
+    }
+
+    @Test
+    @DisplayName("searchBatch - Empty: Should return empty list when no products match query")
+    void searchBatchEmptyResult() throws Exception {
+        // Arrange
+        String query = "nonexistent";
+
+        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(query, query))
+                .thenReturn(List.of());
+
+        // Act
+        List<EnrichedProductResponse> result = productService.searchBatch(query).get();
+
+        // Assert
+        assertThat(result).isNotNull();
+        assertThat(result).isEmpty();
+        
+        // Verificamos que NUNCA se llame al cliente de inventario si la BD no arrojó productos
+        verify(inventoryClient, org.mockito.Mockito.never()).getStockBatch(any(ProductBatchRequest.class));
+    }
+
+    @Test
+    @DisplayName("search - Fallback: Should mark inventory as UNAVAILABLE when batch inventory service fails")
+    void searchBatchInventoryFailureFallback() throws Exception {
+        // Arrange
+        ProductEntity entity = ProductEntity.builder()
+                .id("EXT-001")
+                .name("Laptop")
+                .build();
+
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+
+        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
+                .thenReturn(List.of(entity));
+        when(productMapper.toEnrichedResponse(entity)).thenReturn(responseDto);
+        
+        // Simulamos que la llamada por lote falla retornando un CompletableFuture con error (o lista vacía desde el fallback del cliente)
+        when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
+                .thenReturn(CompletableFuture.completedFuture(List.of())); // O failedFuture según cómo gestione tu servicio el fallo en bloque
+
+        // Act
+        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
+
+        // Assert
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0).getStock()).isNull();
+        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
+    }
+
+    @Test
+    @DisplayName("searchBatch - Fallback: Should log warning and mark inventory as UNAVAILABLE when batch inventory service fails")
+    void searchBatchInventoryFailureFallbackWithUnavailable() throws Exception {
+        // Arrange
+        ProductEntity entity = ProductEntity.builder()
+                .id("EXT-001")
+                .name("Laptop")
+                .build();
+
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+
+        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
+                .thenReturn(List.of(entity));
+        when(productMapper.toEnrichedResponse(entity)).thenReturn(responseDto);
+        
+        // Simuamos el fallo que hace que 'ex' no sea nulo, entrando directamente al .map()
+        when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
+                .thenReturn(CompletableFuture.failedFuture(new RuntimeException("Batch Service Down")));
+
+        // Act
+        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
+
+        // Assert
+        assertThat(result).hasSize(1);
+        assertThat(result.get(0).getStock()).isNull();
+        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
+        
+        // Verificamos que se ejecutó el flujo del cliente
+        verify(inventoryClient).getStockBatch(any(ProductBatchRequest.class));
+    }
+
+    @Test
+    @DisplayName("searchBatch - Success: Should handle duplicate inventory items in batch response using merge function")
+    void searchBatchWithDuplicateInventories() throws Exception {
+        // Arrange
+        ProductEntity entity = ProductEntity.builder()
+                .id("EXT-001")
+                .name("Laptop")
+                .build();
+
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+        responseDto.setName("Laptop");
+
+        // Simulamos una respuesta con duplicados para forzar el uso de la función de merge (existing, replacement) -> existing
+        InventoryDto inventory1 = new InventoryDto("EXT-001", 10);
+        InventoryDto inventory2 = new InventoryDto("EXT-001", 5); // Duplicado del mismo ID
+
+        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
+                .thenReturn(List.of(entity));
+        when(productMapper.toEnrichedResponse(entity)).thenReturn(responseDto);
+        when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
+                .thenReturn(CompletableFuture.completedFuture(List.of(inventory1, inventory2)));
+
+        // Act
+        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
+
+        // Assert
+        assertThat(result).hasSize(1);
+        // Debe conservar el valor del primer elemento ("existing") debido a la regla de merge
+        assertThat(result.get(0).getStock()).isEqualTo(10); 
+        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.IN_STOCK);
+        
+        verify(inventoryClient).getStockBatch(any(ProductBatchRequest.class));
     }
 }

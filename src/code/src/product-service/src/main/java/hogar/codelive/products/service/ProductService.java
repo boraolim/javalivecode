@@ -1,9 +1,11 @@
 package hogar.codelive.products.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Collectors;
 
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,7 @@ import hogar.codelive.products.client.InventoryClient;
 import hogar.codelive.products.constants.AppConstants;
 import hogar.codelive.products.request.ProductNewRequest;
 import hogar.codelive.products.repository.ProductRepository;
+import hogar.codelive.products.request.ProductBatchRequest;
 import hogar.codelive.products.request.ProductExistentRequest;
 import hogar.codelive.products.response.EnrichedProductResponse;
 
@@ -46,6 +49,17 @@ public class ProductService {
             .thenApply(values -> futures.stream()
                 .map(CompletableFuture::join)
                 .toList());
+    }
+
+    @Cacheable(value = "productSearchCache", key = "#queryMult")
+    public CompletableFuture<List<EnrichedProductResponse>> searchBatch(String query) {
+        List<ProductEntity> products = productRepository
+                .findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(query, query);
+
+        return Optional.of(products)
+                .filter(list -> !list.isEmpty())
+                .map(prods -> fetchAndBuildResponses(prods, query))
+                .orElseGet(() -> CompletableFuture.completedFuture(List.of()));
     }
 
     @Cacheable(value = "productByIdCache", key = "#id")
@@ -125,5 +139,60 @@ public class ProductService {
         Optional.ofNullable(productId)
             .flatMap(productRepository::findById)
             .ifPresentOrElse(productRepository::delete, () -> { throw new EntityNotFoundException(String.format(AppConstants.MSG_INVENTORY_NOT_EXISTS, productId)); });
+    }
+
+    private List<EnrichedProductResponse> buildToResponseFromEntities(List<ProductEntity> products, 
+                                                                      List<InventoryDto> inventoryDtos) {
+
+        // Mapeo eficiente O(1) de inventarios por productId
+        Map<String, InventoryDto> inventoryMap = inventoryDtos.stream()
+            .filter(Objects::nonNull)
+            .collect(Collectors.toMap(InventoryDto::getProductId, dto -> dto,
+                (existing, replacement) -> existing));
+
+        return products.stream()
+            .map(product -> {
+                EnrichedProductResponse response = productMapper.toEnrichedResponse(product);
+                InventoryDto inventoryDto = inventoryMap.get(product.getId());
+
+                Optional<Integer> stockOpt = Optional.ofNullable(inventoryDto)
+                    .map(InventoryDto::getStock);
+
+                response.setStock(stockOpt.orElse(null));
+                response.setInventoryStatus(stockOpt
+                    .map(valueEnum -> valueEnum > 0 ? InventoryStatus.IN_STOCK : InventoryStatus.OUT_OF_STOCK)
+                    .orElse(InventoryStatus.UNAVAILABLE));
+
+                return response;
+            })
+            .toList();
+    }
+
+    private CompletableFuture<List<EnrichedProductResponse>> fetchAndBuildResponses(
+            List<ProductEntity> products, String query) {
+        
+        List<String> productIds = products.stream()
+                .map(ProductEntity::getId)
+                .toList();
+
+        ProductBatchRequest request = new ProductBatchRequest(productIds);
+
+        return inventoryClient.getStockBatch(request)
+                .handle((inventoryList, ex) -> resolveSafeInventory(inventoryList, ex, query))
+                .thenApply(safeInventoryList -> buildToResponseFromEntities(products, safeInventoryList));
+    }
+
+    private List<InventoryDto> resolveSafeInventory(List<InventoryDto> inventoryList, Throwable ex, String query) {       
+        return Optional.ofNullable(ex)
+            .map(error -> {
+                logWarning(query, error);
+                return List.<InventoryDto>of();
+            })
+            .orElseGet(() -> Optional.ofNullable(inventoryList).orElse(List.of()));
+    }
+
+    private void logWarning(String query, Throwable ex) {
+        log.warn("No fue posible obtener el inventario por lote para query={}. Motivo: {}. Se marcan como UNAVAILABLE.", 
+                query, ex.getMessage());
     }
 }
