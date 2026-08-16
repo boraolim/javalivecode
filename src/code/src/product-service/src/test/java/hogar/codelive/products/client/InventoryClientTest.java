@@ -1,6 +1,7 @@
 package hogar.codelive.products.client;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -21,6 +22,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import hogar.codelive.products.dto.InventoryDto;
+import hogar.codelive.products.request.ProductBatchRequest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -126,5 +128,79 @@ class InventoryClientTest {
         assertThat(result).isNotNull();
         assertThat(result.getProductId()).isEqualTo(productId);
         assertThat(result.getStock()).isNull();
+    }
+
+    @Test
+    @DisplayName("getStockBatch - Should return list of inventory details when API responds successfully")
+    void shouldReturnInventoryBatchWhenApiRespondsSuccessfully() throws Exception {
+        // Arrange
+        ProductBatchRequest request = new ProductBatchRequest(List.of("PROD-123", "PROD-456"));
+        String mockJsonResponse = "[{\"productId\":\"PROD-123\",\"stock\":45},{\"productId\":\"PROD-456\",\"stock\":10}]";
+
+        mockWebServer.enqueue(new MockResponse()
+                .setResponseCode(200)
+                .setHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                .setBody(mockJsonResponse));
+
+        // Act
+        CompletableFuture<List<InventoryDto>> future = inventoryClient.getStockBatch(request);
+        List<InventoryDto> result = future.get();
+
+        // Assert
+        assertThat(result).isNotNull().hasSize(2);
+        assertThat(result.get(0).getProductId()).isEqualTo("PROD-123");
+        assertThat(result.get(0).getStock()).isEqualTo(45);
+        assertThat(result.get(1).getProductId()).isEqualTo("PROD-456");
+        assertThat(result.get(1).getStock()).isEqualTo(10);
+    }
+
+    @Test
+    @DisplayName("getStockBatch - Should return empty list when API returns 404 Not Found")
+    void shouldReturnEmptyListWhenBatchApiReturns404() throws Exception {
+        // Arrange
+        ProductBatchRequest request = new ProductBatchRequest(List.of("PROD-404"));
+
+        mockWebServer.enqueue(new MockResponse()
+                .setResponseCode(404)
+                .setHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE));
+
+        // Act
+        CompletableFuture<List<InventoryDto>> future = inventoryClient.getStockBatch(request);
+        List<InventoryDto> result = future.get();
+
+        // Assert
+        assertThat(result).isNotNull().isEmpty();
+    }
+
+    @Test
+    @DisplayName("getStockBatch - Should throw Exception when API returns 500")
+    void shouldThrowExceptionWhenBatchApiReturns500() {
+        // Arrange
+        ProductBatchRequest request = new ProductBatchRequest(List.of("PROD-500"));
+
+        mockWebServer.enqueue(new MockResponse()
+                .setResponseCode(500)
+                .setHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE));
+
+        // Act & Assert
+        CompletableFuture<List<InventoryDto>> future = inventoryClient.getStockBatch(request);
+
+        assertThatThrownBy(future::get)
+                .isInstanceOf(ExecutionException.class)
+                .hasCauseInstanceOf(WebClientResponseException.InternalServerError.class);
+    }
+
+    @Test
+    @DisplayName("fallbackInventoryBatch - Should log warning and return empty list")
+    void shouldReturnEmptyListOnBatchFallback() throws Exception {
+        // Arrange
+        Throwable exception = new RuntimeException("Simulated batch network issue");
+
+        // Act (Invocamos directamente el comportamiento del fallback por lote)
+        CompletableFuture<List<InventoryDto>> future = inventoryClient.fallbackInventoryBatch(exception);
+        List<InventoryDto> result = future.get();
+
+        // Assert
+        assertThat(result).isNotNull().isEmpty();
     }
 }
