@@ -70,5 +70,14 @@
     "currency": "MXN",
     "category": "Fashion",
     "active": true
+  },
+  {
+    "id": "EXT-013",
+    "title": "Active Product 10",
+    "description": "Description 10",
+    "price": "1550.00",
+    "currency": "MXN",
+    "category": "Electronics",
+    "active": true
   }
 ]
