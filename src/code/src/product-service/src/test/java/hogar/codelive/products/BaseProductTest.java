@@ -3,6 +3,7 @@ package hogar.codelive.products;
 import java.util.Map;
 import java.util.List;
 import java.math.BigDecimal;
+
 import org.junit.jupiter.api.BeforeEach;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,10 +23,13 @@ public abstract class BaseProductTest {
     protected ProductEntity product2;
     protected ProductEntity product3;
     protected ProductEntity product4;
+    protected ObjectMapper commonMapper;
     protected List<ProductEntity> inventoryList;
 
     @BeforeEach
     void setUpBase() throws Exception {
+        commonMapper = new ObjectMapper();
+
         product1 = ProductEntity.builder()
                 .id(AppTestConstants.PRODUCT_FIRST_ID)
                 .name("PlayStation 5 Slim")
@@ -56,9 +60,7 @@ public abstract class BaseProductTest {
 
         inventoryList = List.of(product1, product2, product3);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        jsonInput = objectMapper.writeValueAsString(List.of(
+        jsonInput = commonMapper.writeValueAsString(List.of(
             Map.of("id", AppTestConstants.PRODUCT_FIRST_ID,
                 "title", "PlayStation 5 Slim",
                 "description", "Next-gen gaming console from Sony",
