@@ -1,6 +1,6 @@
 [
   {
-    "id": "EXT-005",
+    "id": "EXT-008",
     "title": "Active Product 5",
     "description": "Description 5",
     "price": "10.50",
@@ -9,40 +9,13 @@
     "active": true
   },
   {
-    "id": "EXT-006",
+    "id": "EXT-009",
     "title": "Inactive Product 6",
     "description": "Description 6",
     "price": "20.00",
     "currency": "MXN",
     "category": "Home",
     "active": false
-  },
-  {
-    "id": "EXT-007",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
-    "currency": "MXN",
-    "category": "Fashion",
-    "active": true
-  },
-    {
-    "id": "EXT-008",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
-    "currency": "MXN",
-    "category": "Fashion",
-    "active": true
-  },
-  {
-    "id": "EXT-009",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
-    "currency": "MXN",
-    "category": "Fashion",
-    "active": true
   },
   {
     "id": "EXT-010",
@@ -53,8 +26,35 @@
     "category": "Fashion",
     "active": true
   },
-  {
+    {
     "id": "EXT-011",
+    "title": "Active Product 7",
+    "description": "Description 7",
+    "price": "150.00",
+    "currency": "MXN",
+    "category": "Fashion",
+    "active": true
+  },
+  {
+    "id": "EXT-012",
+    "title": "Active Product 7",
+    "description": "Description 7",
+    "price": "150.00",
+    "currency": "MXN",
+    "category": "Fashion",
+    "active": true
+  },
+  {
+    "id": "EXT-013",
+    "title": "Active Product 7",
+    "description": "Description 7",
+    "price": "150.00",
+    "currency": "MXN",
+    "category": "Fashion",
+    "active": true
+  },
+  {
+    "id": "EXT-014",
     "title": "Active Product 8",
     "description": "Description 8",
     "price": "1500.00",
@@ -63,7 +63,7 @@
     "active": true
   },
   {
-    "id": "EXT-012",
+    "id": "EXT-015",
     "title": "Active Product 9",
     "description": "Description 9",
     "price": "1500.00",
@@ -72,7 +72,7 @@
     "active": true
   },
   {
-    "id": "EXT-013",
+    "id": "EXT-016",
     "title": "Active Product 10",
     "description": "Description 10",
     "price": "1550.00",

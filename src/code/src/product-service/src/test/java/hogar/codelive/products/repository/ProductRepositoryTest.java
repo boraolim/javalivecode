@@ -35,8 +35,8 @@ class ProductRepositoryTest extends BaseProductTest {
     @DisplayName("BaseProducts - Should verify base test products configuration")
     void shouldVerifyBaseTestProducts() {
         // Assert
-        assertThat(inventoryList).hasSize(3);
-        assertThat(product1.getName()).isEqualTo("PlayStation 5 Slim");
+        assertThat(inventoryList).hasSize(6);
+        assertThat(productFirst.getName()).isEqualTo("PlayStation 5 Slim");
     }
 
     @Test
@@ -92,12 +92,12 @@ class ProductRepositoryTest extends BaseProductTest {
     @DisplayName("Create - Should save a new product inventory successfully")
     void shouldSaveInventory() {
         // Act
-        ProductEntity savedEntity = productRepository.save(Objects.requireNonNull(product4));
+        ProductEntity savedEntity = productRepository.save(Objects.requireNonNull(productSeventh));
 
         // Assert
         assertAll("Validar inserción de entidad",
                 () -> assertNotNull(savedEntity),
-                () -> assertEquals(AppTestConstants.PRODUCT_FOURTH_ID, savedEntity.getId()),
+                () -> assertEquals(AppTestConstants.PRODUCT_SEVENTH_ID, savedEntity.getId()),
                 () -> assertEquals(new BigDecimal("2449.99"), savedEntity.getPrice())
         );
     }
