@@ -51,7 +51,7 @@ public class ProductService {
                 .toList());
     }
 
-    @Cacheable(value = "productSearchCache", key = "#queryMult")
+    @Cacheable(value = "productSearchBatchCache", key = "#query")
     public CompletableFuture<List<EnrichedProductResponse>> searchBatch(String query) {
         List<ProductEntity> products = productRepository
                 .findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(query, query);

@@ -28,7 +28,7 @@ public class CacheConfig {
 
     @Bean
     public CacheManager cacheManager() {
-        CaffeineCacheManager cacheManager = new CaffeineCacheManager("productSearchCache", "productByIdCache");
+        CaffeineCacheManager cacheManager = new CaffeineCacheManager("productSearchCache", "productSearchBatchCache", "productByIdCache");
         cacheManager.setAsyncCacheMode(true);       
         
         cacheManager.setCaffeine(Objects.requireNonNull(Caffeine.newBuilder()
