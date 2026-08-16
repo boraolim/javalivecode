@@ -9,13 +9,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import org.springframework.test.context.ActiveProfiles;
+
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import jakarta.persistence.EntityNotFoundException;
-import reactor.core.publisher.Flux;
 import hogar.codelive.products.dto.InventoryDto;
+import jakarta.persistence.EntityNotFoundException;
 import hogar.codelive.products.mapper.ProductMapper;
 import hogar.codelive.products.entity.ProductEntity;
 import hogar.codelive.products.enums.InventoryStatus;
@@ -29,11 +30,13 @@ import hogar.codelive.products.request.ProductExistentRequest;
 import hogar.codelive.products.response.EnrichedProductResponse;
 
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.ArgumentMatchers.any;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+@ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
 @DisplayName("ProductService - Unit Tests")
 class ProductServiceTest {
@@ -303,11 +306,10 @@ class ProductServiceTest {
         List<EnrichedProductResponse> result = productService.searchBatch(query).get();
 
         // Assert
-        assertThat(result).isNotNull();
-        assertThat(result).isEmpty();
+        assertThat(result).isNotNull().isEmpty();
         
         // Verificamos que NUNCA se llame al cliente de inventario si la BD no arrojó productos
-        verify(inventoryClient, org.mockito.Mockito.never()).getStockBatch(any(ProductBatchRequest.class));
+        verify(inventoryClient, never()).getStockBatch(any(ProductBatchRequest.class));
     }
 
     @Test

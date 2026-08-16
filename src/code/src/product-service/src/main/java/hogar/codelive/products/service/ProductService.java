@@ -24,8 +24,8 @@ import hogar.codelive.products.enums.InventoryStatus;
 import hogar.codelive.products.client.InventoryClient;
 import hogar.codelive.products.constants.AppConstants;
 import hogar.codelive.products.request.ProductNewRequest;
-import hogar.codelive.products.repository.ProductRepository;
 import hogar.codelive.products.request.ProductBatchRequest;
+import hogar.codelive.products.repository.ProductRepository;
 import hogar.codelive.products.request.ProductExistentRequest;
 import hogar.codelive.products.response.EnrichedProductResponse;
 
