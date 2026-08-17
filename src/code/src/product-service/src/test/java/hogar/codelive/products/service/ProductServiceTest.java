@@ -2,38 +2,30 @@ package hogar.codelive.products.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.math.BigDecimal;
 import java.util.concurrent.CompletableFuture;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.extension.ExtendWith;
 
-import org.mockito.Mock;
-import org.mockito.InjectMocks;
 import org.mockito.quality.Strictness;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
+
 import org.springframework.cache.CacheManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
+
 import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import hogar.codelive.products.BaseProductTest;
 import hogar.codelive.products.dto.InventoryDto;
 import jakarta.persistence.EntityNotFoundException;
-import hogar.codelive.products.mapper.ProductMapper;
 import hogar.codelive.products.entity.ProductEntity;
 import hogar.codelive.products.enums.InventoryStatus;
 import hogar.codelive.products.client.InventoryClient;
 import hogar.codelive.products.constants.AppConstants;
-import hogar.codelive.products.dto.ExternalProductDto;
-import hogar.codelive.products.request.ProductNewRequest;
 import hogar.codelive.products.constants.AppTestConstants;
 import hogar.codelive.products.request.ProductBatchRequest;
 import hogar.codelive.products.repository.ProductRepository;
-import hogar.codelive.products.request.ProductExistentRequest;
 import hogar.codelive.products.response.EnrichedProductResponse;
 
 import static org.mockito.Mockito.when;
@@ -41,7 +33,6 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.argThat;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
