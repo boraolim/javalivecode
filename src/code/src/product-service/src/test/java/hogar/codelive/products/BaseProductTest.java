@@ -12,12 +12,11 @@ import org.springframework.test.context.ActiveProfiles;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
+import hogar.codelive.products.dto.InventoryDto;
 import hogar.codelive.products.entity.ProductEntity;
 import hogar.codelive.products.enums.InventoryStatus;
 import hogar.codelive.products.constants.AppTestConstants;
-import hogar.codelive.products.dto.InventoryDto;
 import hogar.codelive.products.response.EnrichedProductResponse;
-
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -29,9 +28,11 @@ public abstract class BaseProductTest {
     protected ProductEntity productThird;
     protected ProductEntity productFourth;
     protected ProductEntity productSeventh;
+    protected ProductEntity productEighth;
     protected ObjectMapper commonMapper;
     protected List<ProductEntity> inventoryList;
     protected InventoryDto inventoryProductDto;
+    protected InventoryDto inventorySixthProductDto;
     protected EnrichedProductResponse responseProduct;
 
     @BeforeEach
@@ -68,10 +69,17 @@ public abstract class BaseProductTest {
 
         productSeventh = ProductEntity.builder()
                 .id(AppTestConstants.PRODUCT_SEVENTH_ID)
-                .name("PlayStation 5")
-                .description("Standard gaming console from Sony")
-                .price(new BigDecimal("2449.99"))
+                .name("Laptop HP OmniBook 3 16t-bw000")
+                .description("Laptop HP OmniBook 3 AI 16t-bw000 16 AMD Ryzen 5")
+                .price(new BigDecimal("7830.20"))
                 .build();
+
+        productEighth = ProductEntity.builder()
+                .id(AppTestConstants.PRODUCT_EIGHTH_ID)
+                .name("Tablet Huawei MatePad 11.5")
+                .description("Tablet de 11.5 pulgadas con 8 GB de RAM y 128 GB de almacenamiento.")
+                .price(new BigDecimal("7499.00"))
+                .build();                
 
         responseProduct = new EnrichedProductResponse();
         responseProduct.setId(AppTestConstants.PRODUCT_FOURTH_ID);
@@ -83,7 +91,11 @@ public abstract class BaseProductTest {
 
         inventoryProductDto = new InventoryDto();
         inventoryProductDto.setProductId(AppTestConstants.PRODUCT_FOURTH_ID);
-        inventoryProductDto.setStock(100);                
+        inventoryProductDto.setStock(100);
+        
+        inventorySixthProductDto = new InventoryDto();
+        inventorySixthProductDto.setProductId(AppTestConstants.PRODUCT_SIXTH_ID);
+        inventorySixthProductDto.setStock(0);        
 
         inventoryList = List.of(productFirst, productSecond, productThird);
 

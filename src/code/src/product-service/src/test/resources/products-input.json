@@ -1,83 +1,83 @@
 [
   {
-    "id": "EXT-008",
-    "title": "Active Product 5",
-    "description": "Description 5",
-    "price": "10.50",
-    "currency": "MXN",
-    "category": "Electronics",
-    "active": true
-  },
-  {
     "id": "EXT-009",
-    "title": "Inactive Product 6",
-    "description": "Description 6",
-    "price": "20.00",
+    "title": "Laptop Lenovo IdeaPad 3",
+    "description": "Laptop de 15.6 pulgadas con procesador Intel Core i5, 8 GB de RAM y 512 GB SSD.",
+    "price": "12999.00",
     "currency": "MXN",
-    "category": "Home",
-    "active": false
+    "category": "Laptops",
+    "active": true
   },
   {
     "id": "EXT-010",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
+    "title": "Tablet Samsung Galaxy Tab A9",
+    "description": "Tablet de 8.7 pulgadas con 4 GB de RAM y 64 GB de almacenamiento.",
+    "price": "3999.00",
     "currency": "MXN",
-    "category": "Fashion",
-    "active": true
+    "category": "Tablets",
+    "active": false
   },
-    {
+  {
     "id": "EXT-011",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
+    "title": "Laptop HP 15",
+    "description": "Laptop de 15.6 pulgadas con procesador AMD Ryzen 5, 8 GB de RAM y 512 GB SSD.",
+    "price": "11499.00",
     "currency": "MXN",
-    "category": "Fashion",
+    "category": "Laptops",
     "active": true
   },
   {
     "id": "EXT-012",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
+    "title": "Tablet Lenovo Tab M11",
+    "description": "Tablet de 11 pulgadas con 8 GB de RAM y 128 GB de almacenamiento.",
+    "price": "5499.00",
     "currency": "MXN",
-    "category": "Fashion",
+    "category": "Tablets",
     "active": true
   },
   {
     "id": "EXT-013",
-    "title": "Active Product 7",
-    "description": "Description 7",
-    "price": "150.00",
+    "title": "Laptop ASUS VivoBook 15",
+    "description": "Laptop de 15.6 pulgadas con procesador Intel Core i5, 16 GB de RAM y 512 GB SSD.",
+    "price": "15999.00",
     "currency": "MXN",
-    "category": "Fashion",
+    "category": "Laptops",
     "active": true
   },
   {
     "id": "EXT-014",
-    "title": "Active Product 8",
-    "description": "Description 8",
-    "price": "1500.00",
+    "title": "Tablet Xiaomi Redmi Pad SE",
+    "description": "Tablet de 11 pulgadas con 8 GB de RAM y 256 GB de almacenamiento.",
+    "price": "4999.00",
     "currency": "MXN",
-    "category": "Fashion",
+    "category": "Tablets",
     "active": true
   },
   {
     "id": "EXT-015",
-    "title": "Active Product 9",
-    "description": "Description 9",
-    "price": "1500.00",
+    "title": "Laptop Dell Inspiron 15",
+    "description": "Laptop de 15.6 pulgadas con procesador Intel Core i7, 16 GB de RAM y 512 GB SSD.",
+    "price": "18999.00",
     "currency": "MXN",
-    "category": "Fashion",
+    "category": "Laptops",
     "active": true
   },
   {
     "id": "EXT-016",
-    "title": "Active Product 10",
-    "description": "Description 10",
-    "price": "1550.00",
+    "title": "Tablet Samsung Galaxy Tab S9 FE",
+    "description": "Tablet de 10.9 pulgadas con 8 GB de RAM y 128 GB de almacenamiento.",
+    "price": "9999.00",
     "currency": "MXN",
-    "category": "Electronics",
+    "category": "Tablets",
+    "active": true
+  },
+  {
+    "id": "EXT-017",
+    "title": "Laptop Lenovo ThinkPad E14",
+    "description": "Laptop empresarial de 14 pulgadas con procesador Intel Core i7, 16 GB de RAM y 512 GB SSD.",
+    "price": "21999.00",
+    "currency": "MXN",
+    "category": "Laptops",
     "active": true
   }
 ]

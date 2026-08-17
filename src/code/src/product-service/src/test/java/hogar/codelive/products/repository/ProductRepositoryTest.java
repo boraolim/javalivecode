@@ -35,7 +35,7 @@ class ProductRepositoryTest extends BaseProductTest {
     @DisplayName("BaseProducts - Should verify base test products configuration")
     void shouldVerifyBaseTestProducts() {
         // Assert
-        assertThat(inventoryList).hasSize(6);
+        assertThat(inventoryList).hasSize(3);
         assertThat(productFirst.getName()).isEqualTo("PlayStation 5 Slim");
     }
 
@@ -98,7 +98,7 @@ class ProductRepositoryTest extends BaseProductTest {
         assertAll("Validar inserción de entidad",
                 () -> assertNotNull(savedEntity),
                 () -> assertEquals(AppTestConstants.PRODUCT_SEVENTH_ID, savedEntity.getId()),
-                () -> assertEquals(new BigDecimal("2449.99"), savedEntity.getPrice())
+                () -> assertEquals(new BigDecimal("7830.20"), savedEntity.getPrice())
         );
     }
 

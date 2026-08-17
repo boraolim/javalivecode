@@ -12,6 +12,7 @@ public final class AppTestConstants {
     public static final String PRODUCT_FIFTH_ID            = "EXT-005";
     public static final String PRODUCT_SIXTH_ID            = "EXT-006";
     public static final String PRODUCT_SEVENTH_ID          = "EXT-007";
+    public static final String PRODUCT_EIGHTH_ID           = "EXT-008";
     public static final String PRODUCT_UPDATED_ID          = "EXT-100";
     public static final String PRODUCT_LAST_ID             = "EXT-999";
     public static final String PRODUCT_NOT_EXISTENT_ID     = "NO-EXISTE";
