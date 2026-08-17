@@ -117,13 +117,13 @@ class ProductServiceTest extends BaseProductTest {
         // Assert
         assertThat(result).isNotEmpty();
         
-        // Verificamos específicamente el producto EXT-004 traído desde H2
+        // Verificamos específicamente el producto EXT-006 traído desde H2
         EnrichedProductResponse sixthProduct = result.stream()
                 .filter(p -> p.getId().equals(AppTestConstants.PRODUCT_SIXTH_ID))
                 .findFirst()
                 .orElseThrow();
 
-        // assertThat(sixthProduct.getStock()).isZero();
+        assertThat(sixthProduct.getStock()).isZero();
         assertThat(sixthProduct.getInventoryStatus()).isEqualTo(InventoryStatus.OUT_OF_STOCK);
     }
 
