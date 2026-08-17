@@ -15,7 +15,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import hogar.codelive.products.dto.InventoryDto;
 import hogar.codelive.products.entity.ProductEntity;
 import hogar.codelive.products.enums.InventoryStatus;
+import hogar.codelive.products.request.ProductNewRequest;
 import hogar.codelive.products.constants.AppTestConstants;
+import hogar.codelive.products.request.ProductExistentRequest;
 import hogar.codelive.products.response.EnrichedProductResponse;
 
 @SpringBootTest
@@ -31,8 +33,14 @@ public abstract class BaseProductTest {
     protected ProductEntity productEighth;
     protected ObjectMapper commonMapper;
     protected List<ProductEntity> inventoryList;
+
     protected InventoryDto inventoryProductDto;
     protected InventoryDto inventorySixthProductDto;
+
+    protected ProductNewRequest newProductRequest;
+
+    protected ProductExistentRequest existentProductRequest;
+    
     protected EnrichedProductResponse responseProduct;
 
     @BeforeEach
@@ -95,7 +103,13 @@ public abstract class BaseProductTest {
         
         inventorySixthProductDto = new InventoryDto();
         inventorySixthProductDto.setProductId(AppTestConstants.PRODUCT_SIXTH_ID);
-        inventorySixthProductDto.setStock(0);        
+        inventorySixthProductDto.setStock(0);
+        
+        newProductRequest = new ProductNewRequest();
+        newProductRequest.setProductId("EXT-018");
+        newProductRequest.setNameProduct("Leche Alpura");
+        newProductRequest.setDescriptionProduct("Leche Alpura de cuarto de litro con alta lactosa");
+        newProductRequest.setPriceProduct(new BigDecimal("35.00"));
 
         inventoryList = List.of(productFirst, productSecond, productThird);
 

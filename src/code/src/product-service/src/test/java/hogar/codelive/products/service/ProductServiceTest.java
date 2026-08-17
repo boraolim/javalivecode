@@ -148,40 +148,35 @@ class ProductServiceTest extends BaseProductTest {
         assertThat(sixthProduct.getInventoryStatus()).isEqualTo(InventoryStatus.OUT_OF_STOCK);
     }
 
-    /*    
     @Test
     @DisplayName("getProductId - Error: Should throw EntityNotFoundException when id does not exist")
     void getProductIdNotFound() {
-        when(productRepository.findById("INVALID-ID")).thenReturn(Optional.empty());
-
-        assertThatThrownBy(() -> productService.getProductId("INVALID-ID").get())
+        // Act & Assert
+        // Al ser un repositorio real, buscará "INVALID-ID" en H2, no lo encontrará
+        // y el servicio lanzará la excepción esperada.
+        assertThatThrownBy(() -> productService.getProductId(AppTestConstants.PRODUCT_INVALID_ID).get())
                 .hasCauseInstanceOf(EntityNotFoundException.class);
     }
 
     @Test
     @DisplayName("addNewProductAsync - Success: Should save and return new product response")
     void addNewProductAsyncSuccess() throws Exception {
-        ProductNewRequest request = new ProductNewRequest();
-        request.setNameProduct("New Item");
+        
+        // Arrange & Act
+        // Asignamos aquí el nuevo request desde la variable 'newProductRequest'.
+        // Al ser una prueba de integración, el mapper real convertirá el request,
+        // el repositorio real guardará en H2 y se construirá la respuesta.
+        EnrichedProductResponse result = productService.addNewProductAsync(newProductRequest).get();
 
-        ExternalProductDto dto = new ExternalProductDto();
-        ProductEntity productFourth = ProductEntity.builder().id("NEW-1").name("New Item").build();
-        EnrichedProductResponse responseProduct = new EnrichedProductResponse();
-        responseProduct.setId("NEW-1");
-
-        when(productMapper.toDto(request)).thenReturn(dto);
-        when(productMapper.toEntity(dto)).thenReturn(productFourth);
-        when(productRepository.save(any(ProductEntity.class))).thenReturn(productFourth);
-        when(productMapper.toEnrichedResponse(productFourth)).thenReturn(responseProduct);
-
-        EnrichedProductResponse result = productService.addNewProductAsync(request).get();
-
+        // Assert
         assertThat(result).isNotNull();
-        assertThat(result.getId()).isEqualTo("NEW-1");
+        assertThat(result.getId()).isNotNull(); // El repositorio asignará un ID (o el generado por tu lógica/base de datos)
+        assertThat(result.getName()).isEqualTo("Leche Alpura");
         assertThat(result.getStock()).isNull();
         assertThat(result.getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
-    }
+    }   
 
+    /*    
     @Test
     @DisplayName("addNewProductAsync - Error: Should throw IllegalArgumentException when request is null")
     void addNewProductAsyncNullRequest() {
