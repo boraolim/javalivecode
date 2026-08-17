@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.util.concurrent.CompletableFuture;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -14,6 +15,7 @@ import org.mockito.InjectMocks;
 import org.mockito.quality.Strictness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.cache.CacheManager;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -39,6 +41,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.argThat;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -51,7 +54,24 @@ class ProductServiceTest extends BaseProductTest {
     private InventoryClient inventoryClient;
 
     @Autowired
+    private CacheManager cacheManager;
+
+    @Autowired
     private ProductService productService;
+
+    @BeforeEach
+    void setUp() {
+        // Limpia la caché antes de ejecutar cada prueba individual
+        Optional.ofNullable(cacheManager.getCache("productSearchCache"))
+                .ifPresent(org.springframework.cache.Cache::clear);
+        
+        // Si usas otros métodos cacheados (como searchBatch o getProductId), 
+        // puedes limpiar sus cachés aquí también de la misma forma:
+        Optional.ofNullable(cacheManager.getCache("productSearchBatchCache"))
+                .ifPresent(org.springframework.cache.Cache::clear);
+        Optional.ofNullable(cacheManager.getCache("productByIdCache"))
+                .ifPresent(org.springframework.cache.Cache::clear);
+    }
 
     @Test
     @DisplayName("search - Success: Should find products from H2 database and enrich with inventory")
@@ -106,8 +126,10 @@ class ProductServiceTest extends BaseProductTest {
     @DisplayName("getProductId - Success: Should return enriched product when id exists")
     void searchProductIdOutOfStockSuccess() throws Exception {
         // Arrange
-        // Usamos anyString() para evitar NullPointerException si la búsqueda de H2 
-        // devuelve más de un producto que coincida con "laptop"
+        inventorySixthProductDto.setStock(0); // EXT-006 tiene stock 0
+
+        // Configuramos por defecto que cualquier llamada devuelva stock 0 o un valor seguro,
+        // o usamos anyString() si sabemos que la búsqueda solo traerá un producto.
         when(inventoryClient.getStock(anyString()))
                 .thenReturn(CompletableFuture.completedFuture(inventorySixthProductDto));
 
@@ -117,11 +139,10 @@ class ProductServiceTest extends BaseProductTest {
         // Assert
         assertThat(result).isNotEmpty();
         
-        // Verificamos específicamente el producto EXT-006 traído desde H2
         EnrichedProductResponse sixthProduct = result.stream()
                 .filter(p -> p.getId().equals(AppTestConstants.PRODUCT_SIXTH_ID))
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(() -> new AssertionError("El producto EXT-006 no fue encontrado"));
 
         assertThat(sixthProduct.getStock()).isZero();
         assertThat(sixthProduct.getInventoryStatus()).isEqualTo(InventoryStatus.OUT_OF_STOCK);
