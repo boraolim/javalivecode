@@ -27,6 +27,7 @@ public final class AppTestConstants {
     public static final String PRODUCT_ID_P300             = "P300";
     public static final String PRODUCT_ID_P301             = "P301";
     public static final String PRODUCT_FMT_ID              = "EXT-%03d";
+    public static final String QUERY_STRING_NOT_EXIST      = "nonExistent";
     public static final String MSG_ERR_CONEXION_BD         = "Error de conexion a BD";
     public static final String MSG_ERR_PRODUCTO_NO_EXIST   = "El inventario del producto no puede ser nulo.";
     public static final String MSG_ERR_PRODUCTO_NOT_EXIST  = "No se encontro inventario para el producto con id: El inventario del producto no puede ser nulo.";

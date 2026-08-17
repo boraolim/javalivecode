@@ -57,6 +57,9 @@ class ProductServiceTest extends BaseProductTest {
     private CacheManager cacheManager;
 
     @Autowired
+    private ProductRepository productRepository; // <-- Agrega esta línea si te falta
+
+    @Autowired
     private ProductService productService;
 
     @BeforeEach
@@ -64,9 +67,6 @@ class ProductServiceTest extends BaseProductTest {
         // Limpia la caché antes de ejecutar cada prueba individual
         Optional.ofNullable(cacheManager.getCache("productSearchCache"))
                 .ifPresent(org.springframework.cache.Cache::clear);
-        
-        // Si usas otros métodos cacheados (como searchBatch o getProductId), 
-        // puedes limpiar sus cachés aquí también de la misma forma:
         Optional.ofNullable(cacheManager.getCache("productSearchBatchCache"))
                 .ifPresent(org.springframework.cache.Cache::clear);
         Optional.ofNullable(cacheManager.getCache("productByIdCache"))
@@ -174,59 +174,47 @@ class ProductServiceTest extends BaseProductTest {
         assertThat(result.getName()).isEqualTo("Leche Alpura");
         assertThat(result.getStock()).isNull();
         assertThat(result.getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
-    }   
-
-    /*    
+    }
+    
     @Test
     @DisplayName("addNewProductAsync - Error: Should throw IllegalArgumentException when request is null")
     void addNewProductAsyncNullRequest() {
+        // Act & Assert
         assertThatThrownBy(() -> productService.addNewProductAsync(null).get())
                 .hasCauseInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(AppConstants.MSG_NOT_FOUND);
     }
-
+    
     @Test
     @DisplayName("updateProductAsync - Success: Should update and return product response")
     void updateProductAsyncSuccess() throws Exception {
-        String productId = "EXT-001";
-        ProductExistentRequest request = new ProductExistentRequest();
-        request.setNameProduct("Updated Name");
+        // Arrange
+        // Usamos un ID que sabemos existe por nuestro script SQL (EXT-001). Por si las dudas guardamos nuevamente el productFirst.
+        targetId = AppTestConstants.PRODUCT_FIRST_ID;
+        findOrCreateProduct(productFirst);
 
-        ProductEntity existingEntity = ProductEntity.builder()
-                .id(productId)
-                .name("Old Name")
-                .build();
+        // Act
+        // El servicio buscará el producto real en H2, usará el Mapper real para actualizarlo
+        // y guardará el cambio en la base de datos real.
+        EnrichedProductResponse result = productService.updateProductAsync(targetId, existentProductRequest).get();
 
-        ExternalProductDto dto = new ExternalProductDto();
-        dto.setId(productId);
-        dto.setTitle("Old Name");
-
-        ProductEntity updatedEntity = ProductEntity.builder()
-                .id(productId)
-                .name("Updated Name")
-                .build();
-
-        EnrichedProductResponse responseProduct = new EnrichedProductResponse();
-        responseProduct.setId(productId);
-        responseProduct.setName("Updated Name");
-
-        when(productRepository.findById(productId)).thenReturn(Optional.of(existingEntity));
-        when(productMapper.fromEntity(existingEntity)).thenReturn(dto);
-        when(productMapper.toEntity(dto)).thenReturn(updatedEntity);
-        when(productRepository.save(any(ProductEntity.class))).thenReturn(updatedEntity);
-        when(productMapper.toEnrichedResponse(updatedEntity)).thenReturn(responseProduct);
-
-        EnrichedProductResponse result = productService.updateProductAsync(productId, request).get();
-
+        // Assert
         assertThat(result).isNotNull();
-        assertThat(result.getId()).isEqualTo(productId);
+        assertThat(result.getId()).isEqualTo(targetId);
         assertThat(result.getName()).isEqualTo("Updated Name");
-    }
 
+        // Opcional: Verificación extra de persistencia (opcional si quieres asegurar el guardado)
+        // Puedes consultar el repositorio real para confirmar que el nombre cambió en H2
+        ProductEntity savedProduct = productRepository.findById(targetId).orElseThrow();
+        assertThat(savedProduct.getName()).isEqualTo("Updated Name");
+        assertThat(savedProduct.getDescription()).isEqualTo("Cambio de la descripción del artículo EXT-001");
+    }
+    
     @Test
     @DisplayName("updateProductAsync - Error: Should throw IllegalArgumentException when request is null")
     void updateProductAsyncNullRequest() {
-        assertThatThrownBy(() -> productService.updateProductAsync("EXT-001", null).get())
+        // Act & Assert
+        assertThatThrownBy(() -> productService.updateProductAsync(AppTestConstants.PRODUCT_FIRST_ID, null).get())
                 .hasCauseInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(AppConstants.MSG_PRODUCT_NOT_NULL);
     }
@@ -234,63 +222,52 @@ class ProductServiceTest extends BaseProductTest {
     @Test
     @DisplayName("updateProductAsync - Error: Should throw EntityNotFoundException when product does not exist")
     void updateProductAsyncNotFound() {
-        String productId = "INVALID-1";
-        ProductExistentRequest request = new ProductExistentRequest();
+        // Arrange
+        targetId = AppTestConstants.PRODUCT_INVALID_ID;
 
-        when(productRepository.findById(productId)).thenReturn(Optional.empty());
-
-        assertThatThrownBy(() -> productService.updateProductAsync(productId, request).get())
+        // Act & Assert
+        // El repositorio real buscará "INVALID-ID" en H2, no lo encontrará y lanzará la EntityNotFoundException
+        assertThatThrownBy(() -> productService.updateProductAsync(targetId, existentProductRequest).get())
                 .hasCauseInstanceOf(EntityNotFoundException.class)
-                .hasMessageContaining(String.format(AppConstants.MSG_INVENTORY_NOT_EXISTS, productId));
+                .hasMessageContaining(String.format(AppConstants.MSG_INVENTORY_NOT_EXISTS, targetId));
     }
 
     @Test
     @DisplayName("deleteProductAsync - Success: Should delete product when it exists")
     void deleteProductAsyncSuccess() throws Exception {
-        String productId = "EXT-001";
-        ProductEntity productFourth = ProductEntity.builder().id(productId).build();
+        // Arrange
+        targetId = AppTestConstants.PRODUCT_FIRST_ID;
+        findOrCreateProduct(productFirst);
 
-        when(productRepository.findById(productId)).thenReturn(Optional.of(productFourth));
+        // Act
+        // El servicio buscará y eliminará el producto real de la base de datos H2
+        productService.deleteProductAsync(targetId).get();
 
-        productService.deleteProductAsync(productId).get();
-
-        verify(productRepository).delete(productFourth);
+        // Assert
+        // Verificamos de forma real en la BD que el producto ya no existe
+        boolean exists = productRepository.existsById(targetId);
+        assertThat(exists).isFalse();
     }
 
     @Test
     @DisplayName("deleteProductAsync - Error: Should throw EntityNotFoundException when product does not exist")
     void deleteProductAsyncNotFound() {
-        String productId = "INVALID-1";
+        // Arrange
+        targetId = AppTestConstants.PRODUCT_INVALID_ID;
 
-        when(productRepository.findById(productId)).thenReturn(Optional.empty());
-
-        assertThatThrownBy(() -> productService.deleteProductAsync(productId).get())
+        // Act & Assert
+        // El repositorio real buscará un ID inexistente en H2 y lanzará la excepción esperada
+        assertThatThrownBy(() -> productService.deleteProductAsync(targetId).get())
                 .hasCauseInstanceOf(EntityNotFoundException.class)
-                .hasMessageContaining(String.format(AppConstants.MSG_INVENTORY_NOT_EXISTS, productId));
+                .hasMessageContaining(String.format(AppConstants.MSG_INVENTORY_NOT_EXISTS, targetId));
     }
 
     @Test
-    @DisplayName("search - Success: Should return enriched products list using batch inventory call")
+    @DisplayName("searchBatch - Success: Should return enriched products list using batch inventory call")
     void searchSuccessWithBatchInventory() throws Exception {
         // Arrange
-        ProductEntity productFourth = ProductEntity.builder()
-                .id("EXT-001")
-                .name("Laptop")
-                .description("Gaming laptop")
-                .price(BigDecimal.valueOf(1000))
-                .build();
-
-        EnrichedProductResponse responseProduct = new EnrichedProductResponse();
-        responseProduct.setId("EXT-001");
-        responseProduct.setName("Laptop");
-
-        inventoryProductDto inventoryProductDto = new inventoryProductDto("EXT-001", 10);
-
-        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
-                .thenReturn(List.of(productFourth));
-        when(productMapper.toEnrichedResponse(productFourth)).thenReturn(responseProduct);
-        
-        // Mockeamos la llamada al cliente por lote (batch)
+        // Usamos anyString() para evitar NullPointerException si la búsqueda de H2 
+        // devuelve más de un producto que coincida con "laptop"
         when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
                 .thenReturn(CompletableFuture.completedFuture(List.of(inventoryProductDto)));
 
@@ -298,25 +275,27 @@ class ProductServiceTest extends BaseProductTest {
         List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
 
         // Assert
-        assertThat(result).hasSize(1);
-        assertThat(result.get(0).getStock()).isEqualTo(10);
-        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.IN_STOCK);
+        assertThat(result).isNotEmpty();
         
-        // Verificamos que se haya invocado al cliente batch
-        verify(inventoryClient).getStockBatch(any(ProductBatchRequest.class));
+        // Verificamos específicamente el producto EXT-004 traído desde H2
+        EnrichedProductResponse laptopGamer = result.stream()
+                .filter(p -> p.getId().equals(AppTestConstants.PRODUCT_FOURTH_ID))
+                .findFirst()
+                .orElseThrow();
+
+        assertThat(laptopGamer.getStock()).isEqualTo(100);
+        assertThat(laptopGamer.getInventoryStatus()).isEqualTo(InventoryStatus.IN_STOCK);
     }
 
     @Test
     @DisplayName("searchBatch - Empty: Should return empty list when no products match query")
     void searchBatchEmptyResult() throws Exception {
         // Arrange
-        String query = "nonexistent";
-
-        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase(query, query))
-                .thenReturn(List.of());
+        queryStringFor = AppTestConstants.QUERY_STRING_NOT_EXIST;
 
         // Act
-        List<EnrichedProductResponse> result = productService.searchBatch(query).get();
+        // La consulta a la base de datos H2 real no encontrará coincidencias y retornará lista vacía de forma natural
+        List<EnrichedProductResponse> result = productService.searchBatch(queryStringFor).get();
 
         // Assert
         assertThat(result).isNotNull().isEmpty();
@@ -326,86 +305,39 @@ class ProductServiceTest extends BaseProductTest {
     }
 
     @Test
-    @DisplayName("search - Fallback: Should mark inventory as UNAVAILABLE when batch inventory service fails")
+    @DisplayName("searchBatch - Fallback: Should log warning and mark inventory as UNAVAILABLE when batch inventory service fails")
     void searchBatchInventoryFailureFallback() throws Exception {
         // Arrange
-        ProductEntity productFourth = ProductEntity.builder()
-                .id("EXT-001")
-                .name("Laptop")
-                .build();
-
-        EnrichedProductResponse responseProduct = new EnrichedProductResponse();
-        responseProduct.setId("EXT-001");
-
-        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
-                .thenReturn(List.of(productFourth));
-        when(productMapper.toEnrichedResponse(productFourth)).thenReturn(responseProduct);
-        
-        // Simulamos que la llamada por lote falla retornando un CompletableFuture con error (o lista vacía desde el fallback del cliente)
+        // Configuramos el método batch del cliente externo para que falle correctamente
         when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
-                .thenReturn(CompletableFuture.completedFuture(List.of())); // O failedFuture según cómo gestione tu servicio el fallo en bloque
+                .thenReturn(CompletableFuture.failedFuture(new RuntimeException("Service down")));
 
         // Act
-        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
+        List<EnrichedProductResponse> result = productService.searchBatch("tablet").get();
 
         // Assert
-        assertThat(result).hasSize(1);
-        assertThat(result.get(0).getStock()).isNull();
-        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
-    }
-
-    @Test
-    @DisplayName("searchBatch - Fallback: Should log warning and mark inventory as UNAVAILABLE when batch inventory service fails")
-    void searchBatchInventoryFailureFallbackWithUnavailable() throws Exception {
-        // Arrange
-        ProductEntity productFourth = ProductEntity.builder()
-                .id("EXT-001")
-                .name("Laptop")
-                .build();
-
-        EnrichedProductResponse responseProduct = new EnrichedProductResponse();
-        responseProduct.setId("EXT-001");
-
-        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
-                .thenReturn(List.of(productFourth));
-        when(productMapper.toEnrichedResponse(productFourth)).thenReturn(responseProduct);
+        assertThat(result).isNotEmpty();
         
-        // Simuamos el fallo que hace que 'ex' no sea nulo, entrando directamente al .map()
-        when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
-                .thenReturn(CompletableFuture.failedFuture(new RuntimeException("Batch Service Down")));
+        EnrichedProductResponse tabletResult = result.stream()
+                .filter(p -> p.getId().equals(AppTestConstants.PRODUCT_EIGHTH_ID))
+                .findFirst()
+                .orElseThrow();
 
-        // Act
-        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
-
-        // Assert
-        assertThat(result).hasSize(1);
-        assertThat(result.get(0).getStock()).isNull();
-        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
-        
-        // Verificamos que se ejecutó el flujo del cliente
-        verify(inventoryClient).getStockBatch(any(ProductBatchRequest.class));
+        assertThat(tabletResult.getStock()).isNull();
+        assertThat(tabletResult.getInventoryStatus()).isEqualTo(InventoryStatus.UNAVAILABLE);
     }
 
     @Test
     @DisplayName("searchBatch - Success: Should handle duplicate inventory items in batch response using merge function")
     void searchBatchWithDuplicateInventories() throws Exception {
-        // Arrange
-        ProductEntity productFourth = ProductEntity.builder()
-                .id("EXT-001")
-                .name("Laptop")
-                .build();
-
-        EnrichedProductResponse responseProduct = new EnrichedProductResponse();
-        responseProduct.setId("EXT-001");
-        responseProduct.setName("Laptop");
+        // Arrange: Guardamos el producto real en la base de datos H2
+        targetId = AppTestConstants.PRODUCT_FOURTH_ID;
+        findOrCreateProduct(productFourth);
 
         // Simulamos una respuesta con duplicados para forzar el uso de la función de merge (existing, replacement) -> existing
-        inventoryProductDto inventory1 = new inventoryProductDto("EXT-001", 10);
-        inventoryProductDto inventory2 = new inventoryProductDto("EXT-001", 5); // Duplicado del mismo ID
+        InventoryDto inventory1 = new InventoryDto(AppTestConstants.PRODUCT_FOURTH_ID, 10);
+        InventoryDto inventory2 = new InventoryDto(AppTestConstants.PRODUCT_FOURTH_ID, 5); // Duplicado del mismo ID
 
-        when(productRepository.findByNameContainingIgnoreCaseOrDescriptionContainingIgnoreCase("laptop", "laptop"))
-                .thenReturn(List.of(productFourth));
-        when(productMapper.toEnrichedResponse(productFourth)).thenReturn(responseProduct);
         when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
                 .thenReturn(CompletableFuture.completedFuture(List.of(inventory1, inventory2)));
 
@@ -413,12 +345,50 @@ class ProductServiceTest extends BaseProductTest {
         List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
 
         // Assert
-        assertThat(result).hasSize(1);
+        assertThat(result).isNotEmpty();
+
+        EnrichedProductResponse laptopResult = result.stream()
+                .filter(p -> p.getId().equals(AppTestConstants.PRODUCT_FOURTH_ID))
+                .findFirst()
+                .orElseThrow();
+
         // Debe conservar el valor del primer elemento ("existing") debido a la regla de merge
-        assertThat(result.get(0).getStock()).isEqualTo(10); 
-        assertThat(result.get(0).getInventoryStatus()).isEqualTo(InventoryStatus.IN_STOCK);
+        assertThat(laptopResult.getStock()).isEqualTo(10); 
+        assertThat(laptopResult.getInventoryStatus()).isEqualTo(InventoryStatus.IN_STOCK);
         
         verify(inventoryClient).getStockBatch(any(ProductBatchRequest.class));
     }
-    */
+
+    @Test
+    @DisplayName("searchBatch - Success: Should return enriched product when id exists")
+    void searchBatchProductIdOutOfStockSuccess() throws Exception {
+        // Arrange
+        inventorySixthProductDto.setStock(0); // EXT-006 tiene stock 0
+
+        // Configuramos por defecto que cualquier llamada devuelva stock 0 o un valor seguro,
+        // o usamos anyString() si sabemos que la búsqueda solo traerá un producto.
+        when(inventoryClient.getStockBatch(any(ProductBatchRequest.class)))
+                .thenReturn(CompletableFuture.completedFuture(List.of(inventorySixthProductDto)));
+
+        // Act
+        List<EnrichedProductResponse> result = productService.searchBatch("laptop").get();
+
+        // Assert
+        assertThat(result).isNotEmpty();
+        
+        EnrichedProductResponse sixthProduct = result.stream()
+                .filter(p -> p.getId().equals(AppTestConstants.PRODUCT_SIXTH_ID))
+                .findFirst()
+                .orElseThrow(() -> new AssertionError("El producto EXT-006 no fue encontrado"));
+
+        assertThat(sixthProduct.getStock()).isZero();
+        assertThat(sixthProduct.getInventoryStatus()).isEqualTo(InventoryStatus.OUT_OF_STOCK);
+    }
+
+    private ProductEntity findOrCreateProduct(ProductEntity product) {
+        return productRepository.findById(product.getId())
+                .orElseGet(() -> {
+                    return productRepository.save(product);
+                });
+    }
 }

@@ -25,6 +25,7 @@ import hogar.codelive.products.response.EnrichedProductResponse;
 public abstract class BaseProductTest {   
     protected String targetId;
     protected String jsonInput;
+    protected String queryStringFor;
     protected ProductEntity productFirst;
     protected ProductEntity productSecond;
     protected ProductEntity productThird;
@@ -110,6 +111,10 @@ public abstract class BaseProductTest {
         newProductRequest.setNameProduct("Leche Alpura");
         newProductRequest.setDescriptionProduct("Leche Alpura de cuarto de litro con alta lactosa");
         newProductRequest.setPriceProduct(new BigDecimal("35.00"));
+
+        existentProductRequest = new ProductExistentRequest();
+        existentProductRequest.setNameProduct("Updated Name");
+        existentProductRequest.setDescriptionProduct("Cambio de la descripción del artículo EXT-001");
 
         inventoryList = List.of(productFirst, productSecond, productThird);
 
