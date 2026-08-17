@@ -108,7 +108,7 @@ public class ProductService {
         
         response.setStock(stockOpt.orElse(null));
         response.setInventoryStatus(stockOpt
-            .map(valueEnum -> valueEnum > 0 ? InventoryStatus.IN_STOCK : InventoryStatus.OUT_OF_STOCK)
+            .map(this::toInventoryStatus)
             .orElse(InventoryStatus.UNAVAILABLE));
         
         return response;
@@ -160,7 +160,7 @@ public class ProductService {
 
                 response.setStock(stockOpt.orElse(null));
                 response.setInventoryStatus(stockOpt
-                    .map(valueEnum -> valueEnum > 0 ? InventoryStatus.IN_STOCK : InventoryStatus.OUT_OF_STOCK)
+                    .map(this::toInventoryStatus)
                     .orElse(InventoryStatus.UNAVAILABLE));
 
                 return response;
@@ -194,5 +194,9 @@ public class ProductService {
     private void logWarning(String query, Throwable ex) {
         log.warn("No fue posible obtener el inventario por lote para query={}. Motivo: {}. Se marcan como UNAVAILABLE.", 
                 query, ex.getMessage());
+    }
+
+    private InventoryStatus toInventoryStatus(Integer stock) {
+        return stock > 0 ? InventoryStatus.IN_STOCK : InventoryStatus.OUT_OF_STOCK;
     }
 }
