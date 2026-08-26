@@ -55,6 +55,17 @@ It is important to create the environment variables for the correct execution of
 | ${APP_DB_PASSWORD} | Database Password name |
 | ${INVENTORY_SERVICE_URL} | Inventory service URL |
 
+In Windows:
+
+```bash
+// Enter the folder
+$ setx APP_DB_HOST "localhost" /M
+$ setx APP_DB_PORT "3306" /M
+$ setx APP_DB_USERNAME "user_db_app" /M
+$ setx APP_DB_PASSWORD "password_user_db_app" /M
+$ setx INVENTORY_SERVICE_URL "localhost" /M
+```
+
 ### Database Configuration.
 Once the MariaDB database server is installed, it is necessary to execute the [SQL script](src/docs/sql/schema.sql) before starting each of the microservices.
 

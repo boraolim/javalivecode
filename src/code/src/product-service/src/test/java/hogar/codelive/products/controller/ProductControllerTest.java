@@ -35,7 +35,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
 @DisplayName("productController - Pruebas unitarias")
-class ProControllerTest {
+class ProductControllerTest {
 
     @Mock
     private ProductService productService;
