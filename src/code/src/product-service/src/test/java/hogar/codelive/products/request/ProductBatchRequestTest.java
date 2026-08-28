@@ -3,7 +3,6 @@ package hogar.codelive.products.request;
 import java.util.Set;
 import java.util.List;
 
-
 import jakarta.validation.Validator;
 import jakarta.validation.Validation;
 import jakarta.validation.ValidatorFactory;
@@ -49,7 +48,7 @@ class ProductBatchRequestTest {
 
         // Assert
         assertThat(violations).isNotEmpty().hasSize(1);
-        
+
         assertThat(violations.iterator().next().getMessage())
                 .isEqualTo("La lista de productos no puede estar vacía");
     }
