@@ -35,168 +35,165 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 @ExtendWith(MockitoExtension.class)
 @DisplayName("productController - Pruebas unitarias")
 class ProductControllerTest {
-        @Mock
-        private ProductService productService;
+    @Mock
+    private ProductService productService;
 
-        @InjectMocks
-        private ProductController productController;
+    @InjectMocks
+    private ProductController productController;
 
-        private ProductNewRequest defaultNewRequest;
-        private ProductExistentRequest defaultExistentRequest;
+    private ProductNewRequest defaultNewRequest;
+    private ProductExistentRequest defaultExistentRequest;
 
-        @BeforeEach
-        void setUp() {
-                defaultNewRequest = new ProductNewRequest();
-                defaultNewRequest.setProductId("EXT-001");
-                defaultNewRequest.setNameProduct("Laptop Lenovo");
+    @BeforeEach
+    void setUp() {
+        defaultNewRequest = new ProductNewRequest();
+        defaultNewRequest.setProductId("EXT-001");
+        defaultNewRequest.setNameProduct("Laptop Lenovo");
 
-                defaultExistentRequest = new ProductExistentRequest();
-                defaultExistentRequest.setNameProduct("Laptop Lenovo Actualizada");
-        }
+        defaultExistentRequest = new ProductExistentRequest();
+        defaultExistentRequest.setNameProduct("Laptop Lenovo Actualizada");
+    }
 
-        @Test
-        @DisplayName("search - EXITO: retorna 200 OK con la lista de productos enriquecidos")
-        void search_conQueryValida_debeRetornar200ConResponse() {
-                EnrichedProductResponse responseDto = new EnrichedProductResponse();
-                responseDto.setId("EXT-001");
-                responseDto.setName("Laptop Lenovo");
+    @Test
+    @DisplayName("search - EXITO: retorna 200 OK con la lista de productos enriquecidos")
+    void search_conQueryValida_debeRetornar200ConResponse() {
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+        responseDto.setName("Laptop Lenovo");
 
-                when(productService.search("laptop"))
-                                .thenReturn(CompletableFuture.completedFuture(List.of(responseDto)));
+        when(productService.search("laptop"))
+            .thenReturn(CompletableFuture.completedFuture(List.of(responseDto)));
 
-                ResponseEntity<List<EnrichedProductResponse>> response = productController.search("laptop").join();
+        ResponseEntity<List<EnrichedProductResponse>> response = productController.search("laptop").join();
 
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-                assertThat(response.getBody()).hasSize(1).extracting("id").contains("EXT-001");
-                verify(productService, times(1)).search("laptop");
-        }
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).hasSize(1).extracting("id").contains("EXT-001");
+        verify(productService, times(1)).search("laptop");
+    }
 
-        @Test
-        @DisplayName("getProduct - EXITO: retorna 200 OK con el producto enriquecido")
-        void getProduct_conIdExistente_debeRetornar200ConResponse() {
-                EnrichedProductResponse responseDto = new EnrichedProductResponse();
-                responseDto.setId("EXT-001");
+    @Test
+    @DisplayName("getProduct - EXITO: retorna 200 OK con el producto enriquecido")
+    void getProduct_conIdExistente_debeRetornar200ConResponse() {
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
 
-                when(productService.getProductId("EXT-001"))
-                                .thenReturn(CompletableFuture.completedFuture(responseDto));
+        when(productService.getProductId("EXT-001"))
+            .thenReturn(CompletableFuture.completedFuture(responseDto));
 
-                ResponseEntity<EnrichedProductResponse> response = productController.getProduct("EXT-001").join();
+        ResponseEntity<EnrichedProductResponse> response = productController.getProduct("EXT-001").join();
 
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-                assertThat(response.getBody()).isEqualTo(responseDto);
-                verify(productService, times(1)).getProductId("EXT-001");
-        }
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isEqualTo(responseDto);
+        verify(productService, times(1)).getProductId("EXT-001");
+    }
 
-        @Test
-        @DisplayName("getProduct - ERROR: propaga EntityNotFoundException cuando el producto no existe")
-        void getProduct_conIdInexistente_debePropagarExcepcion() {
-                CompletableFuture<EnrichedProductResponse> failedFuture = new CompletableFuture<>();
-                failedFuture.completeExceptionally(
-                                new EntityNotFoundException("No existe un producto con id: EXT-999"));
+    @Test
+    @DisplayName("getProduct - ERROR: propaga EntityNotFoundException cuando el producto no existe")
+    void getProduct_conIdInexistente_debePropagarExcepcion() {
+        CompletableFuture<EnrichedProductResponse> failedFuture = new CompletableFuture<>();
+        failedFuture.completeExceptionally(new EntityNotFoundException("No existe un producto con id: EXT-999"));
 
-                when(productService.getProductId("EXT-999")).thenReturn(failedFuture);
+        when(productService.getProductId("EXT-999")).thenReturn(failedFuture);
 
-                assertThatThrownBy(() -> productController.getProduct("EXT-999").join())
-                                .isInstanceOf(CompletionException.class)
-                                .hasCauseInstanceOf(EntityNotFoundException.class);
-        }
+        assertThatThrownBy(() -> productController.getProduct("EXT-999").join())
+            .isInstanceOf(CompletionException.class)
+            .hasCauseInstanceOf(EntityNotFoundException.class);
+    }
 
-        @Test
-        @DisplayName("addNewProduct - EXITO: retorna 201 CREATED con el producto creado")
-        void addNewProduct_conRequestValido_debeRetornar201ConResponse() {
-                EnrichedProductResponse responseDto = new EnrichedProductResponse();
-                responseDto.setId("EXT-001");
+    @Test
+    @DisplayName("addNewProduct - EXITO: retorna 201 CREATED con el producto creado")
+    void addNewProduct_conRequestValido_debeRetornar201ConResponse() {
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
 
-                when(productService.addNewProductAsync(defaultNewRequest))
-                                .thenReturn(CompletableFuture.completedFuture(responseDto));
+        when(productService.addNewProductAsync(defaultNewRequest))
+            .thenReturn(CompletableFuture.completedFuture(responseDto));
 
-                ResponseEntity<EnrichedProductResponse> response = productController.addNewProduct(defaultNewRequest)
-                                .join();
+        ResponseEntity<EnrichedProductResponse> response = productController.addNewProduct(defaultNewRequest)
+            .join();
 
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
-                assertThat(response.getBody()).isEqualTo(responseDto);
-        }
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(response.getBody()).isEqualTo(responseDto);
+    }
 
-        @Test
-        @DisplayName("addNewProduct - ERROR: propaga IllegalArgumentException del servicio")
-        void addNewProduct_conRequestInvalido_debePropagarExcepcion() {
-                CompletableFuture<EnrichedProductResponse> failedFuture = new CompletableFuture<>();
-                failedFuture.completeExceptionally(new IllegalArgumentException("El producto no puede ser nulo"));
+    @Test
+    @DisplayName("addNewProduct - ERROR: propaga IllegalArgumentException del servicio")
+    void addNewProduct_conRequestInvalido_debePropagarExcepcion() {
+        CompletableFuture<EnrichedProductResponse> failedFuture = new CompletableFuture<>();
+        failedFuture.completeExceptionally(new IllegalArgumentException("El producto no puede ser nulo"));
 
-                when(productService.addNewProductAsync(defaultNewRequest)).thenReturn(failedFuture);
+        when(productService.addNewProductAsync(defaultNewRequest)).thenReturn(failedFuture);
 
-                assertThatThrownBy(() -> productController.addNewProduct(defaultNewRequest).join())
-                                .isInstanceOf(CompletionException.class)
-                                .hasCauseInstanceOf(IllegalArgumentException.class);
-        }
+        assertThatThrownBy(() -> productController.addNewProduct(defaultNewRequest).join())
+            .isInstanceOf(CompletionException.class)
+            .hasCauseInstanceOf(IllegalArgumentException.class);
+    }
 
-        @Test
-        @DisplayName("updateStockProduct - EXITO: retorna 204 NO_CONTENT al actualizar")
-        void updateStockProduct_conRequestValido_debeRetornar204() {
-                when(productService.updateProductAsync("EXT-001", defaultExistentRequest))
-                                .thenReturn(CompletableFuture.completedFuture(new EnrichedProductResponse()));
+    @Test
+    @DisplayName("updateStockProduct - EXITO: retorna 204 NO_CONTENT al actualizar")
+    void updateStockProduct_conRequestValido_debeRetornar204() {
+        when(productService.updateProductAsync("EXT-001", defaultExistentRequest))
+            .thenReturn(CompletableFuture.completedFuture(new EnrichedProductResponse()));
 
-                ResponseEntity<Void> response = productController.updateStockProduct("EXT-001", defaultExistentRequest)
-                                .join();
+        ResponseEntity<Void> response = productController.updateStockProduct("EXT-001", defaultExistentRequest)
+            .join();
 
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
-                assertThat(response.getBody()).isNull();
-        }
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+        assertThat(response.getBody()).isNull();
+    }
 
-        @Test
-        @DisplayName("updateStockProduct - ERROR: propaga EntityNotFoundException si no existe el producto")
-        void updateStockProduct_conProductoInexistente_debePropagarExcepcion() {
-                CompletableFuture<EnrichedProductResponse> failedFuture = new CompletableFuture<>();
-                failedFuture.completeExceptionally(
-                                new EntityNotFoundException("No existe el inventario para el producto: EXT-999"));
+    @Test
+    @DisplayName("updateStockProduct - ERROR: propaga EntityNotFoundException si no existe el producto")
+    void updateStockProduct_conProductoInexistente_debePropagarExcepcion() {
+        CompletableFuture<EnrichedProductResponse> failedFuture = new CompletableFuture<>();
+        failedFuture.completeExceptionally(new EntityNotFoundException("No existe el inventario para el producto: EXT-999"));
 
-                when(productService.updateProductAsync("EXT-999", defaultExistentRequest))
-                                .thenReturn(failedFuture);
+        when(productService.updateProductAsync("EXT-999", defaultExistentRequest))
+            .thenReturn(failedFuture);
 
-                assertThatThrownBy(() -> productController.updateStockProduct("EXT-999", defaultExistentRequest).join())
-                                .isInstanceOf(CompletionException.class)
-                                .hasCauseInstanceOf(EntityNotFoundException.class);
-        }
+        assertThatThrownBy(() -> productController.updateStockProduct("EXT-999", defaultExistentRequest).join())
+            .isInstanceOf(CompletionException.class)
+            .hasCauseInstanceOf(EntityNotFoundException.class);
+    }
 
-        @Test
-        @DisplayName("deleteStockProduct - EXITO: retorna 204 NO_CONTENT al eliminar")
-        void deleteStockProduct_conProductoExistente_debeRetornar204() {
-                when(productService.deleteProductAsync("EXT-001"))
-                                .thenReturn(CompletableFuture.completedFuture(null));
+    @Test
+    @DisplayName("deleteStockProduct - EXITO: retorna 204 NO_CONTENT al eliminar")
+    void deleteStockProduct_conProductoExistente_debeRetornar204() {
+        when(productService.deleteProductAsync("EXT-001"))
+            .thenReturn(CompletableFuture.completedFuture(null));
 
-                ResponseEntity<Void> response = productController.deleteStockProduct("EXT-001").join();
+        ResponseEntity<Void> response = productController.deleteStockProduct("EXT-001").join();
 
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
-        }
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+    }
 
-        @Test
-        @DisplayName("deleteStockProduct - ERROR: propaga EntityNotFoundException si no existe el producto")
-        void deleteStockProduct_conProductoInexistente_debePropagarExcepcion() {
-                CompletableFuture<Void> failedFuture = new CompletableFuture<>();
-                failedFuture.completeExceptionally(
-                                new EntityNotFoundException("No existe el inventario para el producto: EXT-999"));
+    @Test
+    @DisplayName("deleteStockProduct - ERROR: propaga EntityNotFoundException si no existe el producto")
+    void deleteStockProduct_conProductoInexistente_debePropagarExcepcion() {
+        CompletableFuture<Void> failedFuture = new CompletableFuture<>();
+        failedFuture.completeExceptionally(new EntityNotFoundException("No existe el inventario para el producto: EXT-999"));
 
-                when(productService.deleteProductAsync("EXT-999")).thenReturn(failedFuture);
+        when(productService.deleteProductAsync("EXT-999")).thenReturn(failedFuture);
 
-                assertThatThrownBy(() -> productController.deleteStockProduct("EXT-999").join())
-                                .isInstanceOf(CompletionException.class)
-                                .hasCauseInstanceOf(EntityNotFoundException.class);
-        }
+        assertThatThrownBy(() -> productController.deleteStockProduct("EXT-999").join())
+            .isInstanceOf(CompletionException.class)
+            .hasCauseInstanceOf(EntityNotFoundException.class);
+    }
 
-        @Test
-        @DisplayName("searchBatch - EXITO: retorna 200 OK con la lista de productos enriquecidos por lote")
-        void searchBatch_conQueryValida_debeRetornar200ConResponse() {
-                EnrichedProductResponse responseDto = new EnrichedProductResponse();
-                responseDto.setId("EXT-001");
-                responseDto.setName("Laptop Lenovo");
+    @Test
+    @DisplayName("searchBatch - EXITO: retorna 200 OK con la lista de productos enriquecidos por lote")
+    void searchBatch_conQueryValida_debeRetornar200ConResponse() {
+        EnrichedProductResponse responseDto = new EnrichedProductResponse();
+        responseDto.setId("EXT-001");
+        responseDto.setName("Laptop Lenovo");
 
-                when(productService.searchBatch("laptop"))
-                                .thenReturn(CompletableFuture.completedFuture(List.of(responseDto)));
+        when(productService.searchBatch("laptop"))
+            .thenReturn(CompletableFuture.completedFuture(List.of(responseDto)));
 
-                ResponseEntity<List<EnrichedProductResponse>> response = productController.searchbatch("laptop").join();
+        ResponseEntity<List<EnrichedProductResponse>> response = productController.searchbatch("laptop").join();
 
-                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-                assertThat(response.getBody()).hasSize(1).extracting("id").contains("EXT-001");
-                verify(productService, times(1)).searchBatch("laptop");
-        }
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).hasSize(1).extracting("id").contains("EXT-001");
+        verify(productService, times(1)).searchBatch("laptop");
+    }
 }
