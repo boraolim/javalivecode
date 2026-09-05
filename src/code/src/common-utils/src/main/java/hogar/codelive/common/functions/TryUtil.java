@@ -16,20 +16,14 @@ public final class TryUtil {
         }
     }
 
-    public <T> Optional<T> optional(Supplier<T> supplier) {
-        try {
-            return Optional.ofNullable(supplier.get());
-        } catch (Exception ex) {
-            return Optional.empty();
-        }
+    public static <T> Optional<T> optional(Supplier<T> supplier) {
+        return Optional.ofNullable(of(supplier, null));
     }
 
-    public boolean execute(Runnable runnable) {
-        try {
+    public static boolean execute(Runnable runnable) {
+        return of(() -> {
             runnable.run();
             return true;
-        } catch (Exception ex) {
-            return false;
-        }
+        }, false);
     }
 }
